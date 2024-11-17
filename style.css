@@ -197,7 +197,7 @@
 
 /*---------TICKETS--------------*/
 .pjesa1{
-  background-color: rgb(195, 98, 25);
+  background-color: rgb(195, 59, 39);
   width: 100%;
   height: 400px;
   color: white;
@@ -230,7 +230,7 @@
 .card h1 {
   font-size: 33px;
   margin-bottom: 15px;
-  color: rgb(118, 18, 203);
+  color:  black;
 }
 
 .container .price {
@@ -242,7 +242,7 @@
   color: black;
 }
 .button1 {
-  background-color: rgb(118, 18, 203);
+  background-color: rgb(195, 59, 39);
   color: white;
   border: none;
   border-radius: 1px;
@@ -252,7 +252,7 @@
 }
 
 .button1:hover {
-  background-color:rgb(118, 18, 203) ;
+  background-color: #e13f1b;
 }
 #button{
   margin-top:36px ;
@@ -290,32 +290,34 @@
     transform: translateY(0); /* Kthehet në pozicionin fillestar */
   }
 }
+
+
 /*-------ANIMACIONI ME TICKETS-------*/
 .tickets-logo-section {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 10px;
   padding: 20px;
   background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
 }
 
 .tickets-logo-section h2 {
-  font-size: 2em;
-  color: rgb(94, 75, 98);
+  font-size: 30px;
+  color: black;
   margin-bottom: 20px;
 }
 
 .tickets-logos {
   display: flex;              /* Radhit në një rresht */
-  justify-content: center;    /* Qendro ikonat */
+  justify-content: center;   
   gap: 20px;                  /* Hapësirë mes ikonave */
   flex-wrap: wrap;            /* Lejo që të mbështillen për ekranet e vogla */
 }
 
 .ticket-icon {
   font-size: 40px;            /* Madhësia e ikonave */
-  color: rgb(84, 9, 132);
+  color: rgb(195, 59, 39);
   animation: bounce 2s infinite ease-in-out; /* Anima ikonat */
 }
 
@@ -338,6 +340,9 @@
 .ticket-icon:nth-child(6) {
   animation-delay: 1s;
 }
+.ticket-icon:nth-child(7) {
+  animation-delay: 1.2s;
+}
 
 /* Animacioni */
 @keyframes bounce {
@@ -352,3 +357,66 @@
 }
 }
 
+
+
+/*-----PJESA E FAQ Q&A------*/
+.faq-container {
+  width: 100%;
+  padding-top: 30px;
+  
+  
+}
+
+/* FAQ Item */
+.faq-item {
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgb(195, 59, 39);
+  padding-bottom: 10px;
+  font-size: 25px;
+  padding-left: 35px;
+  position: relative;
+}
+
+/* Hide the checkbox (toggle) */
+.faq-item input[type="checkbox"] {
+  display: none;
+}
+
+/* Question Label */
+.faq-question {
+  
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+
+/* Arrow */
+.arrow {
+  padding-right: 30px;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when checkbox is checked */
+.faq-item input[type="checkbox"]:checked + .faq-question .arrow {
+  transform: scaleY(-1);
+}
+
+/* Answer Paragraph */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+ font-size: 25px;
+  color: #666;
+  transition: max-height 0.3s ease;
+  padding: 0 10px;
+}
+
+/* Show answer when checkbox is checked */
+.faq-item input[type="checkbox"]:checked ~ .faq-answer {
+  max-height: 200px; /* Zgjedhja e një max-height më të madhe për përgjigje më të gjata */
+}

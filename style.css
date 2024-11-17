@@ -123,33 +123,20 @@
 
 .footer-item1 {
   font-size: 20px;
+  padding-top: 40px;
  
 }
-.find{
-	  display: flex;
-    width: 100%;
-    margin-left: 50px;
-    margin-top: 80px;
-}
-.icon {
-  color: var(--link-color);
-  font-size: 50px;
-}
-.moon, .sun{
-   height: 50px;
-   width: 50px;
-   font-size: 20px;
-   background-color: transparent;
-   border: none;
-}
+/*----------NEWS------------*/
+
 #header {
-  margin-top: 50px;
+  margin-top: 20px;
   background-color: rgb(94, 75, 98);
   height: 350px; 
   width: 100%; 
   display: flex; 
   align-items: center; 
   justify-content: center; 
+
 }
 #header h1 {
   color: white; 
@@ -210,7 +197,7 @@
 
 /*---------TICKETS--------------*/
 .pjesa1{
-  background-color: rgb(94,75,98);
+  background-color: rgb(118, 18, 203);
   width: 100%;
   height: 400px;
   color: white;
@@ -243,7 +230,7 @@
 .card h1 {
   font-size: 33px;
   margin-bottom: 15px;
-  color: rgb(51, 41, 53);
+  color: rgb(118, 18, 203);
 }
 
 .container .price {
@@ -255,7 +242,7 @@
   color: black;
 }
 .button1 {
-  background-color: rgb(94,75,98);
+  background-color: rgb(118, 18, 203);
   color: white;
   border: none;
   border-radius: 1px;
@@ -265,7 +252,7 @@
 }
 
 .button1:hover {
-  background-color:rgb(84, 9, 132) ;
+  background-color:rgb(118, 18, 203) ;
 }
 #button{
   margin-top:36px ;

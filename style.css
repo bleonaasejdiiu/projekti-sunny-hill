@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
 *{
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -179,7 +181,7 @@ h4:hover {
 
 /*---------TICKETS--------------*/
 .pjesa1{
-  background-color: rgb(236, 97, 38);
+  background: linear-gradient(to right,  rgb(230, 109, 64), rgb(237, 121, 54), rgb(230, 70, 20), rgb(230, 109, 64), rgb(237, 121, 54), rgb(230, 70, 30));
   width: 100%;
   height: 400px;
   color: white;
@@ -188,7 +190,7 @@ h4:hover {
   align-content: center;
   font-size: 25px
 }
-.container {
+.container1 {
   display: flex;
   padding: 5px; 
   flex-wrap: wrap; /* Për të qenë responsive */
@@ -215,7 +217,7 @@ h4:hover {
   color:  black;
 }
 
-.container .price {
+.container1 .price {
   font-weight: bold;
   color: #777; 
  } 
@@ -224,7 +226,7 @@ h4:hover {
   color: black;
 }
 .button1 {
-  background-color: rgb(195, 59, 39);
+  background-color: rgb(239, 76, 22);
   color: white;
   border: none;
   border-radius: 1px;
@@ -277,8 +279,8 @@ h4:hover {
 /*-------ANIMACIONI ME TICKETS-------*/
 .tickets-logo-section {
   text-align: center;
-  margin-top: 10px;
-  padding: 20px;
+  margin-top: 5px;
+  padding: 15px;
   background-color: #f9f9f9;
   border-radius: 5px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
@@ -299,7 +301,7 @@ h4:hover {
 
 .ticket-icon {
   font-size: 40px;            /* Madhësia e ikonave */
-  color: rgb(195, 59, 39);
+  color: #e64917;
   animation: bounce 2s infinite ease-in-out; /* Anima ikonat */
 }
 
@@ -402,3 +404,357 @@ h4:hover {
 .faq-item input[type="checkbox"]:checked ~ .faq-answer {
   max-height: 200px; /* Zgjedhja e një max-height më të madhe për përgjigje më të gjata */
 }
+/*--------CARD PAYMENT-----------*/
+.container{
+  min-height: 100vh;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  padding-bottom: 60px;
+}
+
+.container form{
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 10px 15px rgba(0,0,0,.1);
+  padding: 20px;
+  width: 600px;
+  padding-top: 160px;
+}
+
+.container form .inputBox{
+  margin-top: 20px;
+}
+
+.container form .inputBox span{
+  display: block;
+  color:#999;
+  padding-bottom: 5px;
+}
+
+.container form .inputBox input,
+.container form .inputBox select{
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border:1px solid rgba(0,0,0,.3);
+  color:#444;
+}
+
+.container form .flexbox{
+  display: flex;
+  gap:15px;
+}
+
+.container form .flexbox .inputBox{
+  flex:1 1 150px;
+}
+
+.container form .submit-btn{
+  width: 100%;
+  background:linear-gradient(to right,  rgb(230, 109, 64), rgb(237, 121, 54), rgb(230, 70, 20), rgb(230, 109, 64), rgb(237, 121, 54), rgb(230, 70, 30));
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 20px;
+  color:#fff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .2s linear;
+}
+
+.container form .submit-btn:hover{
+  letter-spacing: 2px;
+  opacity: .8;
+}
+
+.container .card-container{
+  margin-bottom: -150px;
+  position: relative;
+  height: 250px;
+  width: 400px;
+}
+
+.container .card-container .front{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0; left: 0;
+  background:linear-gradient(to right,  rgb(230, 109, 64), rgb(237, 121, 54), rgb(230, 70, 20), rgb(230, 109, 64), rgb(237, 121, 54), rgb(230, 70, 30));
+  border-radius: 5px;
+  backface-visibility: hidden;
+  box-shadow: 0 15px 25px rgba(0,0,0,.2);
+  padding:20px;
+  transform:perspective(1000px) rotateY(0deg);
+  transition:transform .4s ease-out;
+}
+
+.container .card-container .front .image{
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.container .card-container .front .image img{
+  height: 50px;
+}
+
+.container .card-container .front .card-number-box{
+  padding:30px 0;
+  font-size: 22px;
+  color:#fff;
+}
+
+.container .card-container .front .flexbox{
+  display: flex;
+}
+
+.container .card-container .front .flexbox .box:nth-child(1){
+  margin-right: auto;
+}
+
+.container .card-container .front .flexbox .box{
+  font-size: 15px;
+  color:#fff;
+}
+
+.container .card-container .back{
+  position: absolute;
+  top:0; left: 0;
+  height: 100%;
+  width: 100%;
+  background:linear-gradient(to right,  rgb(230, 109, 64), rgb(237, 121, 54), rgb(230, 70, 20), rgb(230, 109, 64), rgb(237, 121, 54), rgb(230, 70, 30));
+  border-radius: 5px;
+  padding: 20px 0;
+  text-align: right;
+  backface-visibility: hidden;
+  box-shadow: 0 15px 25px rgba(0,0,0,.2);
+  transform:perspective(1000px) rotateY(180deg);
+  transition:transform .4s ease-out;
+}
+
+.container .card-container .back .stripe{
+  background: #000;
+  width: 100%;
+  margin: 10px 0;
+  height: 50px;
+}
+
+.container .card-container .back .box{
+  padding: 0 20px;
+}
+
+.container .card-container .back .box span{
+  color:#fff;
+  font-size: 15px;
+}
+
+.container .card-container .back .box .cvv-box{
+  height: 50px;
+  padding: 10px;
+  margin-top: 5px;
+  color:#333;
+  background: #fff;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.container .card-container .back .box img{
+  margin-top: 30px;
+  height: 30px;
+}
+
+/*---------------CONTACT US-------------------*/
+.contact {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: url("contact.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(70%);
+}
+
+.form-container {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background: rgba(255, 255, 255, 0.9); /* Sfond i bardhë me pak transparencë */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hije pak më e errët */
+}
+
+.form {
+  display: none;
+  flex-direction: column;
+}
+
+.form.active {
+  display: flex;
+}
+
+.form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 30px;
+  color: #333; /* Tekst më i errët për kontrast më të mirë */
+}
+
+.form input {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc; /* Kufij pak më të theksuar */
+  border-radius: 5px;
+}
+
+.form button {
+  background-color: #771862;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.form button:hover {
+  background-color: #a12084;
+}
+
+.form .options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+.form span {
+  color: #681555;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.form span:hover {
+  text-decoration: underline;
+}
+
+.form p {
+  margin-top: 20px;
+  color: #333; /* Tekst më i errët për lexueshmëri më të mirë */
+}
+
+/*NJE STILIZIM NDRYSHE I LOGIN
+.contact {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: url("contact.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(70%);
+}
+
+.form-container {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background: rgba(0, 0, 0, 0.4);  /* Përdor një ngjyrë të errët për të bërë kontrast me formën 
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 5px 10px white;
+  backdrop-filter: blur(10px);  /* Aplikoje mjegullimin e sfondit 
+  -webkit-backdrop-filter: blur(10px);
+}
+.form {
+  display: none;
+  flex-direction: column;
+}
+
+.form.active {
+  display: flex;
+}
+
+.form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 30px;
+}
+
+.form input {
+  margin: 10px 0;
+  padding: 10px;
+  box-shadow: 0 2px 5px white;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: transparent;
+  color: white;
+}
+
+.form button {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 13px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.form button:hover {
+  background-color: rgba(255, 255, 255, 0.916);
+}
+
+.form .options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  font-size: 14px;
+  color: white;
+}
+
+.form span {
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.form span:hover {
+  text-decoration: underline;
+}
+
+.form p {
+  margin-top: 20px;
+  color: white;
+}
+
+.form a {
+  color: white;
+}
+.form input::placeholder {
+  color: white;  /* Zgjidhni ngjyrën që dëshironi 
+  opacity: 1;  /* Kontrolloni dukshmërinë e placeholder-it 
+}
+/* Responsive Design for Smaller Screens 
+@media screen and (max-width: 600px) {
+  .form-container {
+    width: 250px;
+  }
+  .form h2 {
+    font-size: 24px;
+  }
+  .form button {
+    font-size: 14px;
+  }
+}
+  */

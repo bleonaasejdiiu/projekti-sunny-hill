@@ -758,3 +758,65 @@ h4:hover {
   }
 }
   */
+
+
+  /*----------- ABOUT US----------------*/
+
+ .b{
+      text-align: center;
+      background: linear-gradient(to right,  rgb(230, 209, 64), rgb(237, 121, 54), rgb(230, 70, 20), rgb(237, 121,54), rgb(230, 70, 30) );;
+      padding: 100px;
+      
+      
+  }
+  .a{
+      background-color: deeppink;
+      display: grind;
+      place-items: center;
+  }
+  div ul{
+      list-style-type: none;
+  }
+  div ul a{
+      display: inline-block;
+      padding: 20px;
+  
+  }
+  
+    .image {
+      display: inline-block;
+      margin-right: 20px;
+    }
+    .text {
+      float: right;
+    }
+    .c{
+      text-align: center;
+      background-color: grey;
+      padding: 50px;
+    }
+  
+    .gallery1{
+      margin-top: -20px;
+      display: flex;
+    }
+    .gallery1 img{
+      width: 364px;
+      display: 600px;
+    }
+    .gallery2{
+      margin-top: -20px;
+      display: flex;
+    }
+    .gallery2 img{
+      width: 364px;
+      display: 600px;
+    }
+    .gallery3{
+      margin-top: -20px;
+      display: flex;
+    }
+    .gallery3 img{
+      width: 364px;
+      display: 600px;
+    }

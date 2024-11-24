@@ -194,7 +194,6 @@ body {
 }
 /*----------NEWS------------*/
 #header {
-  margin-top: 20px;
   background: linear-gradient(to right,  rgb(113, 79, 117), rgb(138, 109, 134), rgb(189, 137, 183), rgb(189, 137, 183), rgb(138, 109, 134), rgb(113, 79, 117)); 
   height: 350px;
   width: 100%;

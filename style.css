@@ -3,21 +3,48 @@
 *{
     font-family: Arial, Helvetica, sans-serif;
 }
-.navbar{
-   background-color: white;
-   text-align: center;
-   padding: 20px;
+body {
+  margin: 0;
+
+  background-color: white; /* Background color for the entire page */
 }
-.navbar a{
-    text-decoration: none;
-    padding: 40px;
-    color: black;
-    font-size: 20PX;
-    font-weight: bold;
+
+/* Style for navbar */
+.navbar {
+  background-color: #a496a4; /* Dark background for navbar */
+  overflow: hidden;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  font-weight: bold;
 }
+
+/* Navbar link styles */
+.navbar a {
+  display: inline-block;
+  padding: 14px 20px;
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover state for navbar links */
 .navbar a:hover {
-    color: #FF6347; /* Ndryshon ngjyrën në portokalli kur kalon mbi të */
+  background-color: #ddd;
+  color: #333;
 }
+
+/* Active state for navbar links */
+.navbar a:active {
+  background-color: #555;
+  color: #fff;
+}
+
+
+
 .img1{
 	width: 100%;
 	height: 500px;
@@ -89,15 +116,45 @@
   height: 450px;
   border: none; 
 }
+.location-container {
+  display: flex; /* Organizim fleksibil */
+  flex-wrap: wrap; /* Lejo thyerjen e rreshtit nëse s'ka hapësirë */
+  justify-content: center; /* Qendërzimi horizontal */
+  gap: 15px; /* Hapësira ndërmjet kutive */
+  margin-top: 20px; /* Hapësirë nga pjesët e tjera */
+}
 
-.grid-item h4,p {
-  margin: 20px 0;
-  text-align: center;
-  margin-top: auto;
+/* Kutitë individuale */
+.location-box {
+  background-color: #f9f9f9; /* Ngjyra e sfondit */
+  padding: 15px; /* Hapësirë brenda kutisë */
+  border-radius: 8px; /* Këndet e rrumbullakëta */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Hije për efekt modern */
+  text-align: center; /* Teksti i qendërzuar */
+  min-width: 120px; /* Gjerësia minimale për uniformitet */
+  flex: 1; /* Fleksibilitet për të përshtatur madhësinë */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efekt Hover */
 }
-h4:hover {
-  color: #e55e10; /* Ndryshon ngjyra në të bardhë kur kalon mbi të */
+
+/* Teksti dhe titulli brenda kutive */
+.location-box h4 {
+  font-size: 1.4rem; /* Madhësia e titullit */
+  color: #f596d2; /* Ngjyra e theksuar */
+  margin-bottom: 5px;
 }
+
+.location-box p {
+  font-size: 1rem;
+  color: #fa95e0; /* Ngjyra e tekstit */
+  line-height: 1.4;
+}
+
+/* Efekti Hover për Kutitë */
+.location-box:hover {
+  transform: translateY(-5px); /* Lëvizje lart kur miu kalon mbi kuti */
+  box-shadow: 0 5px 10px rgba(180, 75, 154, 0.2); /* Hije më e theksuar */
+}
+
 .footer {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -138,7 +195,7 @@ h4:hover {
 /*----------NEWS------------*/
 #header {
   margin-top: 20px;
-  background: linear-gradient(to right,  rgb(230, 109, 64), rgb(237, 121, 54), rgb(230, 70, 20), rgb(230, 109, 64), rgb(237, 121, 54), rgb(230, 70, 30)); 
+  background: linear-gradient(to right,  rgb(113, 79, 117), rgb(138, 109, 134), rgb(189, 137, 183), rgb(189, 137, 183), rgb(138, 109, 134), rgb(113, 79, 117)); 
   height: 350px;
   width: 100%;
   display: flex;
@@ -153,7 +210,7 @@ h4:hover {
 }
 
 #container {
-  background-color: rgb(239, 76, 22);
+  background-color: rgb(114, 79, 117);
   color: white;
   height: 50px;
   width: 100%;
@@ -167,18 +224,50 @@ h4:hover {
 .news {
   font-size: 25px;
   font-family: sans-serif;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid rgb(239, 149, 198);
   text-align: center;
   transition: background-color 0.3s ease; 
 }
 
 .news:hover { /*kur tklikojsh te about shfaqet ngjyr portokalli*/
-  background-color: rgb(236, 88, 2);
-  color: black;
+  background-color: rgb(147, 125, 143);
+  color: rgb(249, 242, 247);
   padding-top: 3px;
 }
+/*=============*/
+.question-section {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 600px;
+}
 
+.question-section h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
 
+.question-section textarea {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #9e7189;
+  border-radius: 4px;
+}
+
+.question-section button {
+  padding: 10px 20px;
+  background-color: #f7b3e4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.question-section button:hover {
+  background-color: #ee92d3;
+}
 /*---------TICKETS--------------*/
 .pjesa1{
   background: linear-gradient(to right,  rgb(230, 109, 64), rgb(237, 121, 54), rgb(230, 70, 20), rgb(230, 109, 64), rgb(237, 121, 54), rgb(230, 70, 30));

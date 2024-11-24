@@ -1,6 +1,14 @@
+document.getElementById("show-signup").addEventListener("click", function() {
+    document.getElementById("login-form").classList.remove("active");
+    document.getElementById("signup-form").classList.add("active");
+});
 
-
-
+// Show Login form and hide Sign Up form
+document.getElementById("show-login").addEventListener("click", function() {
+    document.getElementById("signup-form").classList.remove("active");
+    document.getElementById("login-form").classList.add("active");
+});
+/*------VALIDIMI I FORMAVE-LOGIN------ */
 document.getElementById("login-btn").addEventListener("click", function(e) {
     e.preventDefault(); // Parandalon dërgimin e formës për të kontrolluar validimin
 

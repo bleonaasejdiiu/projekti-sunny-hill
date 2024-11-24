@@ -8,7 +8,17 @@
    
 </head>
 <body>
-    
+    <!-- Guest Mode Modal -->
+    <div id="guestModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Welcome to the Sunny Hill Festival Website!</h2>
+            <p>You are currently browsing as a guest. To access more features, please log in or sign up.</p>
+            <a href="contactus.html"><button>Log In</button></a>
+            <a href="contactus.html"><button>Sign Up</button></a>
+        </div>
+    </div>
+
 
     <nav class="navbar">
         <a href="home.html">Home</a>
@@ -122,7 +132,25 @@
 
 </div>
 
-
+<script>
+    var modal=document.getElementById("guestModal");
+//merre span element e cila e mbyll guest modal
+var span =document.getElementById("closeModal");
+//per me tregu modalin automatikisht kur faqja hapet
+window.onload=function(){
+    modal.style.display="block";
+}
+//kur useri klikon ne span(x), mbyll guest modal
+span.onclick=function(){
+    modal.style.display="none";//e bon hide modal
+}
+//kur useri klikon kudo jashte modal,e mbyll
+window.onclick=function(event){
+    if(event.target == modal){
+        modal.style.display="none";
+    }
+}
+</script>
 
 </body>
 </html>

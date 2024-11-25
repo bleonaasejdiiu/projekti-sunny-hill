@@ -837,3 +837,13 @@ div ul a{
       width: 364px;
       display: 600px;
     }
+
+    /*SHOWS&EVENTS*/
+    .sh {
+      text-align: center;
+          background: linear-gradient(to right,  rgb(113, 79, 117), rgb(138, 109, 134), rgb(189, 137, 183), rgb(189, 137, 183), rgb(138, 109, 134), rgb(113, 79, 117)); 
+          padding: 200px;
+          margin-top: 0;
+    }
+
+

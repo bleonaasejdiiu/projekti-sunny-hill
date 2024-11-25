@@ -754,41 +754,65 @@ input.error {
 }
 
   /*----------- ABOUT US----------------*/
+.b {
+  text-align: center;
+      background: linear-gradient(to right,  rgb(113, 79, 117), rgb(138, 109, 134), rgb(189, 137, 183), rgb(189, 137, 183), rgb(138, 109, 134), rgb(113, 79, 117)); 
+      padding: 200px;
+      margin-top: 0;
+}
+div ul{
+  background-color: #b1a9a9;
+  list-style-type: none;
+  margin-top: 0;
+}
+div ul a{
+  display: inline-block;
+  padding: 20px;
+}
+.row{
+  width: 100%;
+  max-width: 1170%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grind-gap: 50px 30px;
+}
+.row .left{
+  overflow: hidden;
+}
+.row .left img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.row .right{
+  display: flex;
+  align-items: center;
+}
+.row .right .content{
+  padding-left: 20px;
+}
+.row .right .content p{
+  font-size: 16px;
+  line-height: 26px;
+  padding-bottom: 15px;
+}
+@media (max-width: 991px) {
+  .row .right .content{
+    padding-left: 0px;
+  }
+}
+@media (max-width: 768px){
+  .row{
+    width: 90%;
+    grid-template-columns: 1fr;
+  }
+}
+.c{
+  text-align: center ;
+  background-color: grey;
+  padding: 50px;
+}
 
- .b{
-      text-align: center;
-      background: linear-gradient(to right,  rgb(230, 209, 64), rgb(237, 121, 54), rgb(230, 70, 20), rgb(237, 121,54), rgb(230, 70, 30) );;
-      padding: 100px;
-      
-      
-  }
-  .a{
-      background-color: deeppink;
-      display: grind;
-      place-items: center;
-  }
-  div ul{
-      list-style-type: none;
-  }
-  div ul a{
-      display: inline-block;
-      padding: 20px;
-  
-  }
-  
-    .image {
-      display: inline-block;
-      margin-right: 20px;
-    }
-    .text {
-      float: right;
-    }
-    .c{
-      text-align: center;
-      background-color: grey;
-      padding: 50px;
-    }
-  
     .gallery1{
       margin-top: -20px;
       display: flex;

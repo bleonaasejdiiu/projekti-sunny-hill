@@ -814,31 +814,23 @@ div ul a{
   padding: 50px;
 }
 
-    .gallery1{
-      margin-top: -20px;
-      display: flex;
-    }
-    .gallery1 img{
-      width: 364px;
-      display: 600px;
-    }
-    .gallery2{
-      margin-top: -20px;
-      display: flex;
-    }
-    .gallery2 img{
-      width: 364px;
-      display: 600px;
-    }
-    .gallery3{
-      margin-top: -20px;
-      display: flex;
-    }
-    .gallery3 img{
-      width: 364px;
-      display: 600px;
-    }
+.gallery1, .gallery2, .gallery3 {
+  margin-top: -20px;
+  display: flex;
+}
 
+.gallery1 img, .gallery2 img, .gallery3 img {
+  width: 364px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+/* Efekti kur maus prek foton */
+.gallery1 img:hover, .gallery2 img:hover, .gallery3 img:hover {
+  transform: scale(1.05);  /* Kjo do të bëjë që fotoja të zmadhohet pak */
+}
     /*---------------SHOWS&EVENTS----------------------*/
     
     .sh{

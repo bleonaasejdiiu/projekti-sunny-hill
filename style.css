@@ -941,3 +941,54 @@ div ul a{
       color: whitesmoke;
       box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
     }
+    .search-box {
+      width: 600px; /* Gjerësia e kutisë */
+      padding: 20px;
+      border: 1px solid #ccc; /* Kufiri i kutisë */
+      border-radius: 8px; /* Këndet e rrumbullakosura */
+      background-color: #f9f9f9; /* Ngjyra e sfondit */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hija e kutisë */
+      text-align: center;
+  }
+  
+  /* Titulli */
+  .search-box h2 {
+      margin-bottom: 15px; /* Hapsira poshtë titullit */
+      font-size: 18px;
+      color: #333;
+  }
+  
+  /* Inputi (katror) ku mund të shkruajë përdoruesi */
+  .search-input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+  }
+  
+  /* Butoni */
+  .submit-button {
+      width: 100%;
+      padding: 10px;
+      background-color: #d416ed; /* Ngjyra e butonit */
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+  }
+  
+  /* Efekti kur maus është mbi buton */
+  .submit-button:hover {
+      background-color: #390241; /* Ngjyra e butonit kur kalon maus mbi të */
+      transform: translateY(-2px); /* Efekti i zgjatjes */
+  }
+  
+  /* Efekti kur maus është mbi buton (shkallëzimi pak lart) */
+  .submit-button:active {
+      transform: translateY(0); /* Rikthim në pozicionin fillestar kur klikohet */
+  }

@@ -941,54 +941,43 @@ div ul a{
       color: whitesmoke;
       box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
     }
-    .search-box {
-      width: 600px; /* Gjerësia e kutisë */
-      padding: 20px;
-      border: 1px solid #ccc; /* Kufiri i kutisë */
-      border-radius: 8px; /* Këndet e rrumbullakosura */
-      background-color: #f9f9f9; /* Ngjyra e sfondit */
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hija e kutisë */
-      text-align: center;
-  }
-  
-  /* Titulli */
-  .search-box h2 {
-      margin-bottom: 15px; /* Hapsira poshtë titullit */
-      font-size: 18px;
-      color: #333;
-  }
-  
-  /* Inputi (katror) ku mund të shkruajë përdoruesi */
-  .search-input {
-      width: 100%;
+    .search-container {
+      text-align: center; /* Pozicionon elementët në mes */
+      margin-top: 50px; /* Hapësirë nga maja e faqes */
+    }
+    
+    /* Label për tekstin mbi search box */
+    .search-container label {
+      font-size: 20px;
+      display: block; /* E bën të jetë në një linjë më vete */
+      margin-bottom: 10px; /* Hapësirë nën tekst */
+    }
+    
+    /* Search box input */
+    #search-box {
+      width: 300px; /* Gjerësia e kutisë së kërkimit */
       padding: 10px;
-      margin-bottom: 20px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
       font-size: 16px;
-      box-sizing: border-box;
-  }
-  
-  /* Butoni */
-  .submit-button {
-      width: 100%;
-      padding: 10px;
-      background-color: #d416ed; /* Ngjyra e butonit */
+      border: 2px solid #ccc; /* Bordi gri */
+      border-radius: 4px;
+      outline: none; /* Heq kufirin e fokusit nga kutia */
+      margin-right: 10px; /* Hapësirë ndërmjet input dhe butonit */
+    }
+    
+    /* Butoni i submit */
+    #search-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: 2px solid #ccc;
+      background-color: #c64abc; /* Ngjyrë e butonit */
       color: white;
-      border: none;
-      border-radius: 4px;
-      font-size: 16px;
       cursor: pointer;
-      transition: all 0.3s ease;
-  }
-  
-  /* Efekti kur maus është mbi buton */
-  .submit-button:hover {
-      background-color: #390241; /* Ngjyra e butonit kur kalon maus mbi të */
-      transform: translateY(-2px); /* Efekti i zgjatjes */
-  }
-  
-  /* Efekti kur maus është mbi buton (shkallëzimi pak lart) */
-  .submit-button:active {
-      transform: translateY(0); /* Rikthim në pozicionin fillestar kur klikohet */
-  }
+      border-radius: 4px;
+      transition: all 0.3s ease; /* Kalimi i butë për ngjyrat dhe madhësinë */
+    }
+    
+    /* Efekti kur maus kalon mbi buton */
+    #search-button:hover {
+      background-color: #852680; /* Ndryshimi i ngjyrës kur maus kalon mbi të */
+      transform: scale(1.1); /* Zmadhohet butoni */
+    }

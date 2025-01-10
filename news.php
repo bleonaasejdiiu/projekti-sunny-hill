@@ -10,14 +10,14 @@
 </head>
 <body>
  
-    <nav class="navbar">
-        <a href="home.html">Home</a>
+<nav class="navbar">
+        <a href="home.php">Home</a>
         <a href="shows&events.html">Shows&Events</a>
-        <a href="news.html">News</a>
-        <a href="Tickets.html">Tickets</a>
+        <a href="news.php">News</a>
+        <a href="Tickets.php">Tickets</a>
         <a href="aboutus.html">About Us</a>
-        <a href="contactus.html">Log In</a>
-  </nav>
+        <a href="contactus.php">Log In</a>
+    </nav>
         <div id="header">
             
             <h1>NEWS</h1>

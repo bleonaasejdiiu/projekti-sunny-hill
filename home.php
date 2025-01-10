@@ -15,19 +15,18 @@
         <span class="close" id="closeModal">&times;</span>
         <h2>Welcome to the Sunny Hill Festival Website!</h2>
         <p>You are currently browsing as a guest. To access more features, please log in or sign up.</p>
-        <a href="contactus.html"><button>Log In</button></a>
-        <a href="contactus.html"><button>Sign Up</button></a>
+        <a href="contactus.php"><button>Log In</button></a>
+        <a href="contactus.php"><button>Sign Up</button></a>
     </div>
 </div>
 
-    <nav class="navbar">
-        <a href="home.html">Home</a>
+<nav class="navbar">
+        <a href="home.php">Home</a>
         <a href="shows&events.html">Shows&Events</a>
-        <a href="news.html">News</a>
-        <a href="tickets.html">Tickets</a>
+        <a href="news.php">News</a>
+        <a href="Tickets.php">Tickets</a>
         <a href="aboutus.html">About Us</a>
-        <a href="contactus.html">Log In</a>
-       
+        <a href="contactus.php">Log In</a>
     </nav>
   
 

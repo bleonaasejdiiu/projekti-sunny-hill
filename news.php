@@ -82,11 +82,30 @@
 <!---->
 
 
-<div class="question-section">
-  <h3>HAVE A QUESTION OR NEED CLARIFICATION?</h3>
-  <textarea placeholder="Write your question here..."></textarea>
-  <button type="submit">Submit</button>
-</div>
+<form id="questionForm" action="submit_question.php" method="POST">
+        <div class="question-section">
+            <h3>HAVE A QUESTION OR NEED CLARIFICATION?</h3>
+            
+            <input id="username" type="text" name="username" placeholder="Enter your username" required>
+            
+            <input id="password" type="password" name="password" placeholder="Enter your password" required>
+            
+            <textarea id="question" name="question" placeholder="Write your question here..." required></textarea>
+            
+            <button type="submit">Submit</button>
+        </div>
+      </form>
+      
+      <script>
+        document.getElementById('questionForm').addEventListener('submit', function(event) {
+            var question = document.getElementById('question').value;
+            if (question.trim() === "") {
+                alert("Please enter a question before submitting.");
+                event.preventDefault(); 
+            }
+        });
+      </script>
+  >
 
 
 

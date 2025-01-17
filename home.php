@@ -6,71 +6,73 @@
     <title>Home</title>
     <link rel="stylesheet" href="style.css">
     <style>
-    .show-event {
-        position: relative;
-        width: 100%; /* Madhësia totale e slider-it */
-        max-width: 700px;
-        margin: 5px auto; /* Afër imazhit kryesor */
-        overflow: hidden;
-        border: 2px solid #ccc;
-        border-radius: 10px;
-    }
+     .show-event {
+    position: relative;
+    width: 85%; /* Gjerësia pak më e vogël se 100% */
+    max-width: 800pxpx; /* Gjerësi maksimale për ekrane të mëdha */
+    height: 500px; /* Lartësia mbetet e njëjtë */
+    overflow: hidden;
+    margin: 0 auto; /* Vendos slider-in në qendër */
+    border: none;
+}
 
-    .show-event2 {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-       
-    }
+.show-event2 {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    height: 100%;
+}
 
-    .show-event2 img {
-        width: 100%; /* Bëhet më e vogël brenda slider-it */
-        height: 450px; /* Lartësia fikse për një madhësi të barabartë */
-        object-fit: cover; /* Përshtatja e fotove */
-        flex-shrink: 0;
-    }
+.show-event2 img {
+    width: 100%;
+    height: 100%; /* Fotoja mbulon të gjithë hapësirën */
+    object-fit: cover; /* Përshtatja e imazhit */
+    flex-shrink: 0;
+}
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 18px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+}
 
-    /* Butonat për navigim */
-    .slider-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        border: none;
-        font-size: 18px;
-        padding: 5px;
-        cursor: pointer;
-        z-index: 10;
-        border-radius: 50%;
-    }
+.prev {
+    left: 10px;
+}
 
-    .prev {
-        left: 10px;
-    }
+.next {
+    right: 10px;
+}
 
-    .next {
-        right: 10px;
-    }
+/* Pikat për navigim */
+.dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
 
-    /* Pikat për navigim */
-    .dots {
-        text-align: center;
-        margin-top: 5px;
-    }
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
 
-    .dot {
-        height: 12px;
-        width: 12px;
-        margin: 5px;
-        background-color: #bbb;
-        border-radius: 50%;
-        display: inline-block;
-        cursor: pointer;
-    }
-
-    .active-dot {
-        background-color: #717171;
-    }
+.active-dot {
+    background-color:rgb(29, 100, 192);
+}
 </style>
 
     
@@ -100,17 +102,17 @@
   
 
 
-    <img class="img1" src="sunnyhill.jpg">
+    <img class="img1" src="sejdiuu.jpeg">
      <div class="centered"><h5>Opening on Thursday, August 31st</h5>
         <h1>The Sunny Hill Festival 2025</h1>
        <a href="tickets.html"><button id="purchaseBtn">Purchase Tickets</button></a> 
      </div>
      <div class="show-event">
         <div class="show-event2">
-            <img src="bleona6.jpeg" alt="Event 1">
-            <img src="bleona3.jpeg" alt="Event 2">
-            <img src="bleona2.jpeg" alt="Event 3">
-            <img src="bleona5.jpeg" alt="Event 4">
+            <img src="bleona5.jpeg" alt="Event 1">
+            <img src="sejdiuuu.jpeg" alt="Event 2">
+            <img src="bleona6.jpeg" alt="Event 3">
+            <img src="bleona3.jpeg" alt="Event 4">
         </div>
         <button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
         <button class="slider-btn next" onclick="moveSlide(1)">&#10095;</button>
@@ -170,7 +172,7 @@
              
 </div> 
 
-<div class="footer">
+<!--<div class="footer">
             
     <div class="footer-item1"> 
          <p>Volunteer</p>
@@ -203,6 +205,30 @@
 </div> 
 
 
+</div>
+         -->
+<div class="footer">
+    <div class="footer-item1"> 
+        <p>Volunteer</p>
+        <p>Privacy Policy</p>
+        <p>Terms Of Use</p>
+    </div>
+    
+    <div class="footer-item2">
+        <p>Email: info@sunnyhillfestival.com</p>
+        <p>Sunny Hill Festival</p>
+        <p>Enver Maloku, Nr.82</p>
+        <p>Pristina 10000 Kosove</p>
+    </div>
+
+    <div class="footer-item">
+        <h3>Sponsors</h3>
+        <img src="klankosova.png">
+        <img src="cocacola.jpg">
+        <img src="emerald.png"> 
+        <img src="prince.jpg">
+        <img src="vodafone.jpg">
+    </div>
 </div>
 <script>
     let currentIndex = 0;
@@ -257,5 +283,8 @@ window.onclick=function(event){
 
 </body>
 </html>
+
+
+
 
 

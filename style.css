@@ -27,6 +27,11 @@
       width: 1170px;
   }
 }
+@media (max-width: 768px) {
+  .footer-item img {
+    max-width:50px;
+  }
+}
 
 
 *{
@@ -39,7 +44,7 @@ body {
 }
 
 .navbar {
-  background-color: #a496a4; 
+  background-color: #7799e7; 
   overflow: hidden;
   text-align: center;
   position: sticky;
@@ -67,7 +72,7 @@ body {
 
 
 .navbar a:active {
-  background-color: #555;
+  background-color: #4e80ed;
   color: #fff;
 }
 
@@ -112,13 +117,13 @@ body {
 .modal-content button{
   width: 100px;
   padding: 10px;
-  background-color: #a496a4;
+  background-color: #73c6ea;
   font-size: 13px;
  margin-right: 25px;
  
 }
 .modal-content button:hover{
-  background-color: #b283ac ;
+  background-color: #74b6ec ;
    
 }
 /*---------HOME PAGE---------*/
@@ -162,14 +167,14 @@ body {
 .festival-info h2 {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #cd9494;
+  color: #78c4ea;
   margin: 10px 0; 
 }
 
 .festival-info p {
   font-size: 1.1rem; 
   line-height: 1.6; 
-  color: #b1a9a9;
+  color: #78c4ea;
   max-width: 800px;
   margin: 10px 0; 
 }
@@ -217,13 +222,13 @@ body {
 
 .location-box h4 {
   font-size: 1.4rem; 
-  color: #f596d2; 
+  color: #88b4f1; 
   margin-bottom: 5px;
 }
 
 .location-box p {
   font-size: 1rem;
-  color: #fa95e0;
+  color: #6497de;
   line-height: 1.4;
 }
 
@@ -269,7 +274,7 @@ body {
   padding-top: 40px;
  
 }
-/*nnnn*/
+/*
 @media (min-width: 768px) {
   .footer-item,.footer-item1,.footer-item2{
     grid-template-columns: 1fr; 
@@ -281,6 +286,9 @@ body {
   }
 }
 
+*/
+
+ 
 
 /*----------NEWS------------*/
 #header {

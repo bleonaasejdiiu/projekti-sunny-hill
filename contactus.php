@@ -27,7 +27,7 @@
         <!-- Login Form -->
         <div id="login-form" class="form active">
             <h2>Login</h2>
-            <input type="email" id="login-email" placeholder="Enter your email" required>
+            <input type="text" id="login-email" placeholder="Enter your username" required>
             <div id="login-email-error" class="error-message"></div>
             <input type="password" id="login-password" placeholder="Enter your password" required>
             <div id="login-password-error" class="error-message"></div>
@@ -42,7 +42,7 @@
         <!-- Sign Up Form -->
         <div id="signup-form" class="form">
             <h2>Sign Up</h2>
-            <input type="email" id="signup-email" placeholder="Enter your email" required>
+            <input type="text" id="signup-email" placeholder="Enter your username" required>
             <div id="signup-email-error" class="error-message"></div>
             <input type="password" id="signup-password" placeholder="Create password" required>
             <div id="signup-password-error" class="error-message"></div>

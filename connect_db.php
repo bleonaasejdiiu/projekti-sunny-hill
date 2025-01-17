@@ -1,22 +1,19 @@
 <?php
-    
-    class Connect_db{
-        private $servername = "localhost";
-        private $username ="root";
-        private $password="";
-        private $db_name="projekti-web";
-    }
-    
-    function startConnection():void{
-        try{ 
-            $conn = new PDO("mysql;host= $this->servername; db_name=$this->db_name", $this->username, $this->password);
+class Database {
+    private $host = "localhost";
+    private $db_name = "projekti-web";
+    private $username = "root";
+    private $password = "";
+    public $conn;
 
-            $conn->setAttribute(PDO:: ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-            return $conn;
-        }catch(PDOException $e){
-          echo "Lidhja me databaze deshtoi" . $e->getMessage();
-          return null;
+    public function connect() {
+        $this->conn = null;
+        try {
+            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            echo "Lidhja me databaze deshtoi: " . $e->getMessage();
         }
+        return $this->conn;
     }
-
-?>
+}

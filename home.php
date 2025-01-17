@@ -5,6 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+    .show-event {
+        position: relative;
+        width: 100%; /* Madhësia totale e slider-it */
+        max-width: 700px;
+        margin: 5px auto; /* Afër imazhit kryesor */
+        overflow: hidden;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+    }
+
+    .show-event2 {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+       
+    }
+
+    .show-event2 img {
+        width: 100%; /* Bëhet më e vogël brenda slider-it */
+        height: 450px; /* Lartësia fikse për një madhësi të barabartë */
+        object-fit: cover; /* Përshtatja e fotove */
+        flex-shrink: 0;
+    }
+
+    /* Butonat për navigim */
+    .slider-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        font-size: 18px;
+        padding: 5px;
+        cursor: pointer;
+        z-index: 10;
+        border-radius: 50%;
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+
+    /* Pikat për navigim */
+    .dots {
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    .dot {
+        height: 12px;
+        width: 12px;
+        margin: 5px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .active-dot {
+        background-color: #717171;
+    }
+</style>
+
+    
    
 </head>
 <body>
@@ -36,16 +105,31 @@
         <h1>The Sunny Hill Festival 2025</h1>
        <a href="tickets.html"><button id="purchaseBtn">Purchase Tickets</button></a> 
      </div>
-       <div class="show-event">
+     <div class="show-event">
         <div class="show-event2">
-         <img src="showevent.jpg">
-         <img src="showevent2.jpg">
-         <img src="showevent3.jpg">
-         <img src="showevent4.jpg"> 
- </div>
-               
-       </div>
-</div>
+            <img src="bleona6.jpeg" alt="Event 1">
+            <img src="bleona3.jpeg" alt="Event 2">
+            <img src="bleona2.jpeg" alt="Event 3">
+            <img src="bleona5.jpeg" alt="Event 4">
+        </div>
+        <button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="slider-btn next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <div class="dots">
+        <span class="dot" onclick="currentSlide(0)"></span>
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+
+
+
+
+
+
+
 <div class="festival-info">
     <h2>SUNNY HILL FESTIVAL 2025</h2>
     <p>The Sunny Hill Festival, held annually in Pristina, Kosovo, is a vibrant celebration of music and culture,
@@ -65,17 +149,7 @@
     
      </div>
     
-     <!--<div class="grid">
-        <div class="grid-item">
-             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2934.433431424329!2d21.16768097586631!3d42.65216967116733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13549ec39d986beb%3A0xd29a6f7051e16907!2sSunny%20Hill%20Foundation!5e0!3m2!1sen!2s!4v1683888517432!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        
-         </div>
-         <div class="grid">
-            <div class="grid-item">
-                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2934.433431424329!2d21.16768097586631!3d42.65216967116733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13549ec39d986beb%3A0xd29a6f7051e16907!2sSunny%20Hill%20Foundation!5e0!3m2!1sen!2s!4v1683888517432!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            
-             </div>
-            -->
+     
             <div class="grid-item">
                 <div class="location-container">
                     <div class="location-box">
@@ -130,6 +204,36 @@
 
 
 </div>
+<script>
+    let currentIndex = 0;
+    const slides = document.querySelector('.show-event2');
+    const images = document.querySelectorAll('.show-event2 img');
+    const dots = document.querySelectorAll('.dot');
+
+    function updateSlider() {
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach(dot => dot.classList.remove('active-dot'));
+        dots[currentIndex].classList.add('active-dot');
+    }
+
+    function moveSlide(step) {
+        currentIndex = (currentIndex + step + images.length) % images.length;
+        updateSlider();
+    }
+
+    function currentSlide(index) {
+        currentIndex = index;
+        updateSlider();
+    }
+
+    // Auto-slide çdo 5 sekonda
+    setInterval(() => {
+        moveSlide(1);
+    }, 5000);
+
+    // Inicializimi i slider-it
+    updateSlider();
+</script>
 
 <script>
     var modal=document.getElementById("guestModal");
@@ -153,29 +257,5 @@ window.onclick=function(event){
 
 </body>
 </html>
-<!--
-.navbar{
-   background-color: white;
-   text-align: center;
-   padding: 20px;
-}
-.navbar a{
-    text-decoration: none;
-    padding: 40px;
-    color: black;
-    font-size: 20PX;
-    font-weight: bold;
-}
-.navbar a:hover {
-    color: #FF6347; /* Ndryshon ngjyrën në portokalli kur kalon mbi të */
-}
 
-
-
-
-
-
-
-
--->
 

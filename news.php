@@ -1,3 +1,72 @@
+<?php
+
+include("connect_db.php");
+/*if (isset($_POST['submit'])) {
+    try {
+        
+        $name = $_POST['name'];
+        $mbiemri = $_POST['mbiemri'];
+        $age = $_POST['age'];
+        $email = $_POST['email'];
+        $question=$_POST['question'];
+
+        $sql = "INSERT INTO user (emri, mbiemri, mosha, email,question) 
+                VALUES (:emri, :mbiemri, :mosha, :email,:question)";
+        
+        
+        $stmt = $connection->prepare($sql);
+        $stmt->execute([
+            ':emri' => $name,
+            ':mbiemri' => $mbiemri,
+            ':mosha' => $age,
+            ':email' => $email,
+            ':question'=> $question
+        ]);
+
+    
+        echo "<p style='color: green;'>useri u shtua me sukses!</p>";
+
+    } catch (PDOException $e) {
+       
+        echo "<p style='color: red;'>Gabim: " . $e->getMessage() . "</p>";
+    }
+}
+    */
+    if (isset($_POST['submit'])) {
+        try {
+            // Krijo objektin e databazës dhe lidhu me bazën e të dhënave
+            $db = new Database();
+            $connection = $db->connect();
+    
+            // Merr të dhënat nga formulari
+            $name = $_POST['name'];
+            $mbiemri = $_POST['mbiemri'];
+            $age = $_POST['age'];
+            $email = $_POST['email'];
+            $question = $_POST['question'];
+    
+            // Përgatit query-in për futjen e të dhënave
+            $sql = "INSERT INTO user (emri, mbiemri, mosha, email, question) 
+                    VALUES (:emri, :mbiemri, :mosha, :email, :question)";
+    
+            $stmt = $connection->prepare($sql);
+            $stmt->execute([
+                ':emri' => $name,
+                ':mbiemri' => $mbiemri,
+                ':mosha' => $age,
+                ':email' => $email,
+                ':question' => $question,
+            ]);
+    
+            echo "<p style='color: green;'>Useri u shtua me sukses!</p>";
+    
+        } catch (PDOException $e) {
+            echo "<p style='color: red;'>Gabim: " . $e->getMessage() . "</p>";
+        }
+    }    
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,6 +101,7 @@
         
         <div class="news">
         	<p>WE HAVE BEEN NOMINATED FOR THE BEST EUROPIAN FESTIVAL AWARD!</p>
+          
         </div>
         <div class="news"> 
         	<p>ABC  News: Dua  Lipa  has  taken  the  world  of  pop  by  storm.</p>
@@ -82,7 +152,7 @@
 <!---->
 
 
-<form id="questionForm" action="submit_question.php" method="POST">
+<!--<form id="questionForm" action="question.php" method="POST">
         <div class="question-section">
             <h3>HAVE A QUESTION OR NEED CLARIFICATION?</h3>
             
@@ -105,160 +175,185 @@
             }
         });
       </script>
-  
 
 
 
-
-
-
-
-
-
-
-
-
-
-  <div class="footer">
-
-
-        
-            
-        <div class="footer-item1"> 
-             <p>Volunteer</p>
-           <p>Privacy Policy</p>
-            <p>Terms Of Use</p>
-    
-        </div>
-        
-       <div class="footer-item2">
-       <p>Email: info@sunnyhillfestival.com</p>
-       <p>Sunny Hill Festival</p>
-       <p>Enver Maloku, Nr.82</p>
-       <p>Pristina 10000 Kosove</p>
-       
-        </div>
-    
-        <div class="footer-item">
-            <h3>Sponsors</h3>
-         <img src="klankosova.png">
-          <img src="cocacola.jpg">
-         
-     <img  src="emerald.png"> 
-     <img src="prince.jpg">
-    
-       <img src="vodafone.jpg">
-      
-    </div> 
-    
-    
-    </div>
-    
-    <!--
-    <<<<<<< HEAD
-
-
-#container {
-
-  background-color: rgb(101, 77, 100); 
-  color: white; 
-  height: 50px; 
-  width: 100%; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem; 
-  letter-spacing: 0px;
-  word-spacing: 10px;
-  
-}
-
-
-.news{
-	font-size: 25px;
-	font-family: sans-serif;
-	border-bottom: 2px solid black;
-	/*padding-left: 30px; */ 
-	text-align: center;
-}
-.news:hover{
-	background-color: #dcd9e0;
-	padding-top: 3px;
-    
 -->
+<h2>QUESTION FORM</h2>
+    <form method="POST" action="">
+        <label for="name">Emri:</label>
+        <input type="text" name="name" required><br><br>
 
-   
+        <label for="mbiemri">Mbiemri:</label>
+        <input type="text" name="mbiemri" required><br><br>
 
+        <label for="age">Mosha:</label>
+        <input type="number" name="age" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" required><br><br>
+
+        <label for="text">Question:</label>
+        <input type="text" name="question" required><br><br>
+
+
+        <button type="submit" name="submit">SUBMIT</button>
+    </form>      
+
+      
+<style>
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.5em; /* Zvogëluar madhësinë e titullit */
+    color: #333;
+    margin-top: 20px; /* Zvogëluar margjinën e sipërme */
+}
+
+form {
+    width: 90%; /* Zvogëluar gjerësinë e formës */
+    max-width: 500px; /* Ulur gjerësinë maksimale */
+    margin: 20px auto;
+    padding: 20px; /* Zvogëluar padding-un */
+    background-color: #ffffff;
+    border-radius: 8px; /* Rrethimi i formës më i vogël */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Hije më e lehtë */
+}
+
+form label {
+    display: block;
+    font-size: 0.95em; /* Zvogëluar madhësinë e etiketës */
+    color: #555;
+    margin-bottom: 5px;
+}
+
+form input {
+    width: 100%;
+    padding: 8px; /* Zvogëluar padding-un */
+    font-size: 0.95em; /* Zvogëluar madhësinë e tekstit në input */
+    margin-bottom: 12px; /* Zvogëluar margjinën ndërmjet inputeve */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form input:focus {
+    outline: none;
+    border-color:rgb(219, 101, 208);
+    box-shadow: 0 0 5px rgb(237, 104, 199);
+}
+
+form button {
+    padding: 10px 18px; /* Zvogëluar padding-un e butonit */
+    background-color:rgb(201, 70, 183);
+    color: white;
+    font-size: 1em; /* Zvogëluar madhësinë e tekstit të butonit */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+form button:hover {
+    background-color:rgb(234, 154, 242);
+}
+
+form button:active {
+    background-color:rgb(233, 155, 243);
+}
+
+form .success-message {
+    color: green;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px; /* Zvogëluar margjinën */
+}
+
+form .error-message {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px; /* Zvogëluar margjinën */
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.2em; /* Zvogëluar madhësinë e titullit në ekranet e vogla */
+    }
+
+    form {
+        width: 90%; /* Zvogëluar gjerësinë në ekranet e vogla */
+    }
+
+    form input, form button {
+        font-size: 0.9em; /* Zvogëluar fontin në inpute dhe butona */
+    }
+}
+</style>
+
+
+<div class="footer">
+
+
+        
+<div class="footer-item1"> 
+     <p>Volunteer</p>
+   <p>Privacy Policy</p>
+    <p>Terms Of Use</p>
+
+</div>
+
+<div class="footer-item2">
+<p>Email: info@sunnyhillfestival.com</p>
+<p>Sunny Hill Festival</p>
+<p>Enver Maloku, Nr.82</p>
+<p>Pristina 10000 Kosove</p>
+
+</div>
+
+<div class="footer-item">
+    <h3>Sponsors</h3>
+ <img src="klankosova.png">
+  <img src="cocacola.jpg">
+ 
+<img  src="emerald.png"> 
+<img src="prince.jpg">
+
+<img src="vodafone.jpg">
+
+</div> 
+
+
+</div>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
               
 </body>
 </html>
-<!--
-#header {
-  margin-top: 20px;
-  background-color: rgb(195, 59, 39);
-  height: 350px; 
-  width: 100%; 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-
-}
-#header h1 {
-  color: white; 
-  font-size: 3rem; 
-}
-#container {
-
-  background-color:#e13f1b; 
-  color: white; 
-  height: 50px; 
-  width: 100%; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem; 
-  letter-spacing: 0px;
-  word-spacing: 10px;
-  
-}
-
-
-.news{
-	font-size: 25px;
-	font-family: sans-serif;
-	border-bottom: 2px solid black;
-	/*padding-left: 30px; */ 
-	text-align: center;
-}
-.news:hover{
-	background-color: #dcd9e0;
-	padding-top: 3px;
-}
-#container {
-
-  background-color: rgb(241, 82, 14); 
-  color: white; 
-  height: 50px; 
-  width: 100%; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem; 
-  letter-spacing: 0px;
-  word-spacing: 10px;
-  
-}
-.news{
-	font-size: 25px;
-	font-family: sans-serif;
-	border-bottom: 2px solid black;
-	/*padding-left: 30px; */ 
-	text-align: center;
-}
-.news:hover{
-	background-color: #dcd9e0;
-	padding-top: 3px;
-}
 
 
 
@@ -281,5 +376,3 @@
 
 
 
-
--->

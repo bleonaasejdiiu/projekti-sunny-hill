@@ -1,17 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
 
+@media (max-width: 768px) {
+  .container {
+      width: 100%;
+      padding: 10px;
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .container {
+      width: 750px;
+  }
+}
+
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .container {
+      width: 970px;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .container {
+      width: 1170px;
+  }
+}
+
+
 *{
     font-family: Arial, Helvetica, sans-serif;
 }
 body {
   margin: 0;
 
-  background-color: white; /* Background color for the entire page */
+  background-color: white;
 }
 
-/* Style for navbar */
 .navbar {
-  background-color: #a496a4; /* Dark background for navbar */
+  background-color: #a496a4; 
   overflow: hidden;
   text-align: center;
   position: sticky;
@@ -21,7 +49,7 @@ body {
   font-weight: bold;
 }
 
-/* Navbar link styles */
+
 .navbar a {
   display: inline-block;
   padding: 14px 20px;
@@ -31,13 +59,13 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Hover state for navbar links */
+
 .navbar a:hover {
   background-color: #ddd;
   color: #333;
 }
 
-/* Active state for navbar links */
+
 .navbar a:active {
   background-color: #555;
   color: #fff;
@@ -45,7 +73,7 @@ body {
 
 /*--------GUEST MODE---------*/
 .modal {
-  display: none; /* Fsheh modalin fillimisht */
+  display: none; 
   position: fixed;
   z-index: 1;
   left: 0;
@@ -167,42 +195,41 @@ body {
   border: none; 
 }
 .location-container {
-  display: flex; /* Organizim fleksibil */
-  flex-wrap: wrap; /* Lejo thyerjen e rreshtit nëse s'ka hapësirë */
-  justify-content: center; /* Qendërzimi horizontal */
-  gap: 15px; /* Hapësira ndërmjet kutive */
-  margin-top: 20px; /* Hapësirë nga pjesët e tjera */
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 15px; 
+  margin-top: 20px; 
 }
 
-/* Kutitë individuale */
+
 .location-box {
-  background-color: #f9f9f9; /* Ngjyra e sfondit */
-  padding: 15px; /* Hapësirë brenda kutisë */
-  border-radius: 8px; /* Këndet e rrumbullakëta */
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Hije për efekt modern */
-  text-align: center; /* Teksti i qendërzuar */
-  min-width: 120px; /* Gjerësia minimale për uniformitet */
-  flex: 1; /* Fleksibilitet për të përshtatur madhësinë */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efekt Hover */
+  background-color: #f9f9f9; 
+  padding: 15px; 
+  border-radius: 8px; 
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); 
+  text-align: center; 
+  min-width: 120px; 
+  flex: 1; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
-/* Teksti dhe titulli brenda kutive */
+
 .location-box h4 {
-  font-size: 1.4rem; /* Madhësia e titullit */
-  color: #f596d2; /* Ngjyra e theksuar */
+  font-size: 1.4rem; 
+  color: #f596d2; 
   margin-bottom: 5px;
 }
 
 .location-box p {
   font-size: 1rem;
-  color: #fa95e0; /* Ngjyra e tekstit */
+  color: #fa95e0;
   line-height: 1.4;
 }
 
-/* Efekti Hover për Kutitë */
 .location-box:hover {
-  transform: translateY(-5px); /* Lëvizje lart kur miu kalon mbi kuti */
-  box-shadow: 0 5px 10px rgba(180, 75, 154, 0.2); /* Hije më e theksuar */
+  transform: translateY(-5px); 
+  box-shadow: 0 5px 10px rgba(180, 75, 154, 0.2); 
 }
 
 .footer {
@@ -242,6 +269,19 @@ body {
   padding-top: 40px;
  
 }
+/*nnnn*/
+@media (min-width: 768px) {
+  .footer-item,.footer-item1,.footer-item2{
+    grid-template-columns: 1fr; 
+    padding: 20px;
+  }
+
+  .footer-item {
+    margin: 0 auto; 
+  }
+}
+
+
 /*----------NEWS------------*/
 #header {
   background: linear-gradient(to right,  rgb(113, 79, 117), rgb(138, 109, 134), rgb(189, 137, 183), rgb(189, 137, 183), rgb(138, 109, 134), rgb(113, 79, 117)); 
@@ -282,20 +322,19 @@ body {
   box-sizing: border-box;
 }
 
-.news:hover { /*kur tklikojsh te about shfaqet ngjyr portokalli*/
+.news:hover { 
   background-color: rgb(147, 125, 143);
   color: rgb(249, 242, 247);
   padding-top: 3px;
 }
-/*=============*/
-.question-section {
+/*.question-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #f0f0f0;
-  padding: 10px; /* Hapësirë më e vogël */
-  width: 400px;  /* Gjerësi më e madhe */
+  padding: 10px; 
+  width: 400px;  
   margin: 0 auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -312,7 +351,7 @@ body {
 
 .question-section textarea {
   resize: vertical;
-  height: 60px; /* Ulja e lartësisë për textarea */
+  height: 60px; 
 }
 
 .question-section button {
@@ -326,6 +365,8 @@ body {
 .question-section button:hover {
   background-color: #45a049;
 }
+ */
+
 /*---------TICKETS--------------*/
 .pjesa1{
   background: linear-gradient(to right,  rgb(113, 79, 117), rgb(138, 109, 134), rgb(189, 137, 183), rgb(189, 137, 183), rgb(138, 109, 134), rgb(113, 79, 117)); 
@@ -986,3 +1027,25 @@ div ul a{
       background-color: #852680; /* Ndryshimi i ngjyrës kur maus kalon mbi të */
       transform: scale(1.1); /* Zmadhohet butoni */
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

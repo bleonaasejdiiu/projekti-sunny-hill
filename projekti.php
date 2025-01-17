@@ -41,6 +41,75 @@
                
        </div>
 </div>
+<style>
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slider img {
+            width: 100%;
+            height: auto;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 24px;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            z-index: 10;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+        </style>
+    </head>
+<body>
+
+<div class="slider-container">
+    <div class="slider">
+        <div><img src="showevent.jpg" alt="Image 1"></div>
+        <div><img src="showevent2.jpg" alt="Image 2"></div>
+        <div><img src="showevent3.jpg" alt="Image 3"></div>
+        <div><img src="showevent4.jpg" alt="Image 4"></div>
+    </div>
+
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+</div>
+<script>
+    let currentIndex = 0;
+
+    function moveSlide(step) {
+        let slides = document.querySelectorAll('.slider div');
+        currentIndex = (currentIndex + step + slides.length) % slides.length;
+        document.querySelector('.slider').style.transform = 'translateX(' + (-currentIndex * 100) + '%)';
+    }
+
+    // Autoplay function
+    setInterval(() => {
+        moveSlide(1);
+    }, 10000);  // Change slide every 3 seconds
+
+</script>
+    
 <div class="festival-info">
     <h2>SUNNY HILL FESTIVAL 2025</h2>
     <p>The Sunny Hill Festival, held annually in Pristina, Kosovo, is a vibrant celebration of music and culture,

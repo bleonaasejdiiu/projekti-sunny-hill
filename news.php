@@ -100,55 +100,111 @@ include("connect_db.php");
         
         
         <div class="news">
-        	<p>WE HAVE BEEN NOMINATED FOR THE BEST EUROPIAN FESTIVAL AWARD!</p>
-          
+                <p onclick="showImage('image1')">WE HAVE BEEN NOMINATED FOR THE BEST EUROPIAN FESTIVAL AWARD!</p>
+                <div id="image1" class="news-image" style="display: none;">
+                    <img src="https://sunnyhillfestival.com/wp-content/uploads/2022/11/SHFxEFA_NewsArticle.png" alt="Image 0">
+                </div>
         </div>
         <div class="news"> 
-        	<p>ABC  News: Dua  Lipa  has  taken  the  world  of  pop  by  storm.</p>
+            <p onclick="showImage('image3')">ABC  News: Dua  Lipa  has  taken  the  world  of  pop  by  storm.</p>
+            <div id="image3" class="news-image" style="display: none;">
+              <img src="https://tse4.mm.bing.net/th?id=OIP.4A0FgugLhKf85jr4ZByLpQHaEK&pid=Api" alt="Dua Lipa Performing Live at the Royal Albert Hall">>
+            </div>
         </div>
-        <div class="news">
-        	<p>NME: Dua Lipa's dad is  putting on a Musical Festival.</p>
-        </div>
-        <div class="news">
-        	<p>Dua Lipa named the Honorary Ambassador of her home Country, Kosovo</p>
-        </div>
-        <div class="news">
-        	<p>MTV UK: Dua Lipa was given the first ever key to hometown in Kosovo.</p>
-        </div>
-        <div class="news">
-        	<p>The New York Times: Can a Music Festival Make Kosovo Cool?</p>
-        </div>
-        <div class="news">
-        	<p>SpinSouthWest: Dua Lipa & Her Dad Created Their Own Festival In Kosovo.</p>
-        </div>
-        <div class="news">
-        	<p>MTV Italy: DUA LIPA SARÀ HEADLINER DEL FESTIVAL MUSICALE REALIZZATO DA SUO PAPÀ IN KOSOVO.</p>
-        </div>
-        <div class="news">
-        	<p>Giving Balkans: Dua Lipa Donates EUR 100,000 to Sunny Hill Foundation.</p>
-        </div>
-        <div  class="news">
-        	<p>Festival Squad: Sunny Hill Festival Is Putting Kosovo on the Map.</p>
-        </div>
-        <div class="news">
-        	<p>Emerging Europe: Dua Lipa comes home.</p>
-        </div>
-        <div class="news">
-        <p>Metro UK: Dua Lipa’s dad is putting on a music festival and of course the singer will be performing.</p>
-    </div>
-    <div class="news">
-    	<p>LooMee TV: Dua Lipa: Ihr Vater ruft Festival ins Leben.</p>
-    </div>
-    <div class="news">
-    	<p>BalcanCaucaso: Festivals bring the world to Kosovo.</p>
-    </div>
-    <div class="news">
-    	<p>BIG FM: Dua Lipa organisiert eigenes Sunny Hill Festival im Kosovo.</p>
-    </div>
-    <div class="news">
-    	<p>SUNNY HILL FESTIVAL: WE REMAIN HOPEFUL THAT THIS…</p>
-    </div>
+        <div class="news"> 
+            <p onclick="showImage('image4')">NME: Dua Lipa's dad is putting on a Musical Festival.</p>
+            <div id="image4" class="news-image" style="display: none;">
+                <img src="https://sunnyhillfestival.com/wp-content/uploads/2023/02/Vito-Valentinetti-Concert-For-Earth-2022-765.jpg" alt="Dua Lipa Performance">
+            </div>
+            </div>
+       
+        
+            <div class="news">
+                <p onclick="showImage('image5')">Dua Lipa named the Honorary Ambassador of her home Country, Kosovo</p>
+                <div id="image5" class="news-image" style="display: none;">
+                    <img src="https://tse1.mm.bing.net/th?id=OIP.yMQO4_dOhBT0xjCIkFbXmAHaEK&pid=Api" alt="Dua Lipa Honorary Ambassador of Kosovo">
+                </div>
+            </div>
+            <div class="news">
+                <p onclick="showImage('image6')">MTV UK: Dua Lipa was given the first ever key to hometown in Kosovo</p>
+                <div id="image6" class="news-image" style="display: none;">
+                    <img src="https://sunnyhillfestival.com/wp-content/uploads/2021/05/gettyimages-949263270.jpg" alt="Dua Lipa in Kosovo">
+                </div>
+            </div>
+            <div class="news">
+                <p onclick="showImage('image8')">The New York Times: Can a Music Festival Make Kosovo Cool?</p>
+                <div id="image8" class="news-image" style="display: none;">
+                    <img src="https://sunnyhillfestival.com/wp-content/uploads/2021/05/NYTIMES.jpg" alt=" Kosovo">
+                </div>
+            </div>
+            <div class="news">
+                <p onclick="showImage('image7')">SpinSouthWest: Dua Lipa & Her Dad Created Their Own Festival In Kosovo.</p>
+                <div id="image7" class="news-image" style="display: none;">
+                    <img src="https://sunnyhillfestival.com/wp-content/uploads/2021/05/abc1.jpg" alt=" Kosovo">
+                </div>
+            </div>
+            <div class="news">
+                <p onclick="showImage('image9')">MTV Italy: DUA LIPA SARÀ HEADLINER DEL FESTIVAL MUSICALE REALIZZATO DA SUO PAPÀ IN KOSOVO.</p>
+                <div id="image9" class="news-image" style="display: none;">
+                    <img src="https://sunnyhillfestival.com/wp-content/uploads/2021/05/mtvitaly.jpg" alt=" Kosovo">
+                </div>
+            </div>
+            <div class="news">
+                <p onclick="showImage('image10')">Giving Balkans: Dua Lipa Donates EUR 100,000 to Sunny Hill Foundation..</p>
+                <div id="image10" class="news-image" style="display: none;">
+                    <img src="https://sunnyhillfestival.com/wp-content/uploads/2021/05/giving-balkans.jpg" alt=" Kosovo">
+                </div>
+            </div>
+            <div class="news">
+                <p onclick="showImage('image11')">Festival Squad: Sunny Hill Festival Is Putting Kosovo on the Map.</p>
+                <div id="image11" class="news-image" style="display: none;">
+                    <img src="https://sunnyhillfestival.com/wp-content/uploads/2021/05/festival-squad.jpg" alt=" Kosovo">
+                </div>
+            </div>
+           
+            <div class="news">
+                <p onclick="showImage('image13')">Metro UK: Dua Lipa’s dad is putting on a music festival and of course the singer will be performing.</p>
+                <div id="image13" class="news-image" style="display: none;">
+                    <img src="https://sunnyhillfestival.com/wp-content/uploads/2021/05/metrouk.jpg" alt=" Kosovo">
+                </div>
+            </div>
+            <div class="news">
+                <p onclick="showImage('image14')">LooMee TV: Dua Lipa: Ihr Vater ruft Festival ins Leben..</p>
+                <div id="image14" class="news-image" style="display: none;">
+                    <img src="https://sunnyhillfestival.com/wp-content/uploads/2021/05/pedestriantv.jpg" alt=" Kosovo">
+                </div>
+            </div>
+            <div class="news">
+                <p onclick="showImage('image15')">BalcanCaucaso: Festivals bring the world to Kosovo.</p>
+                <div id="image15" class="news-image" style="display: none;">
+                    <img src="https://sunnyhillfestival.com/wp-content/uploads/2021/05/balcancausaco.jpg" alt=" Kosovo">
+                </div>
+            </div>
+            <div class="news">
+                <p onclick="showImage('image16')">BIG FM: Dua Lipa organisiert eigenes Sunny Hill Festival im Kosovo.</p>
+                <div id="image16" class="news-image" style="display: none;">
+                    <img src="https://sunnyhillfestival.com/wp-content/uploads/2021/05/musicbox.jpg" alt=" Kosovo">
+                </div>
+            </div>
+            <div class="news">
+                <p onclick="showImage('image17')">SUNNY HILL FESTIVAL: WE REMAIN HOPEFUL THAT THIS…</p>
+                <div id="image17" class="news-image" style="display: none;">
+                    <img src="https://sunnyhillfestival.com/wp-content/uploads/2024/04/Sunny-Hill-Festival-Grand-Return-in-Prishtina.jpg" alt=" Kosovo">
+                </div>
+            </div>
+        
+        
 
+    <script>
+        function showImage(imageId) {
+            const image = document.getElementById(imageId);
+            if (image.style.display === 'none') {
+                image.style.display = 'block'; // Shfaq imazhin
+            } else {
+             image.style.display = 'none'; // Fshi imazhin
+        }
+    }
+    </script>
 <!---->
 
 

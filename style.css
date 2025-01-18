@@ -44,7 +44,7 @@ body {
 }
 
 .navbar {
-  background-color: #f1700e; 
+  background-color: #ac96a6; 
   overflow: hidden;
   text-align: center;
   position: sticky;
@@ -72,7 +72,7 @@ body {
 
 
 .navbar a:active {
-  background-color: #f1700e;
+  background-color: #9e7b95;
   color: #fff;
 }
 
@@ -117,13 +117,13 @@ body {
 .modal-content button{
   width: 100px;
   padding: 10px;
-  background-color: #d25726;
+  background-color: #daa2ce;
   font-size: 13px;
  margin-right: 25px;
  
 }
 .modal-content button:hover{
-  background-color: #d25726 ;
+  background-color: #daa2ce ;
    
 }
 /*---------HOME PAGE---------*/
@@ -167,7 +167,7 @@ body {
 .festival-info h2 {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #e35d29;
+  color: #ec83d3;
   margin: 10px 0; 
 }
 
@@ -222,13 +222,13 @@ body {
 
 .location-box h4 {
   font-size: 1.4rem; 
-  color: #f06e3b; 
+  color: #f38aa8; 
   margin-bottom: 5px;
 }
 
 .location-box p {
   font-size: 1rem;
-  color: #f06e3b;
+  color: #f38aa8;
   line-height: 1.4;
 }
 
@@ -292,7 +292,7 @@ body {
 
 /*----------NEWS------------*/
 #header {
-  background: linear-gradient(to right,  rgb(236, 92, 35), rgb(229, 102, 51), rgb(252, 123, 53), rgb(252, 123, 53), rgb(229, 102, 51), rgb(236, 92, 35)); 
+  background: linear-gradient(to right,  rgb(113, 79, 117), rgb(138, 109, 134), rgb(189, 137, 183), rgb(189, 137, 183), rgb(138, 109, 134), rgb(113, 79, 117)); 
   height: 350px;
   width: 100%;
   display: flex;
@@ -307,7 +307,7 @@ body {
 }
 
 #container {
-  background-color: rgb(252, 123, 53);
+  background-color: rgb(193, 128, 185);
   color: white;
   height: 50px;
   width: 100%;
@@ -321,20 +321,40 @@ body {
 .news {
   font-size: 23px;
   font-family: sans-serif;
-  border-bottom: 2px solid rgb(252, 122, 54);
+  border-bottom: 2px solid rgb(239, 149, 198);
   text-align: center;
   transition: background-color 0.3s ease; 
-  background-color:#878587 ;
+  background-color:#a496a4 ;
   color: white;
   padding: 5px;
   box-sizing: border-box;
 }
 
 .news:hover { 
-  background-color: rgb(205, 133, 94);
+  background-color: rgb(147, 125, 143);
   color: rgb(249, 242, 247);
   padding-top: 3px;
 }
+
+.news-image {
+  margin-top: 10px;
+  text-align: center;
+  display: none; /* Inicializoni imazhin të fshehur */
+}
+
+.news img {
+  max-width: 500px; /* Gjerësia maksimale më e vogël */
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.news img:hover {
+  transform: scale(1.1); /* Efekti i zmadhojkur kur kalon miu mbi të */
+}
+
 /*.question-section {
   display: flex;
   flex-direction: column;

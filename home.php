@@ -176,6 +176,11 @@
         <img src="showevent.jpg" alt="Foto 2">
         <img src="showevent2.jpg" alt="Foto 3">
         <img src="showevent4.jpg" alt="Foto 4">
+        <img src="s.jpeg" alt="Foto 5">
+        <img src="s1.jpeg" alt="Foto 6">
+        <img src="s2.jpeg" alt="Foto 6">
+        
+        
     </div>   
 
 

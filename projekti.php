@@ -231,6 +231,57 @@
 
 
 </div>
+<script>
+    let currentIndex = 0;
+const slides = document.querySelector('.slider-wrapper');
+const images = document.querySelectorAll('.slider-wrapper img');
+const dots = document.querySelectorAll('.dot');
+
+function updateSlider() {
+    slides.style.transform = `translateX(-${currentIndex * 100}%)`; // Lëviz slider-in
+    dots.forEach(dot => dot.classList.remove('active-dot'));
+    dots[currentIndex].classList.add('active-dot'); // Aktivizo pikën e saktë
+}
+
+function moveSlide(step) {
+    currentIndex = (currentIndex + step + images.length) % images.length;
+    updateSlider();
+}
+
+function currentSlide(index) {
+    currentIndex = index;
+    updateSlider();
+}
+
+// Auto-slide çdo 5 sekonda
+setInterval(() => {
+    moveSlide(1);
+}, 5000);
+
+// Inicializimi i slider-it
+updateSlider();
+
+</script>
+
+<script>
+    var modal=document.getElementById("guestModal");
+//merre span element e cila e mbyll guest modal
+var span =document.getElementById("closeModal");
+//per me tregu modalin automatikisht kur faqja hapet
+window.onload=function(){
+    modal.style.display="block";
+}
+//kur useri klikon ne span(x), mbyll guest modal
+span.onclick=function(){
+    modal.style.display="none";//e bon hide modal
+}
+//kur useri klikon kudo jashte modal,e mbyll
+window.onclick=function(event){
+    if(event.target == modal){
+        modal.style.display="none";
+    }
+}
+</script>
 
 <script src="script.js"></script>
 </body>

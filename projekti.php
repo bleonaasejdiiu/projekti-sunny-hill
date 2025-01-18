@@ -118,89 +118,45 @@
         <a href="aboutus.html">About Us</a>
         <a href="contactus.php">Log In</a>
     </nav>
-    <img class="img1" src="sunnyhill.jpg">
-     <div class="centered"><h5>Opening on Thursday, August 31st</h5>
-        <h1>The Sunny Hill Festival 2025</h1>
-        <button id="purchaseBtn">Purchase Tickets</button>
-     </div>
-       <div class="show-event">
-        <div class="show-event2">
-         <img src="showevent.jpg">
-         <img src="showevent2.jpg">
-         <img src="showevent3.jpg">
-         <img src="showevent4.jpg"> 
- </div>
-               
-       </div>
-</div>
-<style>
-        .slider-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            margin: auto;
-            overflow: hidden;
-        }
 
-        .slider {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
 
-        .slider img {
-            width: 100%;
-            height: auto;
-        }
 
-        .prev, .next {
-            position: absolute;
-            top: 50%;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            font-size: 24px;
-            padding: 10px;
-            cursor: pointer;
-            border: none;
-            z-index: 10;
-        }
+    <div class="slider-container">
+        <div class="slider-wrapper">
+            <img src="sejdiuu.jpeg" alt="Main Image">
+            <div class="centered"><h5>Opening on Thursday, August 31st</h5>
+                <h1>The Sunny Hill Festival 2025</h1>
+               <a href="tickets.html"><button id="purchaseBtn">Purchase Tickets</button></a> 
+            </div>
+            <img src="bleona5.jpeg" alt="Event 1">
+            <img src="bleona6.jpeg" alt="Event 2">
+            <img src="sejdiu8.jpeg" alt="Event 3">
+            <img src="sejdiu9.jpeg" alt="Event 4">
+        </div>
+        <button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="slider-btn next" onclick="moveSlide(1)">&#10095;</button>
+        <div class="dots">
+            <span class="dot" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+    </div> 
+    <div class="static-gallery">
+        <img src="showevent3.jpg" alt="Foto 1">
+        <img src="showevent.jpg" alt="Foto 2">
+        <img src="showevent2.jpg" alt="Foto 3">
+        <img src="showevent4.jpg" alt="Foto 4">
+        <img src="s.jpeg" alt="Foto 5">
+        <img src="s1.jpeg" alt="Foto 6">
+        <img src="s2.jpeg" alt="Foto 6">
+        
+        
+    </div>   
 
-        .prev {
-            left: 0;
-        }
 
-        .next {
-            right: 0;
-        }
-        </style>
-    </head>
-<body>
 
-<div class="slider-container">
-    <div class="slider">
-        <div><img src="showevent.jpg" alt="Image 1"></div>
-        <div><img src="showevent2.jpg" alt="Image 2"></div>
-        <div><img src="showevent3.jpg" alt="Image 3"></div>
-        <div><img src="showevent4.jpg" alt="Image 4"></div>
-    </div>
-
-    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-    <button class="next" onclick="moveSlide(1)">&#10095;</button>
-</div>
-<script>
-    let currentIndex = 0;
-
-    function moveSlide(step) {
-        let slides = document.querySelectorAll('.slider div');
-        currentIndex = (currentIndex + step + slides.length) % slides.length;
-        document.querySelector('.slider').style.transform = 'translateX(' + (-currentIndex * 100) + '%)';
-    }
-
-    // Autoplay function
-    setInterval(() => {
-        moveSlide(1);
-    }, 10000);  // Change slide every 3 seconds
-
-</script>
     
 <div class="festival-info">
     <h2>SUNNY HILL FESTIVAL 2025</h2>

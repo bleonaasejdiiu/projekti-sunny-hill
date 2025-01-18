@@ -5,6 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+      body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Siguron që faqja mos të ketë scroll horizontal */
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Slider mbulon gjithë lartësinë e ekranit */
+    overflow: hidden; /* Fsheh çdo gjë jashtë slider-it */
+}
+
+.slider-wrapper {
+    display: flex;
+    width: 100%; /* Mbështet fleksibilitetin për imazhet */
+    height: 100%;
+    transition: transform 0.5s ease-in-out; /* Lëviz imazhet në mënyrë të qetë */
+}
+
+.slider-wrapper img {
+    flex: 0 0 100%; /* Siguron që çdo imazh zë 100% të gjerësisë */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Përshtatja e imazheve në hapësirë */
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+}
+
+.dot {
+    height: 7px;
+    width: 7px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.active-dot {
+    background-color: rgb(29, 100, 192);
+}
+.static-gallery {
+    display: flex; /* Foto rreshtohen horizontalisht */
+    justify-content: center; /* Qendërzimi i të gjithë grupit të fotove */
+    gap: 0; /* Eliminon hapësirën mes fotove */
+    margin: 20px 0; /* Hapësirë lart dhe poshtë galerisë */
+}
+
+.static-gallery img {
+    width: 180px; /* Gjerësia më e madhe e fotove */
+    height: 180px; /* Lartësia më e madhe e fotove */
+    object-fit: cover; /* Përshtatja e fotove në hapësirë */
+    border-radius: 8px; /* Kënde të rrumbullakosura për një pamje të butë */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efekte gjatë hover */
+}
+
+.static-gallery img:hover {
+    transform: scale(1.1); /* Zmadhohet kur kalon miu mbi foto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hijë për efekt estetik */
+}
+</style>
+
    
 </head>
 <body>

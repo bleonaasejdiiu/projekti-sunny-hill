@@ -25,32 +25,42 @@
     
     <div class="form-container">
         <!-- Login Form -->
-        <div id="login-form" class="form active">
+         <form action="register.php" method="POST">
+        <div id="login-form" class="form active" >
+          
             <h2>Login</h2>
-            <input type="text" id="login-email" placeholder="Enter your username" required>
+            <input type="text" id="login-email" name="login-email" placeholder="Enter your Email" required>
             <div id="login-email-error" class="error-message"></div>
-            <input type="password" id="login-password" placeholder="Enter your password" required>
+            <input type="password" id="login-password" name="login-password" placeholder="Enter your password" required>
             <div id="login-password-error" class="error-message"></div>
             <div class="options">
                 <label><input type="checkbox"> Remember Me</label>
-                <a href="#">Forgot Password?</a>
             </div>
-            <button id="login-btn">Login Now</button>
-            <p>Don't have an account? <span id="show-signup">Sign Up</span></p>
-        </div>
+            <input type="submit" class="btn" value="Log In" name="login-btn">
+            <p>Don't have an account? <span id="show-signup" >Sign Up</span></p>
+      
+        </div>  
+    </form>
     
         <!-- Sign Up Form -->
-        <div id="signup-form" class="form">
+         <form action="register.php" method="POST">
+        <div id="signup-form" class="form" name="signup-form">
+        
             <h2>Sign Up</h2>
-            <input type="text" id="signup-email" placeholder="Enter your username" required>
+            <input type="text" id="signup-username" name="signup-username" placeholder="Enter your username" required>
+            <input type="email" id="signup-email" name="signup-email" placeholder="Enter your email" required>
             <div id="signup-email-error" class="error-message"></div>
-            <input type="password" id="signup-password" placeholder="Create password" required>
+            <input type="password" id="signup-password" name="signup-password" placeholder="Create password" required>
             <div id="signup-password-error" class="error-message"></div>
             <input type="password" id="confirm-password" placeholder="Confirm password" required>
             <div id="confirm-password-error" class="error-message"></div>
-            <button id="signup-btn">Sign Up Now</button>
+
+            <input type="submit" class="btn" value="Sign Up" name="signup-btn">
+
             <p>Already have an account? <span id="show-login">Login</span></p>
+        
         </div>
+    </form>
     </div>
   
         <script src="script.js"></script>

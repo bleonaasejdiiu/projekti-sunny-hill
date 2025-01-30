@@ -1,20 +1,19 @@
 <?php
 class Database {
     private $host = "localhost";
-    private $user = "root";
-    private $pass = "";
-    private $db = "projekti-web";
-    private $conn;
+    private $db_name = "projekti-web";
+    private $username = "root";
+    private $password = "";
+    public $conn;
 
     public function connect() {
-        $this->conn = new mysqli($this->host, $this->user, $this->pass, $this->db);
-        if ($this->conn->connect_error) {
-            die("Failed to connect database: " . $this->conn->connect_error);
+        $this->conn = null;
+        try {
+            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            echo "Lidhja me databaze deshtoi: " . $e->getMessage();
         }
         return $this->conn;
     }
 }
-
-$db = new Database();
-$conn = $db->connect();
-?>

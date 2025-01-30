@@ -324,7 +324,17 @@ $connection->close();
     // Perdorimi i 'submit' event per formularin
     document.getElementById('search-form').addEventListener('submit', function(event) {
         var searchQuery = document.getElementById('search-box').value.trim(); // mi heq hapsirat edhe mi marr vlerat ne kuti  
-         
+        
+        if (searchQuery === "") {
+            // Shfaq një mesazh gabimi
+            alert("Ju lutem shkruani emrin e artistit që kërkoni!");
+            event.preventDefault(); // Ndalo dërgimin e formularit (nëse është një formë)
+        } else {
+            // Mund të bëni ndonjë veprim tjetër, si dërgimi i kërkesës
+            alert("Kërkimi për: " + searchQuery);
+        }
+    });
+</script>
 
         <div class="footer">
             <div class="footer-item1"> 

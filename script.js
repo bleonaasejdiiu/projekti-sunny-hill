@@ -9,7 +9,8 @@ document.getElementById("show-login").addEventListener("click", function() {
     document.getElementById("login-form").classList.add("active");
 });
 /*------VALIDIMI I FORMAVE-LOGIN------ */
-document.getElementById("login-btn").addEventListener("click", function(e) {
+
+document.querySelector("input[name='login-btn']").addEventListener("click", function(e) {
     e.preventDefault(); // Parandalon dërgimin e formës për të kontrolluar validimin
 
     let valid = true;
@@ -45,7 +46,7 @@ document.getElementById("login-btn").addEventListener("click", function(e) {
     }
 });
 
-document.getElementById("signup-btn").addEventListener("click", function(e) {
+document.querySelector("input[name='signup-btn']").addEventListener("click", function(e) {
     e.preventDefault();
 
     let valid = true;

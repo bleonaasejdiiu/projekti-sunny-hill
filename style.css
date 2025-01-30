@@ -822,7 +822,7 @@ body {
   margin-bottom: 8px;
 }
 
-input.error {
+input .error {
   border: 2px solid red;
 }
 

@@ -9,6 +9,15 @@ $password = "";
 $dbname = "searchdb";
 $connection="";
 
+// Krijo lidhjen me databazen
+$connection = new mysqli($servername, $username, $password, $dbname);
+
+// Kontrollo lidhjen
+if ($connection->connect_error) {
+    die("Lidhja me bazën e të dhënave dështoi: " . $connection->connect_error);
+}
+echo "Lidhja me databaz u realizua me sukses.<br>";
+
 
 
 <!DOCTYPE html>

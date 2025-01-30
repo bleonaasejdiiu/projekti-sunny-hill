@@ -29,9 +29,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Ju lutem shkruani emrin e artistit!";
     } else {
        
-        $artist_name = htmlspecialchars($artist_name); // Parandalon XSS
-        $artist_name = stripslashes($artist_name); // Heq shenjat e kthyera të backslash
-        $artist_name = mysqli_real_escape_string($connection, $artist_name); // Parandalon SQL Injection
+        $artist_name = htmlspecialchars($artist_name); 
+        $artist_name = stripslashes($artist_name); 
+        $artist_name = mysqli_real_escape_string($connection, $artist_name); 
         
         // SQL Query nese artisti eksziston
         $sql = "SELECT * FROM artists WHERE artist_name LIKE '%$artist_name%'";

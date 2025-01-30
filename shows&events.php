@@ -18,11 +18,11 @@ if ($connection->connect_error) {
 }
 echo "Lidhja me databaz u realizua me sukses.<br>";
 
-// Kontrollojm nese esht pst
+// Kontrollojm nese esht post
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // Merrni emrin e artistit
-    $artist_name = trim($_POST['artist_name']); // Heqni hapësirat përreth
+    $artist_name = trim($_POST['artist_name']); 
  
     // nese vlera e artistit esht that
     if (empty($artist_name)) {

@@ -320,7 +320,10 @@ $connection->close();
         <button type="submit" id="search-button">Kerko</button>
     </div>
 </form>
-         
+<script>
+    // Perdorimi i 'submit' event per formularin
+    document.getElementById('search-form').addEventListener('submit', function(event) {
+        var searchQuery = document.getElementById('search-box').value.trim(); // mi heq hapsirat edhe mi marr vlerat ne kuti  
          
 
         <div class="footer">

@@ -2,6 +2,13 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+// lidhja me databaze
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "searchdb";
+$connection="";
+
 
 
 <!DOCTYPE html>

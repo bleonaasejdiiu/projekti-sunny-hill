@@ -36,7 +36,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // SQL Query nese artisti eksziston
         $sql = "SELECT * FROM artists WHERE artist_name LIKE '%$artist_name%'";
         $result = $connection->query($sql);
-        
+        if ($result->num_rows > 0) {
+            // me shfaq informacionin per artistin
+            while ($row = $result->fetch_assoc()) {
+                echo "<h2>" . $row["artist_name"] . "</h2>";
+                echo "<p>" . $row["details"] . "</p>";
+            }
+        } else {
+            echo "Nuk u gjet artisti: " . $artist_name;
+        }
+    }
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,3 +1,40 @@
+<?php
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$db_name = "aboutusdb";
+$connection = "";
+
+// Krijojme lidhjen me databazen
+$connection = new mysqli($servername, $username, $password, $db_name);
+
+// Kontrollo nese lidhja u realizu
+if ($connection->connect_error) {
+    die("Lidhja me databazë dështoi: " . $connection->connect_error);
+}
+echo "Lidhja me databazë u realizua me sukses.<br>";
+
+// Merr informacionin nga databaza
+$sql = "SELECT title, description, page_name FROM content WHERE page_name = 'about us' LIMIT 1"; // Këtu po marrim vetëm një rresht
+$result = $connection->query($sql);
+
+// Kontrollojm nese ka rezultate
+if ($result->num_rows > 0) {
+    // marrim te dhenat
+    while($row = $result->fetch_assoc()) {
+        echo "<h1>" . $row["title"] . "</h1>";
+        echo "<p>" . $row["description"] . "</p>";
+        echo "<h2>" . $row["page_name"] . "</h2>";
+    }
+} else {
+    echo "Nuk u gjetën të dhëna për 'About Us'.";
+}
+
+
+$connection->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

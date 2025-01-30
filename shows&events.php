@@ -1,3 +1,56 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// lidhja me databaze
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "searchdb";
+$connection="";
+
+// Krijo lidhjen me databazen
+$connection = new mysqli($servername, $username, $password, $dbname);
+
+// Kontrollo lidhjen
+if ($connection->connect_error) {
+    die("Lidhja me bazën e të dhënave dështoi: " . $connection->connect_error);
+}
+echo "Lidhja me databaz u realizua me sukses.<br>";
+
+// Kontrollojm nese esht post
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    // Merrni emrin e artistit
+    $artist_name = trim($_POST['artist_name']); 
+ 
+    // nese vlera e artistit esht that
+    if (empty($artist_name)) {
+        echo "Ju lutem shkruani emrin e artistit!";
+    } else {
+       
+        $artist_name = htmlspecialchars($artist_name); 
+        $artist_name = stripslashes($artist_name); 
+        $artist_name = mysqli_real_escape_string($connection, $artist_name); 
+        
+        // SQL Query nese artisti eksziston
+        $sql = "SELECT * FROM artists WHERE artist_name LIKE '%$artist_name%'";
+        $result = $connection->query($sql);
+        if ($result->num_rows > 0) {
+            // me shfaq informacionin per artistin
+            while ($row = $result->fetch_assoc()) {
+                echo "<h2>" . $row["artist_name"] . "</h2>";
+                echo "<p>" . $row["details"] . "</p>";
+            }
+        } else {
+            echo "Nuk u gjet artisti: " . $artist_name;
+        }
+    }
+} 
+
+$connection->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -260,12 +313,17 @@
          </div>
     </div>
 
+    <form action="search.php" method="POST" id="search-form">
     <div class="search-container">
-        <label for="search-box">Kërkoni artistin tuaj të preferuar</label>
-        <input type="text" id="search-box" placeholder="Shkruani emrin e artistit...">
-        <button type="submit" id="search-button">Kërko</button>
-      </div>
-         
+        <label for="search-box">Kerkoni artistin tuaj te preferuar</label>
+        <input type="text" id="search-box" name="search" placeholder="Shkruani emrin e artistit...">
+        <button type="submit" id="search-button">Kerko</button>
+    </div>
+</form>
+<script>
+    // Perdorimi i 'submit' event per formularin
+    document.getElementById('search-form').addEventListener('submit', function(event) {
+        var searchQuery = document.getElementById('search-box').value.trim(); // mi heq hapsirat edhe mi marr vlerat ne kuti  
          
 
         <div class="footer">

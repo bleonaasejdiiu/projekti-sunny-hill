@@ -81,10 +81,10 @@ include("connect_db.php");
  
 <nav class="navbar">
         <a href="home.php">Home</a>
-        <a href="shows&events.html">Shows&Events</a>
+        <a href="shows&events.php">Shows&Events</a>
         <a href="news.php">News</a>
         <a href="Tickets.php">Tickets</a>
-        <a href="aboutus.html">About Us</a>
+        <a href="aboutus.php">About Us</a>
         <a href="contactus.php">Log In</a>
     </nav>
         <div id="header">

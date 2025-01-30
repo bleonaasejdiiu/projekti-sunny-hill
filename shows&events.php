@@ -315,9 +315,9 @@ $connection->close();
 
     <form action="search.php" method="POST" id="search-form">
     <div class="search-container">
-        <label for="search-box">Kërkoni artistin tuaj të preferuar</label>
+        <label for="search-box">Kerkoni artistin tuaj te preferuar</label>
         <input type="text" id="search-box" name="search" placeholder="Shkruani emrin e artistit...">
-        <button type="submit" id="search-button">Kërko</button>
+        <button type="submit" id="search-button">Kerko</button>
     </div>
 </form>
          

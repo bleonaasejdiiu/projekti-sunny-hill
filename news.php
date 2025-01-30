@@ -100,7 +100,7 @@ include("connect_db.php");
         
         
         <div class="news">
-                <p onclick="showImage('image1')">WE HAVE BEEN NOMINATED FOR THE BEST EUROPIAN FESTIVAL AWARD!</p>
+                <p onclick="showImage('image1')">WE HAVE BEEN NOMINATED FOR THE BEST EUROPIAN FESTIVAL AWARD!!</p>
                 <div id="image1" class="news-image" style="display: none;">
                     <img src="https://sunnyhillfestival.com/wp-content/uploads/2022/11/SHFxEFA_NewsArticle.png" alt="Image 0">
                 </div>

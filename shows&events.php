@@ -321,7 +321,8 @@ $connection->close();
                     <p>Reper dhe tekstshkrues shqiptar</p>
                     <p>U lind ne  24 mars 1992</p>
                     <p>Nje nder kenget e ti me te njohura eshte "Hatixhe"</p>
-                    <a herf="#" type="button">Read More</a>
+                    <p id="more-text14" style="display:none;">Ai ka nisur karrierën e tij muzikore në vitet e para të 2000-ave dhe është i njohur për tekstet e tij të fuqishme, energjinë në skenë dhe për përdorimin e një stili që kombinon rap-in me elemente të muzikës moderne dhe pop.</p>
+                    <a href="#" id="read-more14" type="button">Read More</a>
                 </div>
              </div>
          </div>

@@ -32,7 +32,7 @@ $userData = $home->getUserData($_SESSION['id']);
         </div>
         <div class="right-links">
             <a href="edit.php?Id=<?php echo $userData['Id']; ?>">Change Profile</a>
-            <a href="php/logout.php"><button class="btn">Log Out</button></a>
+            <a href="logout.php"><button class="btn">Log Out</button></a>
         </div>
     </div>
 

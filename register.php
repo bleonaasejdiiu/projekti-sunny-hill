@@ -1,44 +1,32 @@
 <?php
-include 'connect_db.php';
+class Register {
+    private $conn;
 
-if (isset($_POST['signup-btn'])) {
-    $username = $_POST['signup-username'];
-    $email = $_POST['signup-email'];
-    $password = $_POST['signup-password'];
-    $password = md5($password);
-
-    $checkEmail = "SELECT * FROM users WHERE email='$email'";
-    $result = $conn->query($checkEmail);
-
-    if ($result->num_rows > 0) {
-        echo "Email Address Already Exists!";
-    } else {
-        $insertQuery = "INSERT INTO users (username, email, password)
-                        VALUES ('$username', '$email', '$password')";
-        if ($conn->query($insertQuery) === TRUE) {
-            header("Location: contactus.php");
-        } else {
-            echo "Error: " . $conn->error;
-        }
+    public function __construct($db) {
+        $this->conn = $db;
     }
-}
 
-if (isset($_POST['login-btn'])) {
-    $email = $_POST['login-email'];
-    $password = $_POST['login-password'];
-    $password = md5($password);
+    // Metoda për të verifikuar nëse email-i ekziston në databazë
+    public function verifyEmail($email) {
+        $stmt = $this->conn->prepare("SELECT Email FROM users WHERE Email = :email");
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+        return $stmt->rowCount() > 0; // Kthejmë true nëse ekziston
+    }
 
-    $sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
-    $result = $conn->query($sql);
+    // Metoda për të regjistruar përdoruesin dhe për të ruajtur fjalëkalimin e hashuar
+    public function registerUser($username, $email, $age, $password) {
+        // Hashimi i fjalëkalimit
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    if ($result->num_rows > 0) {
-        session_start();
-        $row = $result->fetch_assoc();
-        $_SESSION['login-email'] = $row['email'];
-        header("Location: home.php");
-        exit();
-    } else {
-        echo "Not Found, Incorrect Email or Password";
+        // Përgatitja e query për regjistrim
+        $stmt = $this->conn->prepare("INSERT INTO users (username, email, age, password) VALUES (:username, :email, :age, :password)");
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':age', $age);
+        $stmt->bindParam(':password', $hashedPassword);
+
+        return $stmt->execute(); // Ekzekutojmë query-n
     }
 }
 ?>

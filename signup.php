@@ -188,7 +188,7 @@ if (isset($_POST['submit'])) {
             <header>Sign Up</header>
             <form action="" method="post" onsubmit="return validateRegisterForm()">
                 <div class="field input">
-                    <label for="username">Username</label>
+                    <label for="username">Full Name</label>
                     <input type="text" name="username" id="username" autocomplete="off" required>
                 </div>
 

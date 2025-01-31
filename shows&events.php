@@ -380,6 +380,7 @@ $connection->close();
           </div> 
         </div> 
         
+        <script src="read.js"></script>
 </body>
  </html>
         

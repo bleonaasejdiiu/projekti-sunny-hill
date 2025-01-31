@@ -117,7 +117,8 @@ $connection->close();
                     <p>Reper dhe tekstshkrues shqiptar</p>
                     <p>U lind ne 24 shkurt 1998</p>
                     <p>Nje nder kenget e tij me te njohura eshte "Nese Po Don"</p>
-                    <a herf="#" type="button">Read More</a>
+                    <p id="more-text2" style="display:none;">Lluni është i njohur për një stil të ashpër dhe të drejtpërdrejtë, shpesh duke përdorur tekstet e tij për të shprehur mendime të thella mbi jetën, rrethinat dhe sfidat që përjeton si artist dhe individ.</p>
+                    <a href="#" id="read-more2" type="button">Read More</a>
                 </div>
              </div>
         </div>

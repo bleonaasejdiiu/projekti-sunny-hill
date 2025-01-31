@@ -100,7 +100,8 @@ $connection->close();
                     <p>Repera dhe tekstshkrues shqiptar</p>
                     <p>Themeluesit e grupit pint</p>
                     <p>Nje nder bashkpunimet e tyre me te njohur eshte "Rrezek"</p>
-                    <a herf="#" type="button">Read More</a>
+                    <p id="more-text1" style="display:none;"> MC Kresha dhe Lyrical Son janë konsideruar si një nga çiftet më të fuqishme në skenën muzikore të hip-hopit shqiptar, dhe kanë një ndikim të madh në kulturën muzikore të rajonit.</p>
+                    <a href="#" id="read-more1" type="button">Read More</a>
                 </div>
              </div>
         </div>

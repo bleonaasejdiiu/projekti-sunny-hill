@@ -26,11 +26,12 @@ $userData = $home->getUserData($_SESSION['id']);
     <link rel="stylesheet" href="style.css">
     <title>User Dashboard</title>
     <style>
-       body{
-        background: rgb(247, 243, 247);
-       }
+       body {
+  background: rgb(247, 243, 247);
+}
+
 .nav {
-    background: linear-gradient(to right,  rgb(113, 79, 117), rgb(138, 109, 134), rgb(189, 137, 183), rgb(189, 137, 183), rgb(138, 109, 134), rgb(113, 79, 117)); 
+  background: linear-gradient(to right, rgb(113, 79, 117), rgb(138, 109, 134), rgb(189, 137, 183), rgb(189, 137, 183), rgb(138, 109, 134), rgb(113, 79, 117)); 
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -54,7 +55,7 @@ $userData = $home->getUserData($_SESSION['id']);
   padding: 8px 20px;
   text-decoration: none;
   margin-left: 20px;
- font-size: 20px;
+  font-size: 20px;
 }
 
 .right-links .btn {
@@ -64,12 +65,11 @@ $userData = $home->getUserData($_SESSION['id']);
   padding: 8px 15px;
   border-radius: 5px;
   cursor: pointer;
-  color: black;
-  font-size:15px;
+  font-size: 15px;
 }
 
 .right-links .btn:hover { 
-   background-color:rgb(186, 115, 170);
+  background-color: rgb(186, 115, 170);
 }
 
 main {
@@ -82,33 +82,28 @@ main {
 .main-box {
   display: flex;
   flex-direction: column;
-  width: 80%;
-  max-width: 900px;
-}
-
-.main-box .top {
-  display: flex;
-  flex-direction: column; /* Change from row to column */
-  justify-content: space-between;
-  margin-bottom: 170px;
-}
-
-.top .box {
-  background-color: #f4f4f4;
+  justify-content: center;
+  align-items: center;      
+  width: 40%;
+  max-width: 900px; 
+  margin: 0 auto; 
+  background-color:rgb(249, 245, 245);
   padding: 20px;
   border-radius: 8px;
-  flex: 1;
-  min-width: 280px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 15px; /* Added spacing between the boxes */
+  box-shadow: 0 4px 8px hsla(0, 26.50%, 90.40%, 0.10);
   text-align: center;
- 
-}
-.top .box p {
-  font-size: 16px;
-  color: #333;
-}
+  transition: box-shadow 0.3s ease, transform 0.2s ease; 
+   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  height: 300px;
+  margin-bottom: 70px;
+  
 
+}
+.main-box p{
+    font-size:25px;
+    color:black;
+}
 
 /* Media Queries */
 @media only screen and (max-width: 840px) {
@@ -131,21 +126,15 @@ main {
     </div>
  
     <main>
-        <div class="main-box top">
-            <div class="top">
-                <div class="box">
+        <div class="main-box">
                     <p>Hello <b><?php echo $userData['Username']; ?></b>, Welcome</p>
-                </div>
-                <div class="box">
-                    <p><b>Enjoy SuNnY HiLl Festival</b>.</p>
-                </div>
-                
-            </div>
-           
+                    
+                    <p><b>Enjoy </b>Sunny Hill Festival!</p>
+              
+            
         </div>
     </main>
 
-   <div class="tickets-logo-section">
    
       <div class="tickets-logos">
         <i class="fa-solid fa-ticket ticket-icon"></i>
@@ -157,6 +146,6 @@ main {
           <i class="fa-solid fa-ticket ticket-icon"></i>
         
       </div>
-  </div>
+ 
 </body>
 </html>

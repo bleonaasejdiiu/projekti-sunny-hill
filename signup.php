@@ -135,7 +135,7 @@ if (isset($_POST['submit'])) {
         }
 
         .form-box {
-            width: 400px;
+            width: 350px;
             margin: 0px 10px;
         }
 
@@ -155,7 +155,7 @@ if (isset($_POST['submit'])) {
 
         .form-box form .input input {
             height: 40px;
-            width: 380px;
+            width: 350px;
             font-size: 16px;
             padding: 0 10px;
             border-radius: 5px;
@@ -169,11 +169,12 @@ if (isset($_POST['submit'])) {
             border: 0;
             border-radius: 5px;
             color: #fff;
-            font-size: 15px;
+            font-size: 18px;
             cursor: pointer;
             transition: all .3s;
             margin-top: 10px;
-            padding: 0px 10px;
+            padding: 0 10px;
+            height:40px;
         }
 
         .btn:hover {
@@ -228,7 +229,7 @@ if (isset($_POST['submit'])) {
                 </div>
 
                 <div class="links">
-                    Already a member? <a href="contactus.php">Sign In</a>
+                    Already a member? <a href="contactus.php">Log In</a>
                 </div>
             </form>
         </div>

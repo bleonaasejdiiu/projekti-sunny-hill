@@ -15,23 +15,32 @@ if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $authResult = $login->authenticate($email, $password);
-
-    if ($authResult) {
-        $redirectUrl = $authResult === 'admin' ? 'admin_dashboard.php' : 'user_dashboard.php';
-        echo "<div id='successPopup' class='popup success'>
-                <div class='popup-content'>
-                    <p>Login successful! Redirecting...</p>
-                </div>
-              </div>";
-        echo "<script>
-                document.getElementById('successPopup').style.display = 'block';
-                setTimeout(function() {
-                    window.location.href = '$redirectUrl';
-                }, 2000);
-              </script>";
-    } else {
-        echo "<p>Invalid email or password.</p>";
+    if ($login->authenticate($email, $password)) {
+        if ($_SESSION['role'] === 'admin') {
+            echo "<div id='successPopup' class='popup success'>
+                    <div class='popup-content'>
+                        <p>Login successful as Admin!</p>
+                    </div>
+                  </div>";
+            echo "<script>
+                    document.getElementById('successPopup').style.display = 'block';
+                    setTimeout(function() {
+                        window.location.href = 'admin_dashboard.php';
+                    }, 1000);
+                  </script>";
+        } else {
+            echo "<div id='successPopup' class='popup success'>
+                    <div class='popup-content'>
+                        <p>Login successful! </p>
+                    </div>
+                  </div>";
+            echo "<script>
+                    document.getElementById('successPopup').style.display = 'block';
+                    setTimeout(function() {
+                        window.location.href = 'user_dashboard.php';
+                    }, 1000);
+                  </script>";
+        }
     }
 }
 ?>
@@ -55,9 +64,9 @@ if (isset($_POST['submit'])) {
             font-weight: bold;
         }
 
-        /* Popup styling for success and error messages */
+       
         .popup {
-            display: none; /* Initially hidden */
+            display: none; 
             position: fixed;
             top: 50%;
             left: 50%;
@@ -66,7 +75,7 @@ if (isset($_POST['submit'])) {
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
             z-index: 1000;
-            animation: popupAnimation 0.5s ease-in-out; /* Add animation */
+            animation: popupAnimation 0.5s ease-in-out; 
         }
 
         .popup-content {
@@ -74,12 +83,12 @@ if (isset($_POST['submit'])) {
         }
 
         .success {
-            background-color: #4caf50; /* Green for success */
+            background-color: #4caf50; 
             color: white;
         }
 
         .error {
-            background-color: #f44336; /* Red for error */
+            background-color: #f44336;
             color: white;
         }
 
@@ -120,7 +129,7 @@ if (isset($_POST['submit'])) {
         }
 
         .form-box {
-            width: 450px;
+            width: 390px;
             margin: 0px 10px;
         }
 
@@ -154,11 +163,12 @@ if (isset($_POST['submit'])) {
             border: 0;
             border-radius: 5px;
             color: #fff;
-            font-size: 15px;
+            font-size: 18px;
             cursor: pointer;
             transition: all .3s;
             margin-top: 10px;
-            padding: 0px 10px;
+            padding: 0 10px;
+            height:40px;
         }
 
         .btn:hover {
@@ -202,7 +212,7 @@ if (isset($_POST['submit'])) {
                     <input type="submit" class="btn" name="submit" value="Login" required>
                 </div>
                 <div class="links">
-                    Don't have an account? <a href="signup.php">Sign Up Now</a>
+                    Don't have an account? <a href="signup.php">Sign Up </a>
                 </div>
             </form>
         </div>

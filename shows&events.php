@@ -253,9 +253,10 @@ $connection->close();
                     <p>Dj te njohur shqiptar</p>
                     <p>DJ PM ka lindur më 12 shkurt 1990 DJ Dagz ka lindur më 19 maj 1990</p>
                     <p>Nje nder remix-et e tyre me te njohur eshte "Coca-Cola"</p>
-                    <a herf="#" type="button">Read More</a>
+                    <p id="more-text10" style="display:none;">Ata janë të njohur për energjinë dhe stilin unik që sjellin në skenë dhe kanë arritur të fitojnë një audiencë të gjerë, jo vetëm në Shqipëri dhe Kosovë, por edhe jashtë saj.</p>
+                    <a href="#" id="read-more10" type="button">Read More</a>
                 </div>
-             </div>
+             </div><
         </div>
         <div class="card1">
             <div class="face face1">

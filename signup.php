@@ -18,20 +18,43 @@ if (isset($_POST['submit'])) {
 
     // Verifikimi i email-it nëse është unik
     if ($register->verifyEmail($email)) {
-        echo "<div class='message'>
-                <p>This email is already used. Please try another one.</p>
+        echo "<div id='errorPopup' class='popup error'>
+                <div class='popup-content'>
+                    <p>This email is already used. Please try another one.</p>
+                </div>
               </div>";
+        echo "<script>
+                document.getElementById('errorPopup').style.display = 'block'; // Show error popup
+                setTimeout(function() {
+                    document.getElementById('errorPopup').style.display = 'none'; // Hide error popup after 3 seconds
+                }, 3000);
+              </script>";
     } else {
         // Regjistrimi i përdoruesit të ri
         if ($register->registerUser($username, $email, $age, $password)) {
-            echo "<div class='message success-message'>
-                    <p>Registration successful! You can now log in.</p>
+            echo "<div id='successPopup' class='popup success'>
+                    <div class='popup-content'>
+                        <p>Registration successful! You can now log in.</p>
+                    </div>
                   </div>";
-            echo "<script>setTimeout(function() { window.location.href = 'contactus.php'; }, 3000);</script>";
+            echo "<script>
+                    document.getElementById('successPopup').style.display = 'block'; // Show success popup
+                    setTimeout(function() {
+                        window.location.href = 'contactus.php';
+                    }, 3000);
+                  </script>";
         } else {
-            echo "<div class='message'>
-                    <p>Something went wrong. Please try again.</p>
+            echo "<div id='errorPopup' class='popup error'>
+                    <div class='popup-content'>
+                        <p>Something went wrong. Please try again.</p>
+                    </div>
                   </div>";
+            echo "<script>
+                    document.getElementById('errorPopup').style.display = 'block'; // Show error popup
+                    setTimeout(function() {
+                        document.getElementById('errorPopup').style.display = 'none'; // Hide error popup after 3 seconds
+                    }, 3000);
+                  </script>";
         }
     }
 }
@@ -45,135 +68,129 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Register</title>
-    <script>
-        function validateRegisterForm() {
-            const username = document.getElementById("username").value;
-            const email = document.getElementById("email").value;
-            const age = document.getElementById("age").value;
-            const password = document.getElementById("password").value;
-
-            if (username === "" || email === "" || age === "" || password === "") {
-                alert("Please fill in all fields.");
-                return false;
-            }
-
-            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-            if (!emailPattern.test(email)) {
-                alert("Please enter a valid email.");
-                return false;
-            }
-
-            if (age < 18) {
-                alert("You must be at least 18 years old to register.");
-                return false;
-            }
-
-            if (password.length < 6) {
-                alert("Password must be at least 6 characters long.");
-                return false;
-            }
-
-            return true;
-        }
-    </script>
+  
     <style>
-  
-  
-.fcontainer {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: url('contact.jpg') no-repeat center center;
-  background-size: cover;
-}
-
-.fcontainer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3); /* Ngjyrë e zezë e zbehtë për background */
-  z-index: 1;
-}
-
-.box {
-  position: relative;
-  z-index: 2;
-  background: rgba(255, 255, 255, 0.9); /* Zbehje vetëm për kutinë */
-  padding: 25px 25px;
-  border-radius: 20px;
-  box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
-              0 32px 64px -48px rgba(0,0,0,0.5);
-}
-.form-box{
-  width: 400px;
-  margin: 0px 10px;
-}
-.form-box header{
-  font-size: 25px;
-  font-weight: 600;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #e6e6e6;
-  margin-bottom: 10px;
-}
-.form-box form .field{
-  display: flex;
-  margin-bottom: 10px;
-  flex-direction: column;
-
-}
-.form-box form .input input{
-  height: 40px;
-  width: 380px;
-  font-size: 16px;
-  padding: 0 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  outline: none;
-}
-.field .btn{
-  height: 35px;
-  background-color: #771862;
-  border: 0;
-  border-radius: 5px;
-  color: #fff;
-  font-size: 15px;
-  cursor: pointer;
-  transition: all .3s;
-  margin-top: 10px;
-  padding: 0px 10px;
-}
-.btn:hover{
-  opacity: 0.82;
-}
-.submit{
-  width: 100%;
-}
-.links{
-  margin-bottom: 15px;
-}
-
-        .message {
-            color: white;
-            background-color: red; /* Ngjyra e kuqe për mesazhet */
-            padding: 10px;
-            border-radius: 5px;
-            text-align: center;
-            margin-top: 20px;
-            font-weight: bold;
+        /* Popup styling for success and error messages */
+        .popup {
+            display: none; /* Initially hidden */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            animation: popupAnimation 0.5s ease-in-out; /* Add animation */
         }
 
-        .success-message {
-            background-color: green; /* Ngjyra jeshile për mesazhin e suksesit */
+        .popup-content {
+            text-align: center;
+        }
+
+        .success {
+            background-color: #4caf50; /* Green for success */
+            color: white;
+        }
+
+        .error {
+            background-color: #f44336; /* Red for error */
+            color: white;
+        }
+
+        @keyframes popupAnimation {
+            0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+            100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+        }
+
+        .fcontainer {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: url('contact.jpg') no-repeat center center;
+            background-size: cover;
+        }
+
+        .fcontainer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3); /* Ngjyrë e zezë e zbehtë për background */
+            z-index: 1;
+        }
+
+        .box {
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.9); /* Zbehje vetëm për kutinë */
+            padding: 25px 25px;
+            border-radius: 20px;
+            box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
+                        0 32px 64px -48px rgba(0,0,0,0.5);
+        }
+
+        .form-box {
+            width: 400px;
+            margin: 0px 10px;
+        }
+
+        .form-box header {
+            font-size: 25px;
+            font-weight: 600;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e6e6e6;
+            margin-bottom: 10px;
+        }
+
+        .form-box form .field {
+            display: flex;
+            margin-bottom: 10px;
+            flex-direction: column;
+        }
+
+        .form-box form .input input {
+            height: 40px;
+            width: 380px;
+            font-size: 16px;
+            padding: 0 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+
+        .field .btn {
+            height: 35px;
+            background-color: #771862;
+            border: 0;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all .3s;
+            margin-top: 10px;
+            padding: 0px 10px;
+        }
+
+        .btn:hover {
+            opacity: 0.82;
+        }
+
+        .submit {
+            width: 100%;
+        }
+
+        .links {
+            margin-bottom: 15px;
         }
     </style>
 </head>
 <body>
-<nav class="navbar">
+    <nav class="navbar">
         <a href="home.php">Home</a>
         <a href="shows&events.html">Shows&Events</a>
         <a href="news.php">News</a>
@@ -182,8 +199,7 @@ if (isset($_POST['submit'])) {
         <a href="contactus.php">Log In</a>
     </nav>
 
-
-  <div class="fcontainer">
+    <div class="fcontainer">
         <div class="box form-box">
             <header>Sign Up</header>
             <form action="" method="post" onsubmit="return validateRegisterForm()">
@@ -218,5 +234,6 @@ if (isset($_POST['submit'])) {
         </div>
     </div>
   
+    <script src="script.js"></script>
 </body>
 </html>

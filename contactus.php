@@ -1,44 +1,37 @@
 <?php
 session_start();
-include("connect_db.php");
-include("Login.php"); // Përfshijmë klasën Login
 
-// Inicimi i bazës së të dhënave
+include("connect_db.php");
+include("Login.php"); 
+
+
 $database = new Database();
 $conn = $database->connect();
 
-// Krijimi i një objekti të klasës Login
+
 $login = new Login($conn);
 
 if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Autentifikimi i përdoruesit përmes metodës authenticate
-    if ($login->authenticate($email, $password)) {
+    $authResult = $login->authenticate($email, $password);
+
+    if ($authResult) {
+        $redirectUrl = $authResult === 'admin' ? 'admin_dashboard.php' : 'user_dashboard.php';
         echo "<div id='successPopup' class='popup success'>
                 <div class='popup-content'>
                     <p>Login successful! Redirecting...</p>
                 </div>
               </div>";
         echo "<script>
-                document.getElementById('successPopup').style.display = 'block'; // Show success popup
+                document.getElementById('successPopup').style.display = 'block';
                 setTimeout(function() {
-                    window.location.href = 'user_dashboard.php';
-                }, 3000);
+                    window.location.href = '$redirectUrl';
+                }, 2000);
               </script>";
     } else {
-        echo "<div id='errorPopup' class='popup error'>
-                <div class='popup-content'>
-                    <p>Wrong email or password. Please try again.</p>
-                </div>
-              </div>";
-        echo "<script>
-                document.getElementById('errorPopup').style.display = 'block'; // Show error popup
-                setTimeout(function() {
-                    document.getElementById('errorPopup').style.display = 'none'; // Hide error popup after 3 seconds
-                }, 3000);
-              </script>";
+        echo "<p>Invalid email or password.</p>";
     }
 }
 ?>
@@ -184,10 +177,10 @@ if (isset($_POST['submit'])) {
 <body>
     <nav class="navbar">
         <a href="home.php">Home</a>
-        <a href="shows&events.html">Shows&Events</a>
+        <a href="shows&events.php">Shows&Events</a>
         <a href="news.php">News</a>
         <a href="Tickets.php">Tickets</a>
-        <a href="aboutus.html">About Us</a>
+        <a href="aboutus.php">About Us</a>
         <a href="contactus.php">Log In</a>
     </nav>
 

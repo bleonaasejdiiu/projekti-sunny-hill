@@ -304,7 +304,8 @@ $connection->close();
                     <p>Kengetare dhe artiste britaneze</p>
                     <p>U lind ne 29 maj 2001</p>
                     <p>Nje nder kenget e saj me te njohura eshte "Black Hole"</p>
-                    <a herf="#" type="button">Read More</a>
+                    <p id="more-text13" style="display:none;">Griff është e njohur për kombinimin e muzikës pop me elemente të stilit indie, elektronike dhe alternative, duke krijuar një tingull të veçantë dhe modern.</p>
+                    <a href="#" id="read-more13" type="button">Read More</a>
                 </div>
              </div>
         </div>

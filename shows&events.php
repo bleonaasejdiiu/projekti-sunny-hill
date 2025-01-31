@@ -270,7 +270,8 @@ $connection->close();
                     <p>Repere dhe kengetare shqiptare</p>
                     <p>U lind me 21 shtator 1994</p>
                     <p>Nje nder kenget e saj me te njohura eshte "Rruga e Re"</p>
-                    <a herf="#" type="button">Read More</a>
+                    <p id="more-text11" style="display:none;">Këngët e saj shpesh trajtojnë tema si dashuria, humbja, dhe përvoja personale, dhe kjo ka bërë që ajo të lidhet ngushtë me audiencën e saj</p>
+                    <a href="#" id="read-more11" type="button">Read More</a>
                 </div>
              </div>
         </div>

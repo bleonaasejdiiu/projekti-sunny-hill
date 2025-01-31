@@ -168,7 +168,8 @@ $connection->close();
                     <p>Kengetar dhe tekstshkrues shqiptar!</p>
                     <p>U lind ne 4 prill 1992</p>
                     <p>Nje nder kenget e tij me te njohur eshte "Buzet e kuqe"</p>
-                    <a herf="#" type="button">Read More</a>
+                    <p id="more-text5" style="display:none;">Një nga karakteristikat që e ka bërë Yll Limanin të veçantë është aftësia e tij për të krijuar këngë me tema të ndryshme, duke trajtuar aspekte të dashurisë, ndjenjave personale dhe realiteteve sociale.</p>
+                    <a href="#" id="read-more5" type="button">Read More</a>
                 </div>
              </div>
         </div> 

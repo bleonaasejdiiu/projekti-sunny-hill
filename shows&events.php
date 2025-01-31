@@ -201,7 +201,8 @@ $connection->close();
                     <p>Grup muzikor i formuar nga dy verllezer amerikano-latin</p>
                     <p>Steven Martinez është lindur më 24 janar 1991 ndersa Chris Martinez është lindur më 7 maj 1989.</p>
                     <p>Nje nder bashkpunimet e tyre me te njohur eshte "H 2 Da Izzo"</p>
-                    <a herf="#" type="button">Read More</a>
+                    <p id="more-text6" style="display:none;">Ledri është i njohur për stilin e tij të veçantë, që përfshin një kombinim të hip-hopit, R&B-së dhe pop-it, dhe për aftësinë për të krijuar këngë që janë tërheqëse dhe ritmike</p>
+                    <a href="#" id="read-more6" type="button">Read More</a>
                 </div>
              </div>
         </div>

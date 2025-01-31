@@ -287,7 +287,8 @@ $connection->close();
                     <p>Reper dhe tekstshkrues shqiptar</p>
                     <p>U lind ne 29 tetor 1996</p>
                     <p>Nje nder kenget e tij me te njohura eshte "Lejla"</p>
-                    <a herf="#" type="button">Read More</a>
+                    <p id="more-text12" style="display:none;">Mozzik është i njohur për stilin e tij të veçantë, që shpesh kombinon elemente të rap-it dhe trap-it me tematikë që prek tema të jetës urbane, dashurisë, marrëdhënieve dhe realitetit të jetës së përditshme.</p>
+                    <a href="#" id="read-more12" type="button">Read More</a>
                 </div>
              </div>
         </div>

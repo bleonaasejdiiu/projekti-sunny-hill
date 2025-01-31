@@ -237,7 +237,7 @@ body {
   box-shadow: 0 5px 10px rgba(180, 75, 154, 0.2); 
 }
 
-.footer {
+/*.footer {
   display: grid;
   grid-template-columns: auto auto auto;
   background-color:whitesmoke;
@@ -274,7 +274,7 @@ body {
   padding-top: 40px;
  
 }
-/*
+
 @media (min-width: 768px) {
   .footer-item,.footer-item1,.footer-item2{
     grid-template-columns: 1fr; 
@@ -288,7 +288,6 @@ body {
 
 */
 
- 
 
 /*----------NEWS------------*/
 #header {
@@ -937,7 +936,7 @@ div ul a{
   line-height: 26px;
   padding-bottom: 15px;
 }
-@media (max-width: 991px) {
+/*@media (max-width: 991px) {
   .row .right .content{
     padding-left: 0px;
   }
@@ -948,6 +947,7 @@ div ul a{
     grid-template-columns: 1fr;
   }
 }
+  */
 .c{
   text-align: center ;
   background-color: grey;

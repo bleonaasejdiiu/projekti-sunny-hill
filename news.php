@@ -81,10 +81,10 @@ include("connect_db.php");
  
 <nav class="navbar">
         <a href="home.php">Home</a>
-        <a href="shows&events.html">Shows&Events</a>
+        <a href="shows&events.php">Shows&Events</a>
         <a href="news.php">News</a>
         <a href="Tickets.php">Tickets</a>
-        <a href="aboutus.html">About Us</a>
+        <a href="aboutus.php">About Us</a>
         <a href="contactus.php">Log In</a>
     </nav>
         <div id="header">
@@ -355,7 +355,7 @@ form .error-message {
 </style>
 
 
-<div class="footer">
+<!--<div class="footer">
 
 
         
@@ -389,7 +389,61 @@ form .error-message {
 
 </div>
 
+-->
+<style>
+    .footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+ 
+  background-color:rgb(240, 233, 237); /* Ngjyra e qumështit */
+  color: #333; /* Ngjyrë e errët për tekstin për kontrast */
+  text-align: center;
+}
 
+.footer-item {
+  padding: 10px;
+}
+
+/* ✅ Mobile & Tableta */
+@media (max-width: 768px) {
+  .footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .sponsors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+</style>
+<footer class="footer">
+    <div class="footer-item"> 
+        <p>Volunteer</p>
+        <p>Privacy Policy</p>
+        <p>Terms Of Use</p>
+    </div>
+    
+    <div class="footer-item">
+        <p>Email: info@sunnyhillfestival.com</p>
+        <p>Sunny Hill Festival</p>
+        <p>Enver Maloku, Nr.82</p>
+        <p>Pristina 10000 Kosove</p>
+    </div>
+
+    <div class="footer-item sponsors">
+        <h3>Sponsors</h3>
+        <img src="klankosova.png" alt="Klan Kosova">
+        <img src="cocacola.jpg" alt="Coca Cola">
+        <img src="emerald.png" alt="Emerald">
+        <img src="prince.jpg" alt="Prince">
+        <img src="vodafone.jpg" alt="Vodafone">
+    </div>
+</footer>
 
 
   

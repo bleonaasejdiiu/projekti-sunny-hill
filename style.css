@@ -902,7 +902,7 @@ div ul a{
     .all .card1 {
       position: relative;
       width: 30%; /* Siguron se kartat janë të shëndosha dhe nuk janë shumë të ngushta */
-      height: 450px; /* Përshtatim i lartësisë së kartave për të lejuar hapësirë për tekstin */
+      height: 600px; /* Përshtatim i lartësisë së kartave për të lejuar hapësirë për tekstin */
       display: flex;
       flex-direction: column;
       transition: 0.3s;

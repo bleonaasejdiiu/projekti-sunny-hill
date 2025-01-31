@@ -83,7 +83,8 @@ $connection->close();
                     <p>Kengetare dhe artiste shqipetare</p>
                     <p>U lind ne 24 dhjetor 1992</p>
                     <p>Nje nder kenget e saj me te njohura eshte "Akuario"</p>
-                    <a herf="#" type="button">Read More</a>
+                    <p id="more-text" style="display:none;">Dhurata është gjithashtu e vlerësuar për energjinë e saj në skenë dhe stilin e saj të veçantë, dhe është e njohur për ndikimin që ka në muzikën moderne shqiptare..</p>
+                    <a href="#" id="read-more" type="button">Read More</a>
                 </div>
              </div>
         </div>

@@ -236,7 +236,8 @@ $connection->close();
                     <p>Kengetare dhe artiste shqiptare me fame internacionale!</p>
                     <p>U lind ne 30 gusht 1989!</p>
                     <p>Nje nder kenget e saj me te njohura eshte "Meant to Be"</p>
-                    <a herf="#" type="button">Read More</a>
+                    <p id="more-text9" style="display:none;">Bebe Rexha është gjithashtu e njohur për fuqinë e saj artistike dhe përmes muzikës ka mbështetur tema të fuqishme si pavarësia, vetëbesimi dhe pranimi i vetes.</p>
+                    <a href="#" id="read-more9" type="button">Read More</a>
                 </div>
              </div>
         </div>

@@ -185,7 +185,8 @@ $connection->close();
                     <p>Reper dhe tekstshkrues shqiptar</p>
                     <p>U lind ne  27 korrik 1986</p>
                     <p>Nje nder kenget e tij me te njohura eshte "Bojna Sene"</p>
-                    <a herf="#" type="button">Read More</a>
+                    <p id="more-text6" style="display:none;">Ledri është i njohur për stilin e tij të veçantë, që përfshin një kombinim të hip-hopit, R&B-së dhe pop-it, dhe për aftësinë për të krijuar këngë që janë tërheqëse dhe ritmike</p>
+                    <a href="#" id="read-more6" type="button">Read More</a>
                 </div>
              </div>
         </div>

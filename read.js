@@ -24,3 +24,16 @@ document.getElementById('read-more1').addEventListener('click', function(event) 
         this.textContent = 'Read More'; 
     }
 });
+document.getElementById('read-more2').addEventListener('click', function(event) {
+    event.preventDefault(); 
+
+    var moreText = document.getElementById('more-text2');
+
+    if (moreText.style.display === 'none') {
+        moreText.style.display = 'block'; 
+        this.textContent = 'Read Less'; 
+    } else {
+        moreText.style.display = 'none'; 
+        this.textContent = 'Read More'; 
+    }
+});

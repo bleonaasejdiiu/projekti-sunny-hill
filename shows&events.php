@@ -219,7 +219,8 @@ $connection->close();
                     <p>Reper dhe tekstshkrues shqiptar</p>
                     <p>U lind ne 26 nëntor 1992</p>
                     <p>Nje nder kenget e tij me te njohura eshte "S'jam Kurgjo"</p>
-                    <a herf="#" type="button">Read More</a>
+                    <p id="more-text8" style="display:none;">Ghetto Geasy është gjithashtu i njohur për energjinë dhe atmosferën që sjell në performancat e tij live, duke krijuar një lidhje të veçantë me fansat e tij.</p>
+                    <a href="#" id="read-more8" type="button">Read More</a>
                 </div>
              </div>
         </div>

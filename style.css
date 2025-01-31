@@ -736,6 +736,72 @@ body {
 
 
 /*---------------CONTACT US-------------------*/
+
+/********* Home *****************/
+
+.nav{
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  line-height: 60px;
+  z-index: 100;
+}
+.logo{
+  font-size: 25px;
+  font-weight: 900;
+  
+}
+.logo a{
+  text-decoration: none;
+  color: #000;
+}
+.right-links a{
+  padding: 0 10px;
+}
+main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+}
+.main-box{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+.main-box .top{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.bottom{
+  width: 100%;
+  margin-top: 20px;
+}
+@media only screen and (max-width:840px){
+  .main-box .top{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+  .top .box{
+      margin: 10px 10px;
+  }
+  .bottom{
+      margin-top: 0;
+  }
+}
+.message{
+  text-align: center;
+  background: #f9eded;
+  padding: 15px 0px;
+  border:1px solid #699053;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  color: red;
+}
+/*
 .contact {
   position: relative;
   height: 100vh;
@@ -752,32 +818,32 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 300px;
-  background: rgba(255, 255, 255, 0.9); /* Sfond i bardhë me pak transparencë */
+  background: rgba(255, 255, 255, 0.9); /* Sfond i bardhë me pak transparencë 
   border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hije pak më e errët */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hije pak më e errët 
 }
 
 .form {
   display: none;
-  flex-direction: column;
 }
 
+/* Shfaq format që kanë klasën 'active' 
 .form.active {
-  display: flex;
+  display: block;
 }
 
 .form h2 {
   text-align: center;
   margin-bottom: 20px;
   font-size: 30px;
-  color: #333; /* Tekst më i errët për kontrast më të mirë */
+  color: #333; /* Tekst më i errët për kontrast më të mirë 
 }
 
 .form input {
   margin: 10px 0;
   padding: 10px;
-  border: 1px solid #ccc; /* Kufij pak më të theksuar */
+  border: 1px solid #ccc; /* Kufij pak më të theksuar 
   border-radius: 5px;
 }
 
@@ -814,7 +880,7 @@ body {
 
 .form p {
   margin-top: 20px;
-  color: #333; /* Tekst më i errët për lexueshmëri më të mirë */
+  color: #333; /* Tekst më i errët për lexueshmëri më të mirë 
 }
 .error-message {
   color: red;
@@ -825,7 +891,7 @@ body {
 input .error {
   border: 2px solid red;
 }
-
+*/
 
   /*----------- ABOUT US----------------*/
 .b {

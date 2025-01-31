@@ -134,7 +134,8 @@ $connection->close();
                     <p>Kengetare dhe artiste shqipare</p>
                     <p>U lind ne 14 prill 1989</p>
                     <p>Nje nder kenget e saj me te njohura eshte "E Dehur"</p>
-                    <a herf="#" type="button">Read More</a>
+                    <p id="more-text3" style="display:none;">Dafina është gjithashtu një figurë e njohur në mediat sociale dhe ka një ndikim të madh në jetën kulturore shqiptare, ku shpesh i jep ndjekësve të saj një pasqyrë të jetës së saj përmes postimeve dhe aktiviteteve të ndryshme.</p>
+                    <a href="#" id="read-more3" type="button">Read More</a>
                 </div>
              </div>
         </div>

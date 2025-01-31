@@ -151,7 +151,8 @@ $connection->close();
                     <p>Reper dhe tekstshkrues shqiptar</p>
                     <p>U lind ne  23 tetor 1996</p>
                     <p>Nje nder kenget e ti me te njohura eshte"Shume Vone"</p>
-                    <a herf="#" type="button">Read More</a>
+                    <p id="more-text4" style="display:none;">Buta është i njohur për mënyrën se si ai përdor lirikën për të shprehur mendimet dhe emocionet e tij, duke e bërë muzikën më të lidhur me audiencën e gjerë.</p>
+                    <a href="#" id="read-more4" type="button">Read More</a>
                 </div>
              </div>
         </div>

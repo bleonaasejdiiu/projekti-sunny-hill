@@ -22,15 +22,15 @@ $connection = $db->connect();
         </tr>
 
         <?php
-        $sql = "SELECT * FROM user";  // Përdorni tabelën 'users' siç keni përmendur
+        $sql = "SELECT * FROM user";  
         $stmt = $connection->query($sql);
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         
             if (isset($row['id'])) {
                 $name = $row['emri']; 
-                $mbiemri = $row['mbiemri'];  // Emri i mbiemrit
-                $email = $row['email'];  // Emaili
-                $question = $row['question'];  // Kolona question
+                $mbiemri = $row['mbiemri'];  
+                $email = $row['email'];  
+                $question = $row['question'];  
 
                 echo "<tr>
                         <td>{$row['id']}</td>

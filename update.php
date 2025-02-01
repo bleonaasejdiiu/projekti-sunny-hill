@@ -32,7 +32,7 @@ $connection = $db->connect();
         $mbiemri = $_POST['mbiemri'];
         $age = $_POST['age'];
         $email = $_POST['email'];
-        $question = $_POST['question'];  // Këtu e korigjova
+        $question = $_POST['question'];  
 
         $sql = "UPDATE user SET emri = :emri, mbiemri = :mbiemri, mosha = :mosha, email = :email, question = :question WHERE id = :id";
         $stmt = $connection->prepare($sql);
@@ -41,7 +41,7 @@ $connection = $db->connect();
             ':mbiemri' => $mbiemri,
             ':mosha' => $age,
             ':email' => $email,
-            ':question' => $question,  // E korigjova
+            ':question' => $question,  
             ':id' => $id
         ]);
 

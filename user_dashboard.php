@@ -23,7 +23,9 @@ $userData = $home->getUserData($_SESSION['id']);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
+
     <title>User Dashboard</title>
     <style>
        body {
@@ -111,6 +113,55 @@ main {
     flex-direction: column;
     gap: 15px;
   }
+}
+/*Animacione me Tickets */
+.tickets-logos {
+  display: flex;             
+  justify-content: center;   
+  gap: 20px;                
+  flex-wrap: wrap;           
+}
+
+.ticket-icon {
+  font-size: 40px;          
+  color: #bd89b7;
+  animation: bounce 2s infinite ease-in-out; 
+}
+
+.ticket-icon:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.ticket-icon:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.ticket-icon:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.ticket-icon:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+.ticket-icon:nth-child(6) {
+  animation-delay: 1s;
+}
+.ticket-icon:nth-child(7) {
+  animation-delay: 1.2s;
+}
+
+/* Animacioni */
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px); /* Lëviz lart */
+  }
+  100% {
+    transform: translateY(0); /* Kthehet poshtë */
+}
 }
     </style>
 </head>

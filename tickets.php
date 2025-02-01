@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,15 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="tickets-style.css">
 </head>
 <body>
     <nav class="navbar">
         <a href="home.php">Home</a>
-        <a href="shows&events.html">Shows&Events</a>
+        <a href="shows&events.php">Shows&Events</a>
         <a href="news.php">News</a>
         <a href="Tickets.php">Tickets</a>
-        <a href="aboutus.html">About Us</a>
+        <a href="aboutus.php">About Us</a>
         <a href="contactus.php">Log In</a>
     </nav>
     
@@ -179,14 +182,13 @@
     </div>
 </div>
 <!----------------CARD PAYMENT--------------------->
+
 <div class="container" id="card-payment">
-
     <div class="card-container">
-
         <div class="front">
             <div class="image">
-                <img src="image/chip.png" alt="">
-                <img src="image/visa.png" alt="">
+                <img src="chip.png" alt="">
+                <img src="visa.png" alt="">
             </div>
             <div class="card-number-box">################</div>
             <div class="flexbox">
@@ -197,8 +199,8 @@
                 <div class="box">
                     <span>expires</span>
                     <div class="expiration">
-                        <span class="exp-month">mm</span>
-                        <span class="exp-year">yy</span>
+                        <span class="exp-month">Ticket</span>
+                        <span class="exp-year">Quantity</span>
                     </div>
                 </div>
             </div>
@@ -209,115 +211,102 @@
             <div class="box">
                 <span>cvv</span>
                 <div class="cvv-box"></div>
-                <img src="image/visa.png" alt="">
+                <img src="visa.png" alt="">
             </div>
         </div>
-
     </div>
 
-    <form action="">
+    <form action="process_payment.php" method="POST">
         <div class="inputBox">
             <span>card number</span>
-            <input type="text" maxlength="16" class="card-number-input">
+            <input type="text" maxlength="16" name="card_number" class="card-number-input" required>
         </div>
         <div class="inputBox">
             <span>card holder</span>
-            <input type="text" class="card-holder-input">
+            <input type="text" name="card_holder" class="card-holder-input" required>
         </div>
         <div class="flexbox">
             <div class="inputBox">
-                <span>expiration mm</span>
-                <select name="" id="" class="month-input">
-                    <option value="month" selected disabled>month</option>
-                   <option value="08">08</option>
-                   
+                <span>Ticket Type</span>
+                <select name="ticket_type" class="ticket-type-input" required>
+                    <option value="" disabled selected>Select Ticket</option>
+                    <option value="Regular">Regular - 200€</option>
+                    <option value="Group of 3">Group of 3 - 180€ per ticket</option>
+                    <option value="Group of 5">Group of 5 - 160€ per ticket</option>
+                    <option value="VIP">VIP Ticket - 400€</option>
                 </select>
             </div>
             <div class="inputBox">
-                <span>expiration yy</span>
-                <select name="" id="" class="year-input">
-                    <option value="year" selected disabled>year</option>
-                    
-                    <option value="2025">2025</option>
-                </select>
+                <span>Quantity</span>
+                <input type="number" name="quantity" min="1" class="quantity-input" required>
             </div>
             <div class="inputBox">
                 <span>cvv</span>
-                <input type="text" maxlength="4" class="cvv-input">
+                <input type="text" maxlength="4" name="cvv" class="cvv-input" required>
             </div>
         </div>
-        <input type="submit" value="submit" class="submit-btn">
+        <input type="submit" value="Submit" class="submit-btn">
     </form>
-
-</div>    
-
-<!--<div class="footer">
-            
-    <div class="footer-item1"> 
-        <p>Volunteer</p>
-       <p>Privacy Policy</p>
-        <p>Terms Of Use</p>
-
-
-    </div>
-    
-
-
-   <div class="footer-item2">
-   <p>Email: info@sunnyhillfestival.com</p>
-   <p>Sunny Hill Festival</p>
-   <p>Enver Maloku, Nr.82</p>
-   <p>Pristina 10000 Kosove</p>
-   
-    </div>
-
-    <div class="footer-item">
-        <h3>Sponsors</h3>
-     <img src="klankosova.png">
-      <img src="cocacola.jpg">
-     
-
- <img  src="emerald.png"> 
- <img src="prince.jpg">
-
-   <img src="vodafone.jpg">
-  
 </div>
 
 
-</div>
--->
+<script>
+    document.querySelector('.ticket-type-input').oninput = () => {
+    document.querySelector('.exp-month').innerText = document.querySelector('.ticket-type-input').value;
+};
+
+document.querySelector('.quantity-input').oninput = () => {
+    document.querySelector('.exp-year').innerText = document.querySelector('.quantity-input').value;
+};
+</script>
+
+
 <style>
     .footer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 20px;
- 
-  background-color:rgb(240, 233, 237); /* Ngjyra e qumështit */
-  color: #333; /* Ngjyrë e errët për tekstin për kontrast */
-  text-align: center;
-}
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: rgb(240, 233, 237); /* Ngjyra e qumështit */
+        color: #333;
+    }
 
-.footer-item {
-  padding: 10px;
-}
 
-/* ✅ Mobile & Tableta */
-@media (max-width: 768px) {
-  .footer {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
+    .footer-item {
+        flex: 1;
+        text-align: left;
+    }
 
-  .sponsors {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
+    .sponsors {
+        display: flex; 
+        gap: 0; 
+    }
 
+    .sponsors img {
+        width: 80px; 
+        height: auto;
+        max-height: 50px;
+        object-fit: contain;
+        margin: 0 !important; 
+        padding: 0 !important; 
+        display: inline-block; 
+    }
+
+
+    @media (max-width: 768px) {
+       .footer {
+            flex-direction: column;
+            text-align: center;
+        }
+
+       .sponsors img {
+            width: 60px;
+            max-height: 40px;
+        }
+    }
 </style>
+
+
 <footer class="footer">
     <div class="footer-item"> 
         <p>Volunteer</p>
@@ -340,6 +329,6 @@
         <img src="prince.jpg" alt="Prince">
         <img src="vodafone.jpg" alt="Vodafone">
     </div>
-</footer>   
+</footer>
 </body>
 </html>

@@ -4,12 +4,12 @@ session_start();
 include("connect_db.php");
 include("Login.php"); 
 
-
 $database = new Database();
 $conn = $database->connect();
 
-
 $login = new Login($conn);
+
+$error_message = "";
 
 if (isset($_POST['submit'])) {
     $email = $_POST['email'];
@@ -31,7 +31,7 @@ if (isset($_POST['submit'])) {
         } else {
             echo "<div id='successPopup' class='popup success'>
                     <div class='popup-content'>
-                        <p>Login successful! </p>
+                        <p>Login successful!</p>
                     </div>
                   </div>";
             echo "<script>
@@ -41,9 +41,12 @@ if (isset($_POST['submit'])) {
                     }, 1000);
                   </script>";
         }
+    } else {
+        $error_message = "Wrong Email or Password!";
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -54,7 +57,7 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" href="style.css">
     <title>Contact Us</title>
     <style>
-        .message {
+     .message {
             color: white;
             background-color: red;
             padding: 10px;
@@ -64,7 +67,6 @@ if (isset($_POST['submit'])) {
             font-weight: bold;
         }
 
-       
         .popup {
             display: none; 
             position: fixed;
@@ -217,5 +219,22 @@ if (isset($_POST['submit'])) {
             </form>
         </div>
     </div>
+
+    <?php if (!empty($error_message)): ?>
+        <div class="popup error" id="errorPopup">
+            <div class="popup-content">
+                <p><?php echo $error_message; ?></p>
+            </div>
+        </div>
+        <script>
+            document.getElementById('errorPopup').style.display = 'block';
+            setTimeout(function() {
+                document.getElementById('errorPopup').style.display = 'none';
+            }, 2000); 
+        </script>
+    <?php endif; ?>
+
+</body>
+</html>
 </body>
 </html>

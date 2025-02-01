@@ -1,4 +1,3 @@
-
 <?php
 // Përshtatimi i kodit me OOP
 include("connect_db.php"); // Ky fajll përmban klasën Database dhe metodën connect()
@@ -43,6 +42,11 @@ class Content {
 // Krijo një objekt të klasës Content dhe merr përmbajtjen për faqen "about us"
 $content = new Content($db);
 $page_data = $content->getContentByPageName('about us');
+
+// Sigurohuni që të dhënat të jenë të pranishme
+$titulli = isset($page_data['titulli']) ? $page_data['titulli'] : 'Titulli nuk është gjetur';
+$teksti = isset($page_data['teksti']) ? $page_data['teksti'] : 'Teksti nuk është gjetur';
+$emri_faqes = isset($page_data['emri_faqes']) ? $page_data['emri_faqes'] : 'Emri i faqes nuk është gjetur';
 ?>
 
 <!DOCTYPE html>

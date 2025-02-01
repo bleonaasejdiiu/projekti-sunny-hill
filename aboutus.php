@@ -162,11 +162,23 @@ $connection->close();
         padding: 0 !important; 
         display: inline-block; 
     }
+    @media (max-width: 768px) {
+       .footer {
+            flex-direction: column;
+            text-align: center;
+        }
 
-
-
-
+       .sponsors img {
+            width: 60px;
+            max-height: 40px;
+        }
+    }
 </style>
+
+
+
+
+
 <footer class="footer">
     <div class="footer-item"> 
         <p>Volunteer</p>

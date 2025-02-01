@@ -1,21 +1,15 @@
 <?php
-// Aktivizo raportimin e gabimeve për zhvillim
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Përfshijmë klasën Database
-include_once('Database.php');
+// Përdorim include për të përfshirë lidhjen me bazën e të dhënave
+include("connect_db.php");
 
-// Krijo një instancë të klasës Database dhe lidhu me bazën
-$database = new Database();
-$db = $database->connect();
-
-// Krijo një funksion për të kërkuar artistin
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Merrni emrin e artistit nga formulari
-    $artist_name = trim($_POST['artist_name']);
     
-    // Kontrollo nëse emri është bosh ose ka më pak se 3 karaktere
+    // Merrni emrin e artistit
+    $artist_name = trim($_POST['artist_name']); 
+    
     if (empty($artist_name)) {
         echo "Ju lutem shkruani emrin e artistit!";
         exit();
@@ -31,19 +25,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    // Sanitizimi i kerkeses
+    // Sanitizimi i kërkesës
     $artist_name = htmlspecialchars($artist_name);
     $artist_name = stripslashes($artist_name);
-    $artist_name = mysqli_real_escape_string($db, $artist_name); // Përdorimi i PDO për lidhjen
+    
+    // Kërkimi në bazën e të dhënave
+    $searchTerm = "%" . $artist_name . "%";  // Formohet kërkimi
 
-    // Kërkimi në databazë
-    $sql = "SELECT * FROM artists WHERE artist_name LIKE :artist_name";
-    $stmt = $db->prepare($sql);
-    $searchTerm = "%" . $artist_name . "%";
+    $query = "SELECT * FROM artists WHERE artist_name LIKE :artist_name";
+    $stmt = $conn->prepare($query);
+
+    // Lidhen parametrat për mbrojtje nga SQL Injection
     $stmt->bindParam(':artist_name', $searchTerm);
+    
     $stmt->execute();
 
-    // Kontrollo nëse ka rezultate
     if ($stmt->rowCount() > 0) {
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo "<h2>" . $row["artist_name"] . "</h2>";
@@ -53,7 +49,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Nuk u gjet artisti: " . htmlspecialchars($artist_name);
     }
 }
-
 ?>
 
 <!DOCTYPE html>

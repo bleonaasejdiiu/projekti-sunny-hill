@@ -1,10 +1,6 @@
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$db_name = "aboutusdb";
-$connection = "";
+
 
 // Krijojme lidhjen me databazen
 $connection = new mysqli($servername, $username, $password, $db_name);

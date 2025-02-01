@@ -11,8 +11,13 @@ $connection = new mysqli($servername, $username, $password, $db_name);
 
 // Kontrollo nese lidhja u realizu
 if ($connection->connect_error) {
-    die("Lidhja me databazë dështoi: " . $connection->connect_error);
+    die("Lidhja me databaze deshtoi: " . $connection->connect_error);
 }
+
+$titulli = "";
+$teksti = "";
+$emri_faqes = "";
+
 
 $connection->close();
 ?>

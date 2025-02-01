@@ -50,7 +50,12 @@ class Admin {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-
+    public function getAllQuestions() {
+        $stmt = $this->conn->prepare("SELECT Id, emri, mbiemri, mosha, email, question FROM user");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
    
 }
+
 ?>

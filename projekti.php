@@ -211,6 +211,10 @@
         flex: 1;
         text-align: left;
     }
+    .sponsors {
+        display: flex;  /* Sponsorët renditen horizontalisht */
+        gap: 0; /* Nuk ka hapësirë ndërmjet imazheve */
+    }
 
          <footer class="footer">
     <div class="footer-item"> 

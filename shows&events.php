@@ -328,13 +328,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          </div>
     </div>
 </div>
-    <form action="search.php" method="POST" id="search-form">
+    <form action="search.php" method="POST" id="search-form"></form>
     <div class="search-container">
         <label for="search-box">Kerkoni artistin tuaj te preferuar</label>
         <input type="text" id="search-box" name="search" placeholder="Shkruani emrin e artistit...">
         <button type="submit" id="search-button">Kerko</button>
     </div>
-</form>
+
 <script>
     document.getElementById('search-button').addEventListener('click', function(event) {
         event.preventDefault(); 

@@ -149,6 +149,10 @@ $connection->close();
         flex: 1;
         text-align: left;
     }
+    .sponsors {
+        display: flex;  
+        gap: 0; 
+    }
 
 
 

@@ -15,13 +15,13 @@ if (!$conn) {
 
 $admin = new Admin($conn);
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Merr të dhënat nga formulari
+    
     $name = $_POST['name'];
     $surname = $_POST['surname'];
     $age = $_POST['age'];
     $email = $_POST['email'];
     $question = $_POST['question'];
- // Shto pyetjen në databazë
+ 
  $result = $admin->addQuestion($name, $surname, $age, $email, $question);
  if ($result) {
     echo "<p style='color: green;'>Pyetja u shtua me sukses!</p>";
@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="tickets-style.css">
 
     <style>
-        /* Styles for the form */
+        
         .form-container {
             width: 50%;
             margin: 0 auto;

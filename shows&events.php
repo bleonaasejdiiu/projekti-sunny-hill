@@ -366,7 +366,7 @@ $connection->close();
             errorMessage = "Ju lutem shkruani te pakten 3 karaktere!";
         }
 
-       t
+       
         if (errorMessage !== '') {
             alert(errorMessage);  
             event.preventDefault(); // ndalimi i dergimit te formularit

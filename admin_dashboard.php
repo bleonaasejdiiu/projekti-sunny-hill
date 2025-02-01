@@ -137,7 +137,17 @@ h1 {
         </table>
 
         <a href="Admin/add_user.php"><button class="btn">Add New User</button></a>
-
+        <h2>User Questions</h2>
+        <table class="admin-table">
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Question</th>
+                <th>Actions</th>
+            </tr>
+            <?php foreach ($questions as $question): ?>
       
      
 </body>

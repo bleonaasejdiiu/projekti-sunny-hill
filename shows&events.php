@@ -1,56 +1,51 @@
 <?php
+// Aktivizo raportimin e gabimeve për zhvillim
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// lidhja me databaze
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "searchdb";
-$connection = new mysqli($servername, $username, $password, $dbname);
+// Përfshijmë klasën Database
+include_once('Database.php');
 
-// Kontrollo lidhjen
-if ($connection->connect_error) {
-    die("Lidhja me bazën e të dhënave dështoi: " . $connection->connect_error);
-}
+// Krijo një instancë të klasës Database dhe lidhu me bazën
+$database = new Database();
+$db = $database->connect();
 
+// Krijo një funksion për të kërkuar artistin
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Merrni emrin e artistit nga formulari
+    $artist_name = trim($_POST['artist_name']);
     
-    // Merrni emrin e artistit
-    $artist_name = trim($_POST['artist_name']); 
-    
-   
+    // Kontrollo nëse emri është bosh ose ka më pak se 3 karaktere
     if (empty($artist_name)) {
         echo "Ju lutem shkruani emrin e artistit!";
         exit();
     }
 
-   
     if (!preg_match("/^[a-zA-Z\s]+$/", $artist_name)) {
-        echo "Emri i artistit mund te permbaje vetem shkronja dhe hapesira!";
+        echo "Emri i artistit mund të përmbajë vetëm shkronja dhe hapësira!";
         exit();
     }
 
-  
     if (strlen($artist_name) < 3) {
-        echo "Ju lutem shkruani te pakten 3 karaktere!";
+        echo "Ju lutem shkruani të paktën 3 karaktere!";
         exit();
     }
 
     // Sanitizimi i kerkeses
-    $artist_name = htmlspecialchars($artist_name); 
-    $artist_name = stripslashes($artist_name); 
-    $artist_name = mysqli_real_escape_string($connection, $artist_name); 
+    $artist_name = htmlspecialchars($artist_name);
+    $artist_name = stripslashes($artist_name);
+    $artist_name = mysqli_real_escape_string($db, $artist_name); // Përdorimi i PDO për lidhjen
 
-    // Prepared statement 
-    $sql = $connection->prepare("SELECT * FROM artists WHERE artist_name LIKE ?");
-    $searchTerm = "%" . $artist_name . "%";  // Kjo ndihmon ne formimin e termit te kerkimit 
-    $sql->bind_param("s", $searchTerm);  // s tregon qe esht nje string
-    $sql->execute();
-    $result = $sql->get_result();
+    // Kërkimi në databazë
+    $sql = "SELECT * FROM artists WHERE artist_name LIKE :artist_name";
+    $stmt = $db->prepare($sql);
+    $searchTerm = "%" . $artist_name . "%";
+    $stmt->bindParam(':artist_name', $searchTerm);
+    $stmt->execute();
 
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
+    // Kontrollo nëse ka rezultate
+    if ($stmt->rowCount() > 0) {
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo "<h2>" . $row["artist_name"] . "</h2>";
             echo "<p>" . $row["details"] . "</p>";
         }
@@ -59,7 +54,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-$connection->close();
 ?>
 
 <!DOCTYPE html>

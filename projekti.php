@@ -21,16 +21,15 @@
 
 .slider-wrapper {
     display: flex;
-    width: 100%; /* Mbështet fleksibilitetin për imazhet */
+    width: 100%; 
     height: 100%;
-    transition: transform 0.5s ease-in-out; /* Lëviz imazhet në mënyrë të qetë */
-}
+    transition: transform 0.5s ease-in-out; 
 
 .slider-wrapper img {
-    flex: 0 0 100%; /* Siguron që çdo imazh zë 100% të gjerësisë */
+    flex: 0 0 100%; 
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Përshtatja e imazheve në hapësirë */
+    object-fit: cover; 
 }
 
 .slider-btn {
@@ -77,23 +76,23 @@
     background-color: rgb(29, 100, 192);
 }
 .static-gallery {
-    display: flex; /* Foto rreshtohen horizontalisht */
-    justify-content: center; /* Qendërzimi i të gjithë grupit të fotove */
-    gap: 0; /* Eliminon hapësirën mes fotove */
-    margin: 20px 0; /* Hapësirë lart dhe poshtë galerisë */
+    display: flex; 
+    justify-content: center; 
+    gap: 0; 
+    margin: 20px 0; 
 }
 
 .static-gallery img {
-    width: 180px; /* Gjerësia më e madhe e fotove */
-    height: 180px; /* Lartësia më e madhe e fotove */
-    object-fit: cover; /* Përshtatja e fotove në hapësirë */
-    border-radius: 8px; /* Kënde të rrumbullakosura për një pamje të butë */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efekte gjatë hover */
+    width: 180px; 
+    height: 180px; 
+    object-fit: cover; 
+    border-radius: 8px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .static-gallery img:hover {
-    transform: scale(1.1); /* Zmadhohet kur kalon miu mbi foto */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hijë për efekt estetik */
+    transform: scale(1.1); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
 }
 </style>
 
@@ -294,15 +293,15 @@ updateSlider();
     var modal=document.getElementById("guestModal");
 
 var span =document.getElementById("closeModal");
-//per me tregu modalin automatikisht kur faqja hapet
+
 window.onload=function(){
     modal.style.display="block";
 }
-//kur useri klikon ne span(x), mbyll guest modal
+
 span.onclick=function(){
-    modal.style.display="none";//e bon hide modal
+    modal.style.display="none";
 }
-//kur useri klikon kudo jashte modal,e mbyll
+
 window.onclick=function(event){
     if(event.target == modal){
         modal.style.display="none";

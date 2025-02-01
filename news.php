@@ -4,18 +4,17 @@ include("connect_db.php");
 
     if (isset($_POST['submit'])) {
         try {
-            // Krijo objektin e databazës dhe lidhu me bazën e të dhënave
+           
             $db = new Database();
             $connection = $db->connect();
     
-            // Merr të dhënat nga formulari
+           
             $name = $_POST['name'];
             $mbiemri = $_POST['mbiemri'];
             $age = $_POST['age'];
             $email = $_POST['email'];
             $question = $_POST['question'];
     
-            // Përgatit query-in për futjen e të dhënave
             $sql = "INSERT INTO user (emri, mbiemri, mosha, email, question) 
                     VALUES (:emri, :mbiemri, :mosha, :email, :question)";
     
@@ -158,13 +157,7 @@ include("connect_db.php");
                     <img src="https://sunnyhillfestival.com/wp-content/uploads/2021/05/musicbox.jpg" alt=" Kosovo">
                 </div>
             </div>
-            <!--<div class="news">
-                <p onclick="showImage('image17')">SUNNY HILL FESTIVAL: WE REMAIN HOPEFUL THAT THIS…</p>
-                <div id="image17" class="news-image" style="display: none;">
-                    <img src="https://sunnyhillfestival.com/wp-content/uploads/2024/04/Sunny-Hill-Festival-Grand-Return-in-Prishtina.jpg" alt=" Kosovo">
-                </div>
-            </div>
--->
+     
             <div class="news">
                 <p onclick="showImage('image17')">SUNNY HILL FESTIVAL: WE REMAIN HOPEFUL THAT THIS…</p>
                 <div id="image17" class="news-image" style="display: none;">
@@ -178,9 +171,9 @@ include("connect_db.php");
         function showImage(imageId) {
             const image = document.getElementById(imageId);
             if (image.style.display === 'none') {
-                image.style.display = 'block'; // Shfaq imazhin
+                image.style.display = 'block'; 
             } else {
-             image.style.display = 'none'; // Fshi imazhin
+             image.style.display = 'none'; 
         }
     }
     </script>
@@ -221,33 +214,33 @@ body {
 
 h2 {
     text-align: center;
-    font-size: 1.5em; /* Zvogëluar madhësinë e titullit */
+    font-size: 1.5em; 
     color: #333;
-    margin-top: 20px; /* Zvogëluar margjinën e sipërme */
+    margin-top: 20px; 
 }
 
 form {
-    width: 90%; /* Zvogëluar gjerësinë e formës */
-    max-width: 500px; /* Ulur gjerësinë maksimale */
+    width: 90%; 
+    max-width: 500px; 
     margin: 20px auto;
-    padding: 20px; /* Zvogëluar padding-un */
+    padding: 20px; 
     background-color: #ffffff;
-    border-radius: 8px; /* Rrethimi i formës më i vogël */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Hije më e lehtë */
+    border-radius: 8px; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 form label {
     display: block;
-    font-size: 0.95em; /* Zvogëluar madhësinë e etiketës */
+    font-size: 0.95em; 
     color: #555;
     margin-bottom: 5px;
 }
 
 form input {
     width: 100%;
-    padding: 8px; /* Zvogëluar padding-un */
-    font-size: 0.95em; /* Zvogëluar madhësinë e tekstit në input */
-    margin-bottom: 12px; /* Zvogëluar margjinën ndërmjet inputeve */
+    padding: 8px; 
+    font-size: 0.95em; 
+    margin-bottom: 12px; 
     border: 1px solid #ddd;
     border-radius: 5px;
     box-sizing: border-box;
@@ -260,10 +253,10 @@ form input:focus {
 }
 
 form button {
-    padding: 10px 18px; /* Zvogëluar padding-un e butonit */
+    padding: 10px 18px; 
     background-color:rgb(201, 70, 183);
     color: white;
-    font-size: 1em; /* Zvogëluar madhësinë e tekstit të butonit */
+    font-size: 1em;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -283,27 +276,27 @@ form .success-message {
     color: green;
     font-weight: bold;
     text-align: center;
-    margin-top: 15px; /* Zvogëluar margjinën */
+    margin-top: 15px; 
 }
 
 form .error-message {
     color: red;
     font-weight: bold;
     text-align: center;
-    margin-top: 15px; /* Zvogëluar margjinën */
+    margin-top: 15px; 
 }
 
 @media (max-width: 768px) {
     h2 {
-        font-size: 1.2em; /* Zvogëluar madhësinë e titullit në ekranet e vogla */
+        font-size: 1.2em; 
     }
 
     form {
-        width: 90%; /* Zvogëluar gjerësinë në ekranet e vogla */
+        width: 90%; 
     }
 
     form input, form button {
-        font-size: 0.9em; /* Zvogëluar fontin në inpute dhe butona */
+        font-size: 0.9em; 
     }
 }
 </style>

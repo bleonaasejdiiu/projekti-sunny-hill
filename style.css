@@ -237,56 +237,7 @@ body {
   box-shadow: 0 5px 10px rgba(180, 75, 154, 0.2); 
 }
 
-/*.footer {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  background-color:whitesmoke;
-  color: var(--text-color);
-  padding-top: 20px;
-  padding-left: 80px;
-  margin-top: 20px;
-}
-.footer-item {
-  padding: 20px;
-  margin-left: 30px;
-  font-size: 20px;
-}
 
-.footer-item2 {
-  padding: 20px;
-  font-size: 20px;
-  margin-left: 200px;
-}
-
-.footer-item img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50px;
-  margin-top: 10px;
-}
-
-.footer-item h3 {
-  padding-left: 100px;
-}
-
-.footer-item1 {
-  font-size: 20px;
-  padding-top: 40px;
- 
-}
-
-@media (min-width: 768px) {
-  .footer-item,.footer-item1,.footer-item2{
-    grid-template-columns: 1fr; 
-    padding: 20px;
-  }
-
-  .footer-item {
-    margin: 0 auto; 
-  }
-}
-
-*/
 
 
 /*----------NEWS------------*/
@@ -338,11 +289,11 @@ body {
 .news-image {
   margin-top: 10px;
   text-align: center;
-  display: none; /* Inicializoni imazhin të fshehur */
+  display: none; 
 }
 
 .news img {
-  max-width: 500px; /* Gjerësia maksimale më e vogël */
+  max-width: 500px; 
   width: 100%;
   height: auto;
   border-radius: 8px;
@@ -351,48 +302,9 @@ body {
 }
 
 .news img:hover {
-  transform: scale(1.1); /* Efekti i zmadhojkur kur kalon miu mbi të */
+  transform: scale(1.1); 
 }
 
-/*.question-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #f0f0f0;
-  padding: 10px; 
-  width: 400px;  
-  margin: 0 auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.question-section input, .question-section textarea, .question-section button {
-  width: 100%;
-  margin: 5px 0;
-  padding: 8px;
-  font-size: 0.9rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.question-section textarea {
-  resize: vertical;
-  height: 60px; 
-}
-
-.question-section button {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 0.9rem;
-}
-
-.question-section button:hover {
-  background-color: #45a049;
-}
- */
 
 
 

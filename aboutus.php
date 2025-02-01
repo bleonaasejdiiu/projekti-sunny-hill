@@ -1,34 +1,59 @@
 <?php
+// Përshtatimi i kodit me OOP
+include("connect_db.php"); // Ky fajll përmban klasën Database dhe metodën connect()
 
-include("connect_db.php")
+// Krijo objektin e klasës Database dhe lidhjen me bazën
+$database = new Database();
+$db = $database->connect();
 
-$connection = new mysqli($servername, $username, $password, $db_name);
+// Krijo një klasë për menaxhimin e përmbajtjes
+class Content {
+    private $conn;
+    private $table_name = "content1"; // Emri i tabelës
 
-
-if ($connection->connect_error) {
-    die("Lidhja me databazë dështoi: " . $connection->connect_error);
-}
-
-
-
-$titulli = "";
-$teksti = "";
-$emri_faqes = "";
-
-$sql = "SELECT titulli, teksti, emri_faqes FROM content1 WHERE emri_faqes = 'about us' LIMIT 1";
-$result = $connection->query($sql);
-
-if ($result->num_rows > 0) {
-   
-    while ($row = $result->fetch_assoc()) {
-        $titulli = $row['titulli'];
-        $teksti = $row['teksti'];  
-        $emri_faqes = $row['emri_faqes'];
+    // Ndërtuesi i klasës Content
+    public function __construct($db) {
+        $this->conn = $db;
     }
-} else {
-    echo "Nuk ka të dhëna!";
+
+    // Metoda për të marrë përmbajtjen nga baza e të dhënave
+    public function getContentByPageName($page_name) {
+        // Përgatitja e pyetjes SQL
+        $query = "SELECT titulli, teksti, emri_faqes FROM " . $this->table_name . " WHERE emri_faqes = :page_name LIMIT 1";
+        
+        // Përgatitja e pyetjes
+        $stmt = $this->conn->prepare($query);
+
+        // Lidhja e parametrave
+        $stmt->bindParam(':page_name', $page_name);
+
+        // Ekzekutimi i pyetjes
+        $stmt->execute();
+
+        // Kontrollojmë nëse ka të dhëna dhe i marrim
+        if ($stmt->rowCount() > 0) {
+            return $stmt->fetch(PDO::FETCH_ASSOC); // Kthejmë të dhënat e gjetura
+        } else {
+            return null; // Nuk ka të dhëna për faqen
+        }
+    }
 }
-$connection->close();
+
+// Krijo një objekt të klasës Content dhe merr përmbajtjen për faqen "about us"
+$content = new Content($db);
+$page_data = $content->getContentByPageName('about us');
+
+// Kontrollo dhe shfaq të dhënat nëse ekzistojnë
+if ($page_data) {
+    $titulli = $page_data['titulli'];
+    $teksti = $page_data['teksti'];
+    $emri_faqes = $page_data['emri_faqes'];
+    echo "Titulli: $titulli<br>";
+    echo "Teksti: $teksti<br>";
+    echo "Emri i Faqes: $emri_faqes<br>";
+} else {
+    echo "Nuk ka të dhëna për faqen e kërkuar!";
+}
 ?>
 
 <!DOCTYPE html>

@@ -6,7 +6,7 @@ class Admin {
         $this->conn = $db;
     }
 
-    // Merr listën e përdoruesve
+    
     public function getAllUsers() {
         $stmt = $this->conn->prepare("SELECT Id, Username, Email, Age FROM users");
         $stmt->execute();
@@ -39,5 +39,18 @@ class Admin {
         $stmt->bindParam(':id', $id);
         return $stmt->execute();
     }
+
+    public function getUsersWithTickets() {
+        $stmt = $this->conn->prepare("
+            SELECT users.Id, users.Username, users.Email, users.Age, 
+                   tickets.ticket_type, tickets.quantity, tickets.total_price, tickets.payment_status
+            FROM users
+            LEFT JOIN tickets ON tickets.user_id = users.Id
+        ");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+   
 }
 ?>

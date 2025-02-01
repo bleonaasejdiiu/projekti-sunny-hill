@@ -2,55 +2,46 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// lidhja me databaze
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "searchdb";
-$connection = new mysqli($servername, $username, $password, $dbname);
-
-// Kontrollo lidhjen
-if ($connection->connect_error) {
-    die("Lidhja me bazën e të dhënave dështoi: " . $connection->connect_error);
-}
+e
+include("connect_db.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
-    // Merrni emrin e artistit
+    
     $artist_name = trim($_POST['artist_name']); 
     
-   
     if (empty($artist_name)) {
         echo "Ju lutem shkruani emrin e artistit!";
         exit();
     }
 
-   
     if (!preg_match("/^[a-zA-Z\s]+$/", $artist_name)) {
-        echo "Emri i artistit mund te permbaje vetem shkronja dhe hapesira!";
+        echo "Emri i artistit mund të përmbajë vetëm shkronja dhe hapësira!";
         exit();
     }
 
-  
     if (strlen($artist_name) < 3) {
-        echo "Ju lutem shkruani te pakten 3 karaktere!";
+        echo "Ju lutem shkruani të paktën 3 karaktere!";
         exit();
     }
 
-    // Sanitizimi i kerkeses
-    $artist_name = htmlspecialchars($artist_name); 
-    $artist_name = stripslashes($artist_name); 
-    $artist_name = mysqli_real_escape_string($connection, $artist_name); 
+   
+    $artist_name = htmlspecialchars($artist_name);
+    $artist_name = stripslashes($artist_name);
+    
+    
+    $searchTerm = "%" . $artist_name . "%";  
 
-    // Prepared statement 
-    $sql = $connection->prepare("SELECT * FROM artists WHERE artist_name LIKE ?");
-    $searchTerm = "%" . $artist_name . "%";  // Kjo ndihmon ne formimin e termit te kerkimit 
-    $sql->bind_param("s", $searchTerm);  // s tregon qe esht nje string
-    $sql->execute();
-    $result = $sql->get_result();
+    $query = "SELECT * FROM artists WHERE artist_name LIKE :artist_name";
+    $stmt = $conn->prepare($query);
 
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
+    
+    $stmt->bindParam(':artist_name', $searchTerm);
+    
+    $stmt->execute();
+
+    if ($stmt->rowCount() > 0) {
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo "<h2>" . $row["artist_name"] . "</h2>";
             echo "<p>" . $row["details"] . "</p>";
         }
@@ -58,8 +49,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Nuk u gjet artisti: " . htmlspecialchars($artist_name);
     }
 }
-
-$connection->close();
 ?>
 
 <!DOCTYPE html>

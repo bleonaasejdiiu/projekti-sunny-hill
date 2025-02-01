@@ -1,48 +1,52 @@
-
 <?php
-// Përshtatimi i kodit me OOP
-include("connect_db.php"); // Ky fajll përmban klasën Database dhe metodën connect()
 
-// Krijo objektin e klasës Database dhe lidhjen me bazën
+include("connect_db.php"); 
+
+// krijimi i lidhjes te databaze me oop
 $database = new Database();
 $db = $database->connect();
 
-// Krijo një klasë për menaxhimin e përmbajtjes
+
 class Content {
     private $conn;
-    private $table_name = "content1"; // Emri i tabelës
+    private $table_name = "content1"; 
 
-    // Ndërtuesi i klasës Content
+    
     public function __construct($db) {
         $this->conn = $db;
     }
 
-    // Metoda për të marrë përmbajtjen nga baza e të dhënave
+  
     public function getContentByPageName($page_name) {
-        // Përgatitja e pyetjes SQL
+        
         $query = "SELECT titulli, teksti, emri_faqes FROM " . $this->table_name . " WHERE emri_faqes = :page_name LIMIT 1";
         
-        // Përgatitja e pyetjes
+       
         $stmt = $this->conn->prepare($query);
 
-        // Lidhja e parametrave
+       
         $stmt->bindParam(':page_name', $page_name);
 
-        // Ekzekutimi i pyetjes
+       
         $stmt->execute();
 
-        // Kontrollojmë nëse ka të dhëna dhe i marrim
+        
         if ($stmt->rowCount() > 0) {
-            return $stmt->fetch(PDO::FETCH_ASSOC); // Kthejmë të dhënat e gjetura
+            return $stmt->fetch(PDO::FETCH_ASSOC);
         } else {
-            return null; // Nuk ka të dhëna për faqen
+            return null; 
         }
     }
 }
 
-// Krijo një objekt të klasës Content dhe merr përmbajtjen për faqen "about us"
+
 $content = new Content($db);
 $page_data = $content->getContentByPageName('about us');
+
+
+$titulli = isset($page_data['titulli']) ? $page_data['titulli'] : 'Titulli nuk është gjetur';
+$teksti = isset($page_data['teksti']) ? $page_data['teksti'] : 'Teksti nuk është gjetur';
+$emri_faqes = isset($page_data['emri_faqes']) ? $page_data['emri_faqes'] : 'Emri i faqes nuk është gjetur';
 ?>
 
 <!DOCTYPE html>

@@ -386,6 +386,12 @@ $connection->close();
         <p>Privacy Policy</p>
         <p>Terms Of Use</p>
     </div>
+    <div class="footer-item">
+        <p>Email: info@sunnyhillfestival.com</p>
+        <p>Sunny Hill Festival</p>
+        <p>Enver Maloku, Nr.82</p>
+        <p>Pristina 10000 Kosove</p>
+    </div>
         <script src="read.js"></script>
 </body>
  </html>

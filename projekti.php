@@ -215,6 +215,16 @@
         display: flex;  /* Sponsorët renditen horizontalisht */
         gap: 0; /* Nuk ka hapësirë ndërmjet imazheve */
     }
+    .sponsors img {
+        width: 80px;  /* Madhësia e imazheve */
+        height: auto;
+        max-height: 50px;
+        object-fit: contain;
+        margin: 0 !important; /* Siguron që nuk ka margin */
+        padding: 0 !important; /* Siguron që nuk ka padding */
+        display: inline-block; /* Kjo i bën imazhet të shfaqen pa hapësira mes tyre */
+    }
+
 
          <footer class="footer">
     <div class="footer-item"> 

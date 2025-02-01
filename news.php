@@ -1,37 +1,7 @@
 <?php
 
 include("connect_db.php");
-/*if (isset($_POST['submit'])) {
-    try {
-        
-        $name = $_POST['name'];
-        $mbiemri = $_POST['mbiemri'];
-        $age = $_POST['age'];
-        $email = $_POST['email'];
-        $question=$_POST['question'];
 
-        $sql = "INSERT INTO user (emri, mbiemri, mosha, email,question) 
-                VALUES (:emri, :mbiemri, :mosha, :email,:question)";
-        
-        
-        $stmt = $connection->prepare($sql);
-        $stmt->execute([
-            ':emri' => $name,
-            ':mbiemri' => $mbiemri,
-            ':mosha' => $age,
-            ':email' => $email,
-            ':question'=> $question
-        ]);
-
-    
-        echo "<p style='color: green;'>useri u shtua me sukses!</p>";
-
-    } catch (PDOException $e) {
-       
-        echo "<p style='color: red;'>Gabim: " . $e->getMessage() . "</p>";
-    }
-}
-    */
     if (isset($_POST['submit'])) {
         try {
             // Krijo objektin e databazës dhe lidhu me bazën e të dhënave

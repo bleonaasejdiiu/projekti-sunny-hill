@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="Tickets/tickets-style.css">
 </head>
 <body>
     <nav class="navbar">
@@ -185,8 +186,8 @@
 
         <div class="front">
             <div class="image">
-                <img src="image/chip.png" alt="">
-                <img src="image/visa.png" alt="">
+                <img src="Tickets/chip.png" alt="">
+                <img src="Tickets/visa.png" alt="">
             </div>
             <div class="card-number-box">################</div>
             <div class="flexbox">
@@ -209,7 +210,7 @@
             <div class="box">
                 <span>cvv</span>
                 <div class="cvv-box"></div>
-                <img src="image/visa.png" alt="">
+                <img src="Tickets/visa.png" alt="">
             </div>
         </div>
 
@@ -250,6 +251,39 @@
     </form>
 
 </div>    
+<script>
+
+document.querySelector('.card-number-input').oninput = () =>{
+    document.querySelector('.card-number-box').innerText = document.querySelector('.card-number-input').value;
+}
+
+document.querySelector('.card-holder-input').oninput = () =>{
+    document.querySelector('.card-holder-name').innerText = document.querySelector('.card-holder-input').value;
+}
+
+document.querySelector('.month-input').oninput = () =>{
+    document.querySelector('.exp-month').innerText = document.querySelector('.month-input').value;
+}
+
+document.querySelector('.year-input').oninput = () =>{
+    document.querySelector('.exp-year').innerText = document.querySelector('.year-input').value;
+}
+
+document.querySelector('.cvv-input').onmouseenter = () =>{
+    document.querySelector('.front').style.transform = 'perspective(1000px) rotateY(-180deg)';
+    document.querySelector('.back').style.transform = 'perspective(1000px) rotateY(0deg)';
+}
+
+document.querySelector('.cvv-input').onmouseleave = () =>{
+    document.querySelector('.front').style.transform = 'perspective(1000px) rotateY(0deg)';
+    document.querySelector('.back').style.transform = 'perspective(1000px) rotateY(180deg)';
+}
+
+document.querySelector('.cvv-input').oninput = () =>{
+    document.querySelector('.cvv-box').innerText = document.querySelector('.cvv-input').value;
+}
+
+</script>
 
 <!--<div class="footer">
             
@@ -294,13 +328,22 @@
   gap: 20px;
   padding: 20px;
  
-  background-color:rgb(240, 233, 237); /* Ngjyra e qumështit */
-  color: #333; /* Ngjyrë e errët për tekstin për kontrast */
+  background-color:rgb(240, 233, 237); 
+  color: #333;
   text-align: center;
+}
+.footer-item img {
+  max-width: 60px;
+  height: auto;
+
 }
 
 .footer-item {
-  padding: 10px;
+  padding: 15px;
+}
+
+.footer {
+  gap: 10px;
 }
 
 /* ✅ Mobile & Tableta */

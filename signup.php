@@ -1,13 +1,13 @@
 <?php
 session_start();
-include("connect_db.php"); // Përfshijmë konfigurimin e bazës së të dhënave
+include("connect_db.php"); 
 include("Register.php");
 
-// Inicimi i klasës Register
+
 $database = new Database();
 $conn = $database->connect();
 
-// Krijimi i një objekti të klasës Register
+
 $register = new Register($conn);
 
 if (isset($_POST['submit'])) {
@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
     $age = $_POST['age'];
     $password = $_POST['password'];
 
-    // Verifikimi i email-it nëse është unik
+   
     if ($register->verifyEmail($email)) {
         echo "<div id='errorPopup' class='popup error'>
                 <div class='popup-content'>
@@ -30,7 +30,7 @@ if (isset($_POST['submit'])) {
                 }, 3000);
               </script>";
     } else {
-        // Regjistrimi i përdoruesit të ri
+        
         if ($register->registerUser($username, $email, $age, $password)) {
             echo "<div id='successPopup' class='popup success'>
                     <div class='popup-content'>
@@ -66,13 +66,13 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Tickets/tickets-style.css">
     <title>Register</title>
   
     <style>
-        /* Popup styling for success and error messages */
+       
         .popup {
-            display: none; /* Initially hidden */
+            display: none; 
             position: fixed;
             top: 50%;
             left: 50%;
@@ -81,7 +81,7 @@ if (isset($_POST['submit'])) {
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
             z-index: 1000;
-            animation: popupAnimation 0.5s ease-in-out; /* Add animation */
+            animation: popupAnimation 0.5s ease-in-out; 
         }
 
         .popup-content {
@@ -89,12 +89,12 @@ if (isset($_POST['submit'])) {
         }
 
         .success {
-            background-color: #4caf50; /* Green for success */
+            background-color: #4caf50;
             color: white;
         }
 
         .error {
-            background-color: #f44336; /* Red for error */
+            background-color: #f44336; 
             color: white;
         }
 
@@ -120,14 +120,14 @@ if (isset($_POST['submit'])) {
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.3); /* Ngjyrë e zezë e zbehtë për background */
+            background-color: rgba(0, 0, 0, 0.3); 
             z-index: 1;
         }
 
         .box {
             position: relative;
             z-index: 2;
-            background: rgba(255, 255, 255, 0.9); /* Zbehje vetëm për kutinë */
+            background: rgba(255, 255, 255, 0.9); 
             padding: 25px 25px;
             border-radius: 20px;
             box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
@@ -155,7 +155,7 @@ if (isset($_POST['submit'])) {
 
         .form-box form .input input {
             height: 40px;
-            width: 350px;
+            width: 325px;
             font-size: 16px;
             padding: 0 10px;
             border-radius: 5px;

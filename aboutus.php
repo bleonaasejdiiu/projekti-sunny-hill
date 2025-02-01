@@ -11,8 +11,28 @@ $connection = new mysqli($servername, $username, $password, $db_name);
 
 // Kontrollo nese lidhja u realizu
 if ($connection->connect_error) {
-    die("Lidhja me databazë dështoi: " . $connection->connect_error);
+    die("Lidhja me databaze deshtoi: " . $connection->connect_error);
 }
+
+$titulli = "";
+$teksti = "";
+$emri_faqes = "";
+
+$sql = "SELECT titulli, teksti, emri_faqes FROM content1 WHERE emri_faqes = 'about us' LIMIT 1";
+$result = $connection->query($sql);
+
+if ($result->num_rows > 0) {
+   
+    while ($row = $result->fetch_assoc()) {
+        $titulli = $row['titulli'];
+        $teksti = $row['teksti'];  
+        $emri_faqes = $row['emri_faqes'];
+    }
+} else {
+    echo "Nuk ka të dhëna!";
+}
+
+
 
 $connection->close();
 ?>

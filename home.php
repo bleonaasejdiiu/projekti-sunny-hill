@@ -124,31 +124,7 @@
   
 
 
-   <!-- <img class="img1" src="sejdiuu.jpeg">
-     <div class="centered"><h5>Opening on Thursday, August 31st</h5>
-        <h1>The Sunny Hill Festival 2025</h1>
-       <a href="tickets.html"><button id="purchaseBtn">Purchase Tickets</button></a> 
-     </div>
-     <div class="show-event">
-        <div class="show-event2">
-            <img src="bleona5.jpeg" alt="Event 1">
-            <img src="sejdiuuu.jpeg" alt="Event 2">
-            <img src="bleona6.jpeg" alt="Event 3">
-            <img src="bleona3.jpeg" alt="Event 4">
-        </div>
-        <button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="slider-btn next" onclick="moveSlide(1)">&#10095;</button>
-    </div>
-
-    <div class="dots">
-        <span class="dot" onclick="currentSlide(0)"></span>
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-    </div>
-
-
--->
+   
 <div class="slider-container">
         <div class="slider-wrapper">
             <img src="sejdiuu.jpeg" alt="Main Image">

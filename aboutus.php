@@ -18,6 +18,10 @@ $titulli = "";
 $teksti = "";
 $emri_faqes = "";
 
+$sql = "SELECT titulli, teksti, emri_faqes FROM content1 WHERE emri_faqes = 'about us' LIMIT 1";
+$result = $connection->query($sql);
+
+
 
 $connection->close();
 ?>

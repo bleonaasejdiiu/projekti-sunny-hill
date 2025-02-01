@@ -2,7 +2,12 @@
 
 include("connect_db.php")
 
+$connection = new mysqli($servername, $username, $password, $db_name);
 
+
+if ($connection->connect_error) {
+    die("Lidhja me databazë dështoi: " . $connection->connect_error);
+}
 
 
 

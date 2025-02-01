@@ -1,40 +1,48 @@
+
 <?php
+// Përshtatimi i kodit me OOP
+include("connect_db.php"); // Ky fajll përmban klasën Database dhe metodën connect()
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$db_name = "aboutusdb";
-$connection = "";
+// Krijo objektin e klasës Database dhe lidhjen me bazën
+$database = new Database();
+$db = $database->connect();
 
-// Krijojme lidhjen me databazen
-$connection = new mysqli($servername, $username, $password, $db_name);
+// Krijo një klasë për menaxhimin e përmbajtjes
+class Content {
+    private $conn;
+    private $table_name = "content1"; // Emri i tabelës
 
-// Kontrollo nese lidhja u realizu
-if ($connection->connect_error) {
-    die("Lidhja me databaze deshtoi: " . $connection->connect_error);
-}
-
-$titulli = "";
-$teksti = "";
-$emri_faqes = "";
-
-$sql = "SELECT titulli, teksti, emri_faqes FROM content1 WHERE emri_faqes = 'about us' LIMIT 1";
-$result = $connection->query($sql);
-
-if ($result->num_rows > 0) {
-   
-    while ($row = $result->fetch_assoc()) {
-        $titulli = $row['titulli'];
-        $teksti = $row['teksti'];  
-        $emri_faqes = $row['emri_faqes'];
+    // Ndërtuesi i klasës Content
+    public function __construct($db) {
+        $this->conn = $db;
     }
-} else {
-    echo "Nuk ka të dhëna!";
+
+    // Metoda për të marrë përmbajtjen nga baza e të dhënave
+    public function getContentByPageName($page_name) {
+        // Përgatitja e pyetjes SQL
+        $query = "SELECT titulli, teksti, emri_faqes FROM " . $this->table_name . " WHERE emri_faqes = :page_name LIMIT 1";
+        
+        // Përgatitja e pyetjes
+        $stmt = $this->conn->prepare($query);
+
+        // Lidhja e parametrave
+        $stmt->bindParam(':page_name', $page_name);
+
+        // Ekzekutimi i pyetjes
+        $stmt->execute();
+
+        // Kontrollojmë nëse ka të dhëna dhe i marrim
+        if ($stmt->rowCount() > 0) {
+            return $stmt->fetch(PDO::FETCH_ASSOC); // Kthejmë të dhënat e gjetura
+        } else {
+            return null; // Nuk ka të dhëna për faqen
+        }
+    }
 }
 
-
-
-$connection->close();
+// Krijo një objekt të klasës Content dhe merr përmbajtjen për faqen "about us"
+$content = new Content($db);
+$page_data = $content->getContentByPageName('about us');
 ?>
 
 <!DOCTYPE html>
@@ -56,7 +64,7 @@ $connection->close();
         <a href="aboutus.html">About Us</a>
         <a href="contactus.html">Log In</a>
     </nav>
-                <h1 class="b">ABOUT US</h1>
+                <h1 class="b"><?php echo isset($titulli) ? $titulli : 'ABOUT US'; ?></h1>
                 <div class="a">
                     <ul>
                         <a herf="#"><li>LEARN MORE ABOUT US</li></a>
@@ -72,12 +80,16 @@ $connection->close();
                         </div>
                         <div class="right">
                             <div class="content">
-                                <p>
-                                    SUNNY HILL Festival is the biggest music festival in Kosovo and based on the headliners, probably the biggest in South East Europe. International music festival of the highest standards, one that puts Prishtina – Kosovo on the festival map as a not to be missed cultural place, in a country that loves music and knows how to have fun.</p>
-                                   <p> In each edition, Sunny Hill Festival hosts more than 100,000 music lovers from around the world to come and experience the weekend of the festival with the best lineup – some of the best-known performers of our modern time and charts – including Dua Lipa, Miley Cyrus, J Balvin, Calvin Harris, Martin Garrix, Afrojack, Hardwell, Stormzy, Skepta, AJ Tracey, Action Bronson, Gashi and many more regional and international artists and performers.</p>
-                                   <p> This year, Sunny Hill Festival reclaimed the spotlight of local and global attention this past summer, announcing two new editions, one in Pristina and another in Tirana. Being featured on global media outlets, such as The New York Times, BBC, The Guardian, Vogue, Rolling Stone, Elle, Billboard.com, NME, and many many more, the festival has managed to appear on more than five thousand media articles, all across the world, reaching almost 1 billion impressions, 4M interactions and 4M likes among other KPIs.
-                                    Additionally, by bringing together a great crowd of diverse people from all ages, this year’s editions managed to create a powerful progressive motion in the both countries economic, touristic and cultural development.
-                                    Sunny Hill Festival is at the service of Sunny Hill Foundation.</p> 
+                            <?php  // explode per me nda tekstin ne paragrafe//
+                         $paragrafet = explode("\n", $teksti); 
+
+                    
+                    foreach ($paragrafet as $paragraf) {
+                        if (!empty($paragraf)) {
+                            echo "<p>" . nl2br(trim($paragraf)) . "</p>";
+                        }
+                    }
+                    ?>
                             </div>
                         </div>
                      </div>     

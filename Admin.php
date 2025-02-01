@@ -55,7 +55,8 @@ class Admin {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-   
+    public function addQuestion($name, $surname, $age, $email, $question) {
+        $stmt = $this->conn->prepare("INSERT INTO user (emri, mbiemri, mosha, email, question) 
 }
 
 ?>

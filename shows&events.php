@@ -380,6 +380,15 @@ $connection->close();
           </div> 
         </div> 
 -->
+<style>
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: rgb(240, 233, 237); 
+        color: #333;
+    }
 <footer class="footer">
     <div class="footer-item"> 
         <p>Volunteer</p>

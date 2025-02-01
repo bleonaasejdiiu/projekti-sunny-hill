@@ -145,6 +145,10 @@ $connection->close();
         background-color: rgb(240, 233, 237); 
         color: #333;
     }
+    .footer-item {
+        flex: 1;
+        text-align: left;
+    }
 
 
 

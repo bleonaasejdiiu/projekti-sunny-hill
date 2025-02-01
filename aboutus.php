@@ -69,12 +69,16 @@ $connection->close();
                         </div>
                         <div class="right">
                             <div class="content">
-                                <p>
-                                    SUNNY HILL Festival is the biggest music festival in Kosovo and based on the headliners, probably the biggest in South East Europe. International music festival of the highest standards, one that puts Prishtina – Kosovo on the festival map as a not to be missed cultural place, in a country that loves music and knows how to have fun.</p>
-                                   <p> In each edition, Sunny Hill Festival hosts more than 100,000 music lovers from around the world to come and experience the weekend of the festival with the best lineup – some of the best-known performers of our modern time and charts – including Dua Lipa, Miley Cyrus, J Balvin, Calvin Harris, Martin Garrix, Afrojack, Hardwell, Stormzy, Skepta, AJ Tracey, Action Bronson, Gashi and many more regional and international artists and performers.</p>
-                                   <p> This year, Sunny Hill Festival reclaimed the spotlight of local and global attention this past summer, announcing two new editions, one in Pristina and another in Tirana. Being featured on global media outlets, such as The New York Times, BBC, The Guardian, Vogue, Rolling Stone, Elle, Billboard.com, NME, and many many more, the festival has managed to appear on more than five thousand media articles, all across the world, reaching almost 1 billion impressions, 4M interactions and 4M likes among other KPIs.
-                                    Additionally, by bringing together a great crowd of diverse people from all ages, this year’s editions managed to create a powerful progressive motion in the both countries economic, touristic and cultural development.
-                                    Sunny Hill Festival is at the service of Sunny Hill Foundation.</p> 
+                            <?php  // explode per me nda tekstin ne paragrafe//
+                    $paragrafet = explode("\n", $teksti); 
+
+                    
+                    foreach ($paragrafet as $paragraf) {
+                        if (!empty($paragraf)) {
+                            echo "<p>" . nl2br(trim($paragraf)) . "</p>";
+                        }
+                    }
+                    ?>
                             </div>
                         </div>
                      </div>     

@@ -137,8 +137,33 @@ h1 {
         </table>
 
         <a href="Admin/add_user.php"><button class="btn">Add New User</button></a>
+        <h2>User Questions</h2>
+        <table class="admin-table">
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Question</th>
+                <th>Actions</th>
+            </tr>
+            <?php foreach ($questions as $question): ?>
+                <tr>
+                <td><?= $question['emri'] ?></td>
+                <td><?= $question['mbiemri'] ?></td>
+                <td><?= $question['mosha'] ?></td>
+                <td><?= $question['email'] ?></td>
+                <td><?= $question['question'] ?></td>
+                <td>
+                <a href="update.php?id=<?= $question['Id'] ?>">Edit</a> | 
+                    <a href="delete.php?id=<?= $question['Id'] ?>">Delete</a>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
 
-      
+        <a href="add_question.php"><button class="btn">Add New Question</button></a>
+    </div>
      
 </body>
 </html>

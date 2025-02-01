@@ -1,4 +1,7 @@
 <?php include 'connect_db.php';
+//session
+
+//perfundimi
 $db = new Database();
 $connection = $db->connect(); 
  ?>

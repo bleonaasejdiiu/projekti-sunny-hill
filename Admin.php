@@ -50,7 +50,36 @@ class Admin {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-
-   
+    public function getAllQuestions() {
+        $stmt = $this->conn->prepare("SELECT Id, emri, mbiemri, mosha, email, question FROM user");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function addQuestion($name, $surname, $age, $email, $question) {
+        $stmt = $this->conn->prepare("INSERT INTO user (emri, mbiemri, mosha, email, question) VALUES (:name, :surname, :age, :email, :question)");
+        $stmt->bindParam(':name', $name);
+        $stmt->bindParam(':surname', $surname);
+        $stmt->bindParam(':age', $age);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':question', $question);
+        return $stmt->execute();
+    }
+    public function updateQuestion($id, $name, $surname, $age, $email, $question) {
+        $stmt = $this->conn->prepare("UPDATE user SET emri = :name, mbiemri = :surname, mosha = :age, email = :email, question = :question 
+                                      WHERE Id = :id");
+        $stmt->bindParam(':name', $name);
+        $stmt->bindParam(':surname', $surname);
+        $stmt->bindParam(':age', $age);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':question', $question);
+        $stmt->bindParam(':id', $id);
+        return $stmt->execute();
+    }
+    public function deleteQuestion($id) {
+        $stmt = $this->conn->prepare("DELETE FROM user WHERE Id = :id");
+        $stmt->bindParam(':id', $id);
+        return $stmt->execute();
+    }
 }
+
 ?>

@@ -61,9 +61,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <nav class="navbar">
-        <a href="home.html">Home</a>
+        <a href="home.php">Home</a>
         <a href="shows&events.html">Shows&Events</a>
-        <a href="news.html">News</a>
+        <a href="news.php">News</a>
         <a href="Tickets.html">Tickets</a>
         <a href="aboutus.html">About Us</a>
         <a href="contactus.html">Log In</a>
@@ -328,13 +328,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          </div>
     </div>
 </div>
-    <form action="search.php" method="POST" id="search-form"></form>
+    <form action="search.php" method="POST" id="search-form">
     <div class="search-container">
         <label for="search-box">Kerkoni artistin tuaj te preferuar</label>
         <input type="text" id="search-box" name="search" placeholder="Shkruani emrin e artistit...">
         <button type="submit" id="search-button">Kerko</button>
     </div>
-
+</form>
 <script>
     document.getElementById('search-button').addEventListener('click', function(event) {
         event.preventDefault(); 

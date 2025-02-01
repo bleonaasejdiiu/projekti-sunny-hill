@@ -31,8 +31,7 @@ if ($result->num_rows > 0) {
 } else {
     echo "Nuk ka të dhëna!";
 }
-$connection->close();
-?>
+$connection->close();?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -70,7 +69,7 @@ $connection->close();
                         <div class="right">
                             <div class="content">
                             <?php  // explode per me nda tekstin ne paragrafe//
-                    $paragrafet = explode("\n", $teksti); 
+                         $paragrafet = explode("\n", $teksti); 
 
                     
                     foreach ($paragrafet as $paragraf) {

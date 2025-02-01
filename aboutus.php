@@ -31,7 +31,8 @@ if ($result->num_rows > 0) {
 } else {
     echo "Nuk ka të dhëna!";
 }
-$connection->close();?>
+$connection->close();
+?>
 
 <!DOCTYPE html>
 <html lang="en">

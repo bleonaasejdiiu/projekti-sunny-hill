@@ -75,6 +75,11 @@ class Admin {
         $stmt->bindParam(':id', $id);
         return $stmt->execute();
     }
+    public function deleteQuestion($id) {
+        $stmt = $this->conn->prepare("DELETE FROM user WHERE Id = :id");
+        $stmt->bindParam(':id', $id);
+        return $stmt->execute();
+    }
 }
 
 ?>

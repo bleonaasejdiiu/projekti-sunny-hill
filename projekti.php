@@ -197,7 +197,7 @@
 
 </div> 
 
-<div class="footer">
+<!--<div class="footer">
             
     <div class="footer-item1"> 
          <p>Volunteer</p>
@@ -231,6 +231,14 @@
 
 
 </div>
+         -->
+         <footer class="footer">
+    <div class="footer-item"> 
+        <p>Volunteer</p>
+        <p>Privacy Policy</p>
+        <p>Terms Of Use</p>
+    </div>
+    
 <script>
     let currentIndex = 0;
 const slides = document.querySelector('.slider-wrapper');

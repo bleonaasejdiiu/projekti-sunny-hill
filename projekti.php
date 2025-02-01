@@ -224,7 +224,11 @@
         padding: 0 !important; /* Siguron që nuk ka padding */
         display: inline-block; /* Kjo i bën imazhet të shfaqen pa hapësira mes tyre */
     }
-
+    @media (max-width: 768px) {
+       .footer {
+            flex-direction: column;
+            text-align: center;
+        }
 
          <footer class="footer">
     <div class="footer-item"> 

@@ -12,6 +12,7 @@ $connection = $db->connect();
     <title>Update USER</title>
 </head>
 <body>
+
     <h2>Update USER</h2>
 
     <?php
@@ -53,6 +54,88 @@ $connection = $db->connect();
         exit;
     }
     ?>
+    <style>
+    form {
+    width: 350px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 2px solid #f0f0f0;
+}
+
+/* Stili për titullin */
+form h2 {
+    text-align: center;
+    color:rgb(228, 119, 210);
+    font-family: 'Arial', sans-serif;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Stili për etiketat */
+label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+    font-weight: bold;
+}
+
+/* Stili për inputet */
+input[type="text"],
+input[type="number"],
+input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Stili për butonin */
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color:rgb(245, 119, 190);
+}
+
+/* Stili për mesazhin e suksesit ose gabimit */
+.success, .error {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.success {
+    color: #4CAF50;
+}
+
+.error {
+    color: #FF0000;
+}
+</style>
 
     <form method="POST" action="">
         <label for="name">Emri:</label>

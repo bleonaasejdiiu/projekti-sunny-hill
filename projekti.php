@@ -229,6 +229,13 @@
             flex-direction: column;
             text-align: center;
         }
+        .sponsors img {
+            width: 60px;
+            max-height: 40px;
+        }
+    }
+</style>
+
 
          <footer class="footer">
     <div class="footer-item"> 

@@ -148,6 +148,13 @@ h1 {
                 <th>Actions</th>
             </tr>
             <?php foreach ($questions as $question): ?>
+                <tr>
+                <td><?= $question['emri'] ?></td>
+                <td><?= $question['mbiemri'] ?></td>
+                <td><?= $question['mosha'] ?></td>
+                <td><?= $question['email'] ?></td>
+                <td><?= $question['question'] ?></td>
+                <td>
       
      
 </body>

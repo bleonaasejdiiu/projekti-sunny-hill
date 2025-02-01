@@ -2,8 +2,7 @@
 
 include("connect_db.php")
 
-// Krijojme lidhjen me databazen
-$connection = new mysqli($servername, $username, $password, $db_name);
+
 
 // Kontrollo nese lidhja u realizu
 if ($connection->connect_error) {

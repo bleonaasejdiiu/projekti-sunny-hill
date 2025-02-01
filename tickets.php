@@ -285,82 +285,53 @@ document.querySelector('.cvv-input').oninput = () =>{
 
 </script>
 
-<!--<div class="footer">
-            
-    <div class="footer-item1"> 
-        <p>Volunteer</p>
-       <p>Privacy Policy</p>
-        <p>Terms Of Use</p>
 
-
-    </div>
-    
-
-
-   <div class="footer-item2">
-   <p>Email: info@sunnyhillfestival.com</p>
-   <p>Sunny Hill Festival</p>
-   <p>Enver Maloku, Nr.82</p>
-   <p>Pristina 10000 Kosove</p>
-   
-    </div>
-
-    <div class="footer-item">
-        <h3>Sponsors</h3>
-     <img src="klankosova.png">
-      <img src="cocacola.jpg">
-     
-
- <img  src="emerald.png"> 
- <img src="prince.jpg">
-
-   <img src="vodafone.jpg">
-  
-</div>
-
-
-</div>
--->
 <style>
     .footer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 20px;
- 
-  background-color:rgb(240, 233, 237); 
-  color: #333;
-  text-align: center;
-}
-.footer-item img {
-  max-width: 60px;
-  height: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: rgb(240, 233, 237); /* Ngjyra e qumështit */
+        color: #333;
+    }
 
-}
 
-.footer-item {
-  padding: 15px;
-}
+    .footer-item {
+        flex: 1;
+        text-align: left;
+    }
 
-.footer {
-  gap: 10px;
-}
+    .sponsors {
+        display: flex; 
+        gap: 0; 
+    }
 
-/* ✅ Mobile & Tableta */
-@media (max-width: 768px) {
-  .footer {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
+    .sponsors img {
+        width: 80px; 
+        height: auto;
+        max-height: 50px;
+        object-fit: contain;
+        margin: 0 !important; 
+        padding: 0 !important; 
+        display: inline-block; 
+    }
 
-  .sponsors {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
 
+    @media (max-width: 768px) {
+       .footer {
+            flex-direction: column;
+            text-align: center;
+        }
+
+       .sponsors img {
+            width: 60px;
+            max-height: 40px;
+        }
+    }
 </style>
+
+
 <footer class="footer">
     <div class="footer-item"> 
         <p>Volunteer</p>
@@ -383,6 +354,6 @@ document.querySelector('.cvv-input').oninput = () =>{
         <img src="prince.jpg" alt="Prince">
         <img src="vodafone.jpg" alt="Vodafone">
     </div>
-</footer>   
+</footer>
 </body>
 </html>

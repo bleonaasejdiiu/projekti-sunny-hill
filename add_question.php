@@ -21,3 +21,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $age = $_POST['age'];
     $email = $_POST['email'];
     $question = $_POST['question'];
+ // Shto pyetjen në databazë
+ $result = $admin->addQuestion($name, $surname, $age, $email, $question);

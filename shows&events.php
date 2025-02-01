@@ -2,12 +2,12 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Përdorim include për të përfshirë lidhjen me bazën e të dhënave
+e
 include("connect_db.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
-    // Merrni emrin e artistit
+    
     $artist_name = trim($_POST['artist_name']); 
     
     if (empty($artist_name)) {
@@ -25,17 +25,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    // Sanitizimi i kërkesës
+   
     $artist_name = htmlspecialchars($artist_name);
     $artist_name = stripslashes($artist_name);
     
-    // Kërkimi në bazën e të dhënave
-    $searchTerm = "%" . $artist_name . "%";  // Formohet kërkimi
+    
+    $searchTerm = "%" . $artist_name . "%";  
 
     $query = "SELECT * FROM artists WHERE artist_name LIKE :artist_name";
     $stmt = $conn->prepare($query);
 
-    // Lidhen parametrat për mbrojtje nga SQL Injection
+    
     $stmt->bindParam(':artist_name', $searchTerm);
     
     $stmt->execute();

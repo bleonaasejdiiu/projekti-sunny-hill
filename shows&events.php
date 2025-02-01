@@ -327,7 +327,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
              </div>
          </div>
     </div>
-
+</div>
     <form action="search.php" method="POST" id="search-form">
     <div class="search-container">
         <label for="search-box">Kerkoni artistin tuaj te preferuar</label>

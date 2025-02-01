@@ -348,6 +348,8 @@ $connection->close();
 </form>
 <script>
     document.getElementById('search-button').addEventListener('click', function(event) {
+        event.preventDefault(); 
+
         var searchQuery = document.getElementById('search-box').value.trim(); //me marr vleren dhe mi heq hapesirat
         var errorMessage = ''; // Variabel per mesazhin e gabimit
 

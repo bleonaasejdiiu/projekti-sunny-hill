@@ -366,34 +366,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     });
 </script>
 
-        <div class="footer">
-            <div class="footer-item1"> 
-                <p>Volunteer</p>
-              <p>Privacy Policy</p>
-               <p>Terms Of Use</p>
-       
-           </div>
-           
-       
-          <div class="footer-item2">
-          <p>Email: info@sunnyhillfestival.com</p>
-          <p>Sunny Hill Festival</p>
-          <p>Enver Maloku, Nr.82</p>
-          <p>Pristina 10000 Kosove</p>
-          
-           </div>
-       
-           <div class="footer-item">
-               <h3>Sponsors</h3>
-             <img src="klankosova.png">
-             <img src="cocacola.jpg">
-            
-             <img  src="emerald.png"> 
-             <img src="prince.jpg">
-       
-             <img src="vodafone.jpg">
-          </div> 
-        </div> 
+<footer class="footer">
+    <div class="footer-item"> 
+        <p>Volunteer</p>
+        <p>Privacy Policy</p>
+        <p>Terms Of Use</p>
+    </div>
+    
+    <div class="footer-item">
+        <p>Email: info@sunnyhillfestival.com</p>
+        <p>Sunny Hill Festival</p>
+        <p>Enver Maloku, Nr.82</p>
+        <p>Pristina 10000 Kosove</p>
+    </div>
+
+    <div class="footer-item sponsors">
+        <h3>Sponsors</h3>
+        <img src="klankosova.png" alt="Klan Kosova">
+        <img src="cocacola.jpg" alt="Coca Cola">
+        <img src="emerald.png" alt="Emerald">
+        <img src="prince.jpg" alt="Prince">
+        <img src="vodafone.jpg" alt="Vodafone">
+    </div>
+</footer>
         
         <script src="read.js"></script>
 </body>

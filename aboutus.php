@@ -4,10 +4,7 @@ include("connect_db.php")
 
 
 
-// Kontrollo nese lidhja u realizu
-if ($connection->connect_error) {
-    die("Lidhja me databaze deshtoi: " . $connection->connect_error);
-}
+
 
 $titulli = "";
 $teksti = "";

@@ -295,29 +295,29 @@ function currentSlide(index) {
     updateSlider();
 }
 
-// Auto-slide çdo 5 sekonda
+
 setInterval(() => {
     moveSlide(1);
 }, 5000);
 
-// Inicializimi i slider-it
+
 updateSlider();
 
 </script>
 
 <script>
     var modal=document.getElementById("guestModal");
-//merre span element e cila e mbyll guest modal
+
 var span =document.getElementById("closeModal");
-//per me tregu modalin automatikisht kur faqja hapet
+
 window.onload=function(){
     modal.style.display="block";
 }
-//kur useri klikon ne span(x), mbyll guest modal
+
 span.onclick=function(){
-    modal.style.display="none";//e bon hide modal
+    modal.style.display="none";
 }
-//kur useri klikon kudo jashte modal,e mbyll
+
 window.onclick=function(event){
     if(event.target == modal){
         modal.style.display="none";

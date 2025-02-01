@@ -150,19 +150,21 @@ include("connect_db.php");
                     <img src="https://sunnyhillfestival.com/wp-content/uploads/2021/05/balcancausaco.jpg" alt=" Kosovo">
                 </div>
             </div>
-            <!--<div class="news">
-                <p onclick="showImage('image16')">BIG FM: Dua Lipa organisiert eigenes Sunny Hill Festival im Kosovo.</p>
-                <div id="image16" class="news-image" style="display: none;">
-                    <img src="https://sunnyhillfestival.com/wp-content/uploads/2021/05/musicbox.jpg" alt=" Kosovo">
-                </div>
-            </div>
--->
+            
+
             <div class="news">
                 <p onclick="showImage('image16')">BIG FM: Dua Lipa organisiert eigenes Sunny Hill Festival im Kosovo.</p>
                 <div id="image16" class="news-image" style="display: none;">
                     <img src="https://sunnyhillfestival.com/wp-content/uploads/2021/05/musicbox.jpg" alt=" Kosovo">
                 </div>
             </div>
+            <!--<div class="news">
+                <p onclick="showImage('image17')">SUNNY HILL FESTIVAL: WE REMAIN HOPEFUL THAT THIS…</p>
+                <div id="image17" class="news-image" style="display: none;">
+                    <img src="https://sunnyhillfestival.com/wp-content/uploads/2024/04/Sunny-Hill-Festival-Grand-Return-in-Prishtina.jpg" alt=" Kosovo">
+                </div>
+            </div>
+-->
             <div class="news">
                 <p onclick="showImage('image17')">SUNNY HILL FESTIVAL: WE REMAIN HOPEFUL THAT THIS…</p>
                 <div id="image17" class="news-image" style="display: none;">

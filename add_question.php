@@ -7,3 +7,5 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
 }
 include_once 'connect_db.php';
 include_once 'Admin.php';
+$database = new Database();
+$conn = $database->connect();

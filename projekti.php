@@ -207,7 +207,10 @@
         background-color: rgb(240, 233, 237); /* Ngjyra e qumështit */
         color: #333;
     }
-
+    .footer-item {
+        flex: 1;
+        text-align: left;
+    }
 
          <footer class="footer">
     <div class="footer-item"> 

@@ -23,3 +23,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $question = $_POST['question'];
  // Shto pyetjen në databazë
  $result = $admin->addQuestion($name, $surname, $age, $email, $question);
+ if ($result) {
+    echo "<p style='color: green;'>Pyetja u shtua me sukses!</p>";
+} else {
+    echo "<p style='color: red;'>Gabim gjatë shtimit të pyetjes. Provoni përsëri!</p>";
+}
+}
+?>

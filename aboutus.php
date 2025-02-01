@@ -31,9 +31,6 @@ if ($result->num_rows > 0) {
 } else {
     echo "Nuk ka të dhëna!";
 }
-
-
-
 $connection->close();
 ?>
 
@@ -56,7 +53,7 @@ $connection->close();
         <a href="aboutus.html">About Us</a>
         <a href="contactus.html">Log In</a>
     </nav>
-                <h1 class="b">ABOUT US</h1>
+                <h1 class="b"><?php echo isset($titulli) ? $titulli : 'ABOUT US'; ?></h1>
                 <div class="a">
                     <ul>
                         <a herf="#"><li>LEARN MORE ABOUT US</li></a>

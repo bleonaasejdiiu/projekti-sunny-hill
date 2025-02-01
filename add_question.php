@@ -9,3 +9,8 @@ include_once 'connect_db.php';
 include_once 'Admin.php';
 $database = new Database();
 $conn = $database->connect();
+if (!$conn) {
+    die("Lidhja me databazën nuk u realizua.");
+}
+
+$admin = new Admin($conn);

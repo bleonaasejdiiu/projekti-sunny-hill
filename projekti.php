@@ -9,14 +9,14 @@
       body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Siguron që faqja mos të ketë scroll horizontal */
+    overflow-x: hidden; 
 }
 
 .slider-container {
     position: relative;
     width: 100%;
-    height: 80vh; /* Slider mbulon gjithë lartësinë e ekranit */
-    overflow: hidden; /* Fsheh çdo gjë jashtë slider-it */
+    height: 80vh; 
+    overflow: hidden; 
 }
 
 .slider-wrapper {
@@ -204,7 +204,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 20px;
-        background-color: rgb(240, 233, 237); /* Ngjyra e qumështit */
+        background-color: rgb(240, 233, 237); 
         color: #333;
     }
     .footer-item {
@@ -212,17 +212,17 @@
         text-align: left;
     }
     .sponsors {
-        display: flex;  /* Sponsorët renditen horizontalisht */
-        gap: 0; /* Nuk ka hapësirë ndërmjet imazheve */
+        display: flex;  
+        gap: 0; 
     }
     .sponsors img {
-        width: 80px;  /* Madhësia e imazheve */
+        width: 80px;  
         height: auto;
         max-height: 50px;
         object-fit: contain;
-        margin: 0 !important; /* Siguron që nuk ka margin */
-        padding: 0 !important; /* Siguron që nuk ka padding */
-        display: inline-block; /* Kjo i bën imazhet të shfaqen pa hapësira mes tyre */
+        margin: 0 !important; 
+        padding: 0 !important; 
+        display: inline-block; 
     }
     @media (max-width: 768px) {
        .footer {
@@ -265,9 +265,9 @@ const images = document.querySelectorAll('.slider-wrapper img');
 const dots = document.querySelectorAll('.dot');
 
 function updateSlider() {
-    slides.style.transform = `translateX(-${currentIndex * 100}%)`; // Lëviz slider-in
+    slides.style.transform = `translateX(-${currentIndex * 100}%)`; 
     dots.forEach(dot => dot.classList.remove('active-dot'));
-    dots[currentIndex].classList.add('active-dot'); // Aktivizo pikën e saktë
+    dots[currentIndex].classList.add('active-dot'); 
 }
 
 function moveSlide(step) {
@@ -280,19 +280,19 @@ function currentSlide(index) {
     updateSlider();
 }
 
-// Auto-slide çdo 5 sekonda
+
 setInterval(() => {
     moveSlide(1);
 }, 5000);
 
-// Inicializimi i slider-it
+
 updateSlider();
 
 </script>
 
 <script>
     var modal=document.getElementById("guestModal");
-//merre span element e cila e mbyll guest modal
+
 var span =document.getElementById("closeModal");
 //per me tregu modalin automatikisht kur faqja hapet
 window.onload=function(){

@@ -64,6 +64,17 @@ class Admin {
         $stmt->bindParam(':question', $question);
         return $stmt->execute();
     }
+    public function updateQuestion($id, $name, $surname, $age, $email, $question) {
+        $stmt = $this->conn->prepare("UPDATE user SET emri = :name, mbiemri = :surname, mosha = :age, email = :email, question = :question 
+                                      WHERE Id = :id");
+        $stmt->bindParam(':name', $name);
+        $stmt->bindParam(':surname', $surname);
+        $stmt->bindParam(':age', $age);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':question', $question);
+        $stmt->bindParam(':id', $id);
+        return $stmt->execute();
+    }
 }
 
 ?>

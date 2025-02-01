@@ -1,3 +1,14 @@
+
+Për të siguruar që teksti i marrë nga databaza të shfaqet vetëm në pjesën specifike të faqes, dhe jo në fillim të faqes siç po ndodh aktualisht, mund të ndryshojmë kodin PHP për të shfaqur përmbajtjen në një vend të caktuar të HTML-së.
+
+Në këtë rast, mund të sigurojmë që përmbajtja të shfaqet vetëm në pjesën ku e kemi caktuar në HTML, pa pasur nevojë për butonë. Për ta bërë këtë, thjesht duhet ta vendosim pjesën që merr dhe shfaq përmbajtjen pas hapësirës ku do të vendosim kodin për HTML.
+
+Ja si mund ta bëni:
+Vendosja e PHP-së brenda div-it të caktuar në HTML për të siguruar që teksti të shfaqet vetëm në atë seksion.
+Heqja e pjesës që shfaq përmbajtjen direkt në fillim të faqes.
+Kodi i përmirësuar:
+php
+Copy
 <?php
 // Përshtatimi i kodit me OOP
 include("connect_db.php"); // Ky fajll përmban klasën Database dhe metodën connect()
@@ -42,18 +53,6 @@ class Content {
 // Krijo një objekt të klasës Content dhe merr përmbajtjen për faqen "about us"
 $content = new Content($db);
 $page_data = $content->getContentByPageName('about us');
-
-// Kontrollo dhe shfaq të dhënat nëse ekzistojnë
-if ($page_data) {
-    $titulli = $page_data['titulli'];
-    $teksti = $page_data['teksti'];
-    $emri_faqes = $page_data['emri_faqes'];
-    echo "Titulli: $titulli<br>";
-    echo "Teksti: $teksti<br>";
-    echo "Emri i Faqes: $emri_faqes<br>";
-} else {
-    echo "Nuk ka të dhëna për faqen e kërkuar!";
-}
 ?>
 
 <!DOCTYPE html>

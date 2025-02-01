@@ -356,51 +356,50 @@ form .error-message {
 
 
 <style>
-.footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: rgb(240, 233, 237); /* Ngjyra e qumështit */
-    color: #333;
-}
-
-/* 📌 Seksionet e footer-it */
-.footer-item {
-    flex: 1;
-    text-align: left;
-}
-
-/* 📌 Seksioni i sponsorëve */
-.sponsors {
-    display: flex;  
-    gap: 0; /* Nuk ka hapësirë ndërmjet imazheve */
-    align-items: center;
-}
-
-.sponsors img {
-    width: 100px;  
-    height: auto;
-    max-height: 60px;
-    object-fit: contain;
-    margin: 0 !important; 
-    padding: 0 !important; 
-    display: block; 
-}
-
-/* 📱 Përshtatja për mobile dhe tableta */
-@media (max-width: 768px) {
     .footer {
-        flex-direction: column;
-        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: rgb(240, 233, 237); 
+        color: #333;
+    }
+
+
+    .footer-item {
+        flex: 1;
+        text-align: left;
+    }
+
+    .sponsors {
+        display: flex;  
+        gap: 0; 
     }
 
     .sponsors img {
-        width: 80px;  /* Rritje e vogël për logot në mobile */
+        width: 80px;  
+        height: auto;
         max-height: 50px;
+        object-fit: contain;
+        margin: 0 !important; 
+        padding: 0 !important; 
+        display: inline-block; 
     }
-}
+
+
+    @media (max-width: 768px) {
+       .footer {
+            flex-direction: column;
+            text-align: center;
+        }
+
+       .sponsors img {
+            width: 60px;
+            max-height: 40px;
+        }
+    }
 </style>
+
 
 <footer class="footer">
     <div class="footer-item"> 

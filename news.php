@@ -355,72 +355,53 @@ form .error-message {
 </style>
 
 
-<!--<div class="footer">
-
-
-        
-<div class="footer-item1"> 
-     <p>Volunteer</p>
-   <p>Privacy Policy</p>
-    <p>Terms Of Use</p>
-
-</div>
-
-<div class="footer-item2">
-<p>Email: info@sunnyhillfestival.com</p>
-<p>Sunny Hill Festival</p>
-<p>Enver Maloku, Nr.82</p>
-<p>Pristina 10000 Kosove</p>
-
-</div>
-
-<div class="footer-item">
-    <h3>Sponsors</h3>
- <img src="klankosova.png">
-  <img src="cocacola.jpg">
- 
-<img  src="emerald.png"> 
-<img src="prince.jpg">
-
-<img src="vodafone.jpg">
-
-</div> 
-
-
-</div>
-
--->
 <style>
-    .footer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 20px;
- 
-  background-color:rgb(240, 233, 237); /* Ngjyra e qumështit */
-  color: #333; /* Ngjyrë e errët për tekstin për kontrast */
-  text-align: center;
-}
-
-.footer-item {
-  padding: 10px;
-}
-
-/* ✅ Mobile & Tableta */
-@media (max-width: 768px) {
-  .footer {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .sponsors {
+.footer {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(240, 233, 237); /* Ngjyra e qumështit */
+    color: #333;
 }
 
+/* 📌 Seksionet e footer-it */
+.footer-item {
+    flex: 1;
+    text-align: left;
+}
+
+/* 📌 Seksioni i sponsorëve */
+.sponsors {
+    display: flex;  
+    gap: 0; /* Nuk ka hapësirë ndërmjet imazheve */
+    align-items: center;
+}
+
+.sponsors img {
+    width: 100px;  
+    height: auto;
+    max-height: 60px;
+    object-fit: contain;
+    margin: 0 !important; 
+    padding: 0 !important; 
+    display: block; 
+}
+
+/* 📱 Përshtatja për mobile dhe tableta */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sponsors img {
+        width: 80px;  /* Rritje e vogël për logot në mobile */
+        max-height: 50px;
+    }
+}
 </style>
+
 <footer class="footer">
     <div class="footer-item"> 
         <p>Volunteer</p>

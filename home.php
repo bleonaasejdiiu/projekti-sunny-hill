@@ -286,37 +286,101 @@
     </div>
 </div>
          -->
+<!--<style>
+       .footer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 20px;
+        background-color: rgb(240, 233, 237); /* Ngjyra e qumështit */
+        color: #333; /* Ngjyrë e errët për tekstin për kontrast */
+        text-align: center;
+    }
+
+    .footer-item {
+        padding: 10px;
+    }
+
+    .sponsors {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Krijon kolonat automatikisht */
+        gap: 10px;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .sponsors img {
+        width: 70px; /* Madhësia e kontrolluar e imazheve */
+        height: auto;
+        max-height: 50px; /* Kufizon lartësinë */
+        object-fit: contain; /* Siguron që imazhi të mos deformohet */
+    }
+
+    /* ✅ Mobile & Tableta */
+    @media (max-width: 768px) {
+        .footer {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+
+        .sponsors {
+            grid-template-columns: repeat(3, 1fr); /* Përshtatja për mobile */
+        }
+
+        .sponsors img {
+            width: 60px;
+            max-height: 40px;
+        }
+    }
+</style>
+
+         -->
 <style>
     .footer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 20px;
- 
-  background-color:rgb(240, 233, 237); /* Ngjyra e qumështit */
-  color: #333; /* Ngjyrë e errët për tekstin për kontrast */
-  text-align: center;
-}
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: rgb(240, 233, 237); /* Ngjyra e qumështit */
+        color: #333;
+    }
 
-.footer-item {
-  padding: 10px;
-}
 
-/* ✅ Mobile & Tableta */
-@media (max-width: 768px) {
-  .footer {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
+    .footer-item {
+        flex: 1;
+        text-align: left;
+    }
 
-  .sponsors {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
+    .sponsors {
+        display: flex;  /* Sponsorët renditen horizontalisht */
+        gap: 0; /* Nuk ka hapësirë ndërmjet imazheve */
+    }
 
+    .sponsors img {
+        width: 80px;  /* Madhësia e imazheve */
+        height: auto;
+        max-height: 50px;
+        object-fit: contain;
+        margin: 0 !important; /* Siguron që nuk ka margin */
+        padding: 0 !important; /* Siguron që nuk ka padding */
+        display: inline-block; /* Kjo i bën imazhet të shfaqen pa hapësira mes tyre */
+    }
+
+
+    @media (max-width: 768px) {
+       .footer {
+            flex-direction: column;
+            text-align: center;
+        }
+
+       .sponsors img {
+            width: 60px;
+            max-height: 40px;
+        }
+    }
 </style>
+
+
 <footer class="footer">
     <div class="footer-item"> 
         <p>Volunteer</p>

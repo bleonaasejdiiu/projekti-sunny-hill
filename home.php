@@ -84,16 +84,16 @@
 }
 
 .static-gallery img {
-    width: 180px; /* Gjerësia më e madhe e fotove */
-    height: 180px; /* Lartësia më e madhe e fotove */
-    object-fit: cover; /* Përshtatja e fotove në hapësirë */
-    border-radius: 8px; /* Kënde të rrumbullakosura për një pamje të butë */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efekte gjatë hover */
+    width: 180px; 
+    height: 180px; 
+    object-fit: cover; 
+    border-radius: 8px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .static-gallery img:hover {
-    transform: scale(1.1); /* Zmadhohet kur kalon miu mbi foto */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hijë për efekt estetik */
+    transform: scale(1.1); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
 }
 </style>
 
@@ -210,7 +210,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 20px;
-        background-color: rgb(240, 233, 237); /* Ngjyra e qumështit */
+        background-color: rgb(240, 233, 237); 
         color: #333;
     }
 
@@ -221,18 +221,18 @@
     }
 
     .sponsors {
-        display: flex;  /* Sponsorët renditen horizontalisht */
-        gap: 0; /* Nuk ka hapësirë ndërmjet imazheve */
+        display: flex;  
+        gap: 0; 
     }
 
     .sponsors img {
-        width: 80px;  /* Madhësia e imazheve */
+        width: 80px;  
         height: auto;
         max-height: 50px;
         object-fit: contain;
-        margin: 0 !important; /* Siguron që nuk ka margin */
-        padding: 0 !important; /* Siguron që nuk ka padding */
-        display: inline-block; /* Kjo i bën imazhet të shfaqen pa hapësira mes tyre */
+        margin: 0 !important; 
+        padding: 0 !important; 
+        display: inline-block; 
     }
 
 

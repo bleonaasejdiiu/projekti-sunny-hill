@@ -162,7 +162,7 @@ h1 {
             <?php endforeach; ?>
         </table>
 
-        <a href="Admin/add_question.php"><button class="btn">Add New Question</button></a>
+        <a href="add_question.php"><button class="btn">Add New Question</button></a>
     </div>
      
 </body>

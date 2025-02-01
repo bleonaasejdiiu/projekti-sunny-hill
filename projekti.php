@@ -208,6 +208,7 @@
         color: #333;
     }
 
+
          <footer class="footer">
     <div class="footer-item"> 
         <p>Volunteer</p>

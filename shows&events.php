@@ -366,6 +366,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     });
 </script>
 
+<script src="read.js"></script>
+
 <footer class="footer">
     <div class="footer-item"> 
         <p>Volunteer</p>
@@ -390,7 +392,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 </footer>
         
-        <script src="read.js"></script>
+        
 </body>
  </html>
         

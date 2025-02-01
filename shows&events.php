@@ -336,79 +336,63 @@ $connection->close();
     </div>
 </form>
 <script>
-    // Perdorimi i 'submit' event per formularin
-    document.getElementById('search-form').addEventListener('submit', function(event) {
-        var searchQuery = document.getElementById('search-box').value.trim(); // mi heq hapsirat edhe mi marr vlerat ne kuti  
-        
+    document.getElementById('search-button').addEventListener('click', function(event) {
+        var searchQuery = document.getElementById('search-box').value.trim(); //me marr vleren dhe mi heq hapesirat
+        var errorMessage = ''; // Variabel per mesazhin e gabimit
+
+       
         if (searchQuery === "") {
-            // Shfaq mesazh gabimi
-            alert("Ju lutem shkruani emrin e artistit që kërkoni!");
-            event.preventDefault(); // Ndalo dërgimin e formularit 
+            errorMessage = "Ju lutem shkruani emrin e artistit qe kerkoni!";
+        } 
+        
+        else if (!/^[A-Za-z\s]+$/.test(searchQuery)) {
+            errorMessage = "Ju lutem shkruani vetem shkronja dhe hapesira!";
+        }
+       
+        else if (searchQuery.length < 3) {
+            errorMessage = "Ju lutem shkruani te pakten 3 karaktere!";
+        }
+
+       t
+        if (errorMessage !== '') {
+            alert(errorMessage);  
+            event.preventDefault(); // ndalimi i dergimit te formularit
         } else {
-            // dergimi i kerkeses
-            alert("Kërkimi për: " + searchQuery);
+            
+            alert("Kerkimi per: " + searchQuery);
         }
     });
 </script>
 
-<style>
-    .footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px;
-        background-color: rgb(240, 233, 237); 
-        color: #333;
-    }
-    .footer-item {
-        flex: 1;
-        text-align: left;
-    }
-    .sponsors {
-        display: flex;  
-        gap: 0; 
-    }
-    .sponsors img {
-        width: 80px;  
-        height: auto;
-        max-height: 50px;
-        object-fit: contain;
-        margin: 0 !important; 
-        padding: 0 !important; 
-        display: inline-block; 
-    }
-    @media (max-width: 768px) {
-       .footer {
-            flex-direction: column;
-            text-align: center;
-        }
-        .sponsors img {
-            width: 60px;
-            max-height: 40px;
-        }
-    }
-</style>
-<footer class="footer">
-    <div class="footer-item"> 
-        <p>Volunteer</p>
-        <p>Privacy Policy</p>
-        <p>Terms Of Use</p>
-    </div>
-    <div class="footer-item">
-        <p>Email: info@sunnyhillfestival.com</p>
-        <p>Sunny Hill Festival</p>
-        <p>Enver Maloku, Nr.82</p>
-        <p>Pristina 10000 Kosove</p>
-    </div>
-    <div class="footer-item sponsors">
-        <h3>Sponsors</h3>
-        <img src="klankosova.png" alt="Klan Kosova">
-        <img src="cocacola.jpg" alt="Coca Cola">
-        <img src="emerald.png" alt="Emerald">
-        <img src="prince.jpg" alt="Prince">
-        <img src="vodafone.jpg" alt="Vodafone">
-    </div>
-</footer>
+        <div class="footer">
+            <div class="footer-item1"> 
+                <p>Volunteer</p>
+              <p>Privacy Policy</p>
+               <p>Terms Of Use</p>
+       
+           </div>
+           
+       
+          <div class="footer-item2">
+          <p>Email: info@sunnyhillfestival.com</p>
+          <p>Sunny Hill Festival</p>
+          <p>Enver Maloku, Nr.82</p>
+          <p>Pristina 10000 Kosove</p>
+          
+           </div>
+       
+           <div class="footer-item">
+               <h3>Sponsors</h3>
+             <img src="klankosova.png">
+             <img src="cocacola.jpg">
+            
+             <img  src="emerald.png"> 
+             <img src="prince.jpg">
+       
+             <img src="vodafone.jpg">
+          </div> 
+        </div> 
+        
         <script src="read.js"></script>
 </body>
  </html>

@@ -12,7 +12,7 @@ class TicketPurchase {
         if (isset($_SESSION['id'])) {
             $this->userId = $_SESSION['id'];
         } else {
-            header("Location: projekti-sunny-hill/contactus.php"); // Nëse nuk është loguar, ridrejtohet te login.php
+            header("Location: contactus.php");
             exit();
         }
     }

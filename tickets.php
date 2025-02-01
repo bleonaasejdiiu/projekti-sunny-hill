@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -267,7 +265,7 @@ document.querySelector('.quantity-input').oninput = () => {
         justify-content: space-between;
         align-items: center;
         padding: 20px;
-        background-color: rgb(240, 233, 237); /* Ngjyra e qumështit */
+        background-color: rgb(240, 233, 237); 
         color: #333;
     }
 

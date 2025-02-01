@@ -155,7 +155,15 @@ h1 {
                 <td><?= $question['email'] ?></td>
                 <td><?= $question['question'] ?></td>
                 <td>
-      
+                <a href="update.php?id=<?= $question['Id'] ?>">Edit</a> | 
+                    <a href="delete.php?id=<?= $question['Id'] ?>">Delete</a>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+
+        <a href="Admin/add_question.php"><button class="btn">Add New Question</button></a>
+    </div>
      
 </body>
 </html>

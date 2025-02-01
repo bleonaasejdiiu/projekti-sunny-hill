@@ -351,7 +351,7 @@ $connection->close();
     });
 </script>
 
-        <div class="footer">
+        <!--<div class="footer">
             <div class="footer-item1"> 
                 <p>Volunteer</p>
               <p>Privacy Policy</p>
@@ -379,7 +379,13 @@ $connection->close();
              <img src="vodafone.jpg">
           </div> 
         </div> 
-        
+-->
+<footer class="footer">
+    <div class="footer-item"> 
+        <p>Volunteer</p>
+        <p>Privacy Policy</p>
+        <p>Terms Of Use</p>
+    </div>
         <script src="read.js"></script>
 </body>
  </html>

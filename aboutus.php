@@ -61,9 +61,9 @@ $emri_faqes = isset($page_data['emri_faqes']) ? $page_data['emri_faqes'] : 'Emri
 </head>
 <body>
     <nav class="navbar">
-        <a href="home.html">Home</a>
-        <a href="shows&events.html">Shows&Events</a>
-        <a href="news.html">News</a>
+        <a href="home.php">Home</a>
+        <a href="shows&events.php">Shows&Events</a>
+        <a href="news.php">News</a>
         <a href="Tickets.html">Tickets</a>
         <a href="aboutus.html">About Us</a>
         <a href="contactus.html">Log In</a>

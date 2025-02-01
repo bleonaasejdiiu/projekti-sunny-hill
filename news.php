@@ -185,13 +185,13 @@ include("connect_db.php");
 <h2>QUESTION FORM</h2>
     <form method="POST" action="">
         <label for="name">Emri:</label>
-        <input type="text" name="name" required><br><br>
+        <input type="text" name="name"  required><br><br>
 
         <label for="mbiemri">Mbiemri:</label>
         <input type="text" name="mbiemri" required><br><br>
 
         <label for="age">Mosha:</label>
-        <input type="number" name="age" required><br><br>
+        <input type="number" name="age"  required><br><br>
 
         <label for="email">Email:</label>
         <input type="email" name="email" required><br><br>
@@ -372,7 +372,37 @@ form .error-message {
     </div>
 </footer>
 
+<script>
+    function validateRegisterForm() {
+    const username = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const age = document.getElementById("age").value;
+    const password = document.getElementById("password").value;
 
+    if (name === "" || email === "" || age === "" || password === "") {
+        alert("Please fill in all fields.");
+        return false;
+    }
+
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email.");
+        return false;
+    }
+
+    if (age < 18) {
+        alert("You must be at least 18 years old to register.");
+        return false;
+    }
+
+    if (password.length < 6) {
+        alert("Password must be at least 6 characters long.");
+        return false;
+    }
+
+    return true;
+}
+</script>
   
 
 

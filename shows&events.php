@@ -393,6 +393,19 @@ $connection->close();
         flex: 1;
         text-align: left;
     }
+    .sponsors {
+        display: flex;  
+        gap: 0; 
+    }
+    .sponsors img {
+        width: 80px;  
+        height: auto;
+        max-height: 50px;
+        object-fit: contain;
+        margin: 0 !important; 
+        padding: 0 !important; 
+        display: inline-block; 
+    }
 <footer class="footer">
     <div class="footer-item"> 
         <p>Volunteer</p>

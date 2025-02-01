@@ -150,18 +150,19 @@ $connection->close();
 }
 
 /* ✅ Mobile & Tableta */
-@media (max-width: 768px) {
-  .footer {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
 
-  .sponsors {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
+@media (max-width: 768px) {
+       .footer {
+            flex-direction: column;
+            text-align: center;
+        }
+
+       .sponsors img {
+            width: 60px;
+            max-height: 40px;
+        }
+    }
+</style>
 
 </style>
 <footer class="footer">

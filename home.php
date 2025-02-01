@@ -9,28 +9,28 @@
       body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Siguron që faqja mos të ketë scroll horizontal */
+    overflow-x: hidden; 
 }
 
 .slider-container {
     position: relative;
     width: 100%;
-    height: 80vh; /* Slider mbulon gjithë lartësinë e ekranit */
-    overflow: hidden; /* Fsheh çdo gjë jashtë slider-it */
+    height: 80vh; 
+    overflow: hidden; 
 }
 
 .slider-wrapper {
     display: flex;
-    width: 100%; /* Mbështet fleksibilitetin për imazhet */
+    width: 100%; 
     height: 100%;
-    transition: transform 0.5s ease-in-out; /* Lëviz imazhet në mënyrë të qetë */
+    transition: transform 0.5s ease-in-out; 
 }
 
 .slider-wrapper img {
-    flex: 0 0 100%; /* Siguron që çdo imazh zë 100% të gjerësisë */
+    flex: 0 0 100%; 
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Përshtatja e imazheve në hapësirë */
+    object-fit: cover; 
 }
 
 .slider-btn {
@@ -77,10 +77,10 @@
     background-color: rgb(29, 100, 192);
 }
 .static-gallery {
-    display: flex; /* Foto rreshtohen horizontalisht */
-    justify-content: center; /* Qendërzimi i të gjithë grupit të fotove */
-    gap: 0; /* Eliminon hapësirën mes fotove */
-    margin: 20px 0; /* Hapësirë lart dhe poshtë galerisë */
+    display: flex; 
+    justify-content: center; 
+    gap: 0; 
+    margin: 20px 0; 
 }
 
 .static-gallery img {
@@ -280,9 +280,9 @@ const images = document.querySelectorAll('.slider-wrapper img');
 const dots = document.querySelectorAll('.dot');
 
 function updateSlider() {
-    slides.style.transform = `translateX(-${currentIndex * 100}%)`; // Lëviz slider-in
+    slides.style.transform = `translateX(-${currentIndex * 100}%)`; 
     dots.forEach(dot => dot.classList.remove('active-dot'));
-    dots[currentIndex].classList.add('active-dot'); // Aktivizo pikën e saktë
+    dots[currentIndex].classList.add('active-dot'); 
 }
 
 function moveSlide(step) {

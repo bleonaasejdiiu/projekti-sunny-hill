@@ -392,6 +392,15 @@ $connection->close();
         <p>Enver Maloku, Nr.82</p>
         <p>Pristina 10000 Kosove</p>
     </div>
+    <div class="footer-item sponsors">
+        <h3>Sponsors</h3>
+        <img src="klankosova.png" alt="Klan Kosova">
+        <img src="cocacola.jpg" alt="Coca Cola">
+        <img src="emerald.png" alt="Emerald">
+        <img src="prince.jpg" alt="Prince">
+        <img src="vodafone.jpg" alt="Vodafone">
+    </div>
+</footer>
         <script src="read.js"></script>
 </body>
  </html>

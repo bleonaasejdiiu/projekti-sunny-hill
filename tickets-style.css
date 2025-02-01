@@ -1,0 +1,383 @@
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  margin: 0;
+
+  background-color: white;
+}
+
+.navbar {
+  background-color: #ac96a6; 
+  overflow: hidden;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  font-weight: bold;
+}
+
+
+.navbar a {
+  display: inline-block;
+  padding: 14px 20px;
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: #333;
+}
+
+
+.navbar a:active {
+  background-color: #9e7b95;
+  color: #fff;
+}
+
+/*---------TICKETS--------------*/
+.pjesa1{
+    background: linear-gradient(to right,  rgb(113, 79, 117), rgb(138, 109, 134), rgb(189, 137, 183), rgb(189, 137, 183), rgb(138, 109, 134), rgb(113, 79, 117)); 
+    width: 100%;
+    height: 400px;
+    color: white;
+    text-align: center;
+    float: inline-start;
+    align-content: center;
+    font-size: 25px
+  }
+  .container1 {
+    display: flex;
+    padding: 5px; 
+    flex-wrap: wrap; /* Për të qenë responsive */
+  }
+  
+  .card {
+    background-color: white;
+    text-align: center;
+    padding: 50px;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-bottom: 50px;
+    width: 250px; 
+    border-right: 2px solid grey; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Fillon e padukshme */
+    transform: translateY(50px); /* Fillon poshtë */
+    animation: slideIn 1s forwards; /* Lëviz drejt pozicionit */
+  }
+  
+  .card h1 {
+    font-size: 33px;
+    margin-bottom: 15px;
+    color:  black;
+  }
+  
+  .container1 .price {
+    font-weight: bold;
+    color: #777; 
+   } 
+  .card p {
+    font-size: 0.9em;
+    color: black;
+  }
+  .button1 {
+    background-color:#9a7696;
+    color: white;
+    border: none;
+    border-radius: 1px;
+    padding: 10px 30px;
+    cursor: pointer;
+    font-size: 1em;
+    text-decoration: none;
+  }
+  
+  .button1:hover {
+    background-color: rgb(147, 125, 143);
+  }
+  #button{
+    margin-top:36px ;
+  }
+  
+  .card:nth-child(1) {
+    animation-delay: 0.2s;
+  }
+  
+  .card:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+  
+  .card:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+  
+  .card:nth-child(4) {
+    animation-delay: 0.8s;
+  }
+  
+  /* Animacioni i butonit kur kalon mbi të */
+  .button1 {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .button1:hover {
+    transform: scale(1.1); /* Zmadhohet butoni */
+  }
+  
+  /* Kyçja e animacionit */
+  @keyframes slideIn {
+    to {
+      opacity: 1; /* Bëhet i dukshëm */
+      transform: translateY(0); /* Kthehet në pozicionin fillestar */
+    }
+  }
+  
+  
+  /*-------ANIMACIONI ME TICKETS-------*/
+  .tickets-logo-section {
+    text-align: center;
+    margin-top: 5px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #bd89b7;
+  }
+  
+  .tickets-logo-section h2 {
+    font-size: 30px;
+    color: black;
+    margin-bottom: 20px;
+  }
+  
+  .tickets-logos {
+    display: flex;             
+    justify-content: center;   
+    gap: 20px;                
+    flex-wrap: wrap;           
+  }
+  
+  .ticket-icon {
+    font-size: 40px;          
+    color: #bd89b7;
+    animation: bounce 2s infinite ease-in-out; 
+  }
+  
+  .ticket-icon:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .ticket-icon:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  .ticket-icon:nth-child(4) {
+    animation-delay: 0.6s;
+  }
+  
+  .ticket-icon:nth-child(5) {
+    animation-delay: 0.8s;
+  }
+  
+  .ticket-icon:nth-child(6) {
+    animation-delay: 1s;
+  }
+  .ticket-icon:nth-child(7) {
+    animation-delay: 1.2s;
+  }
+  
+  /* Animacioni */
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px); /* Lëviz lart */
+    }
+    100% {
+      transform: translateY(0); /* Kthehet poshtë */
+  }
+  }
+  
+  /*-----PJESA E FAQ Q&A------*/
+  .faq-container {
+    width: 100%;
+    padding-top: 35px;
+  }
+  
+  /* FAQ Item */
+  .faq-item {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #bd89b7;
+    padding-bottom: 10px;
+    font-size: 25px;
+    padding-left: 35px;
+    position: relative;
+  }
+  
+  /* Hide the checkbox (toggle) */
+  .faq-item input[type="checkbox"] {
+    display: none;
+  }
+  
+  /* Question Label */
+  .faq-question {
+    
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+  
+  
+  /* Arrow */
+  .arrow {
+    padding-right: 30px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Rotate arrow when checkbox is checked */
+  .faq-item input[type="checkbox"]:checked + .faq-question .arrow {
+    transform: scaleY(-1);
+  }
+  
+  /* Answer Paragraph */
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+   font-size: 25px;
+    color: #666;
+    transition: max-height 0.3s ease;
+    padding: 0 10px;
+  }
+  
+  /* Show answer when checkbox is checked */
+  .faq-item input[type="checkbox"]:checked ~ .faq-answer {
+    max-height: 200px; /* Zgjedhja e një max-height më të madhe për përgjigje më të gjata */
+  }
+  /*--------CARD PAYMENT-----------*/
+  .container{
+    min-height: 100vh;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding-bottom: 60px;
+  }
+  
+  .container form{
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,.1);
+    padding: 20px;
+    width: 600px;
+    padding-top: 160px;
+  }
+  
+  .container form .inputBox{
+    margin-top: 20px;
+  }
+  
+  .container form .inputBox span{
+    display: block;
+    color:#999;
+    padding-bottom: 5px;
+  }
+  
+  .container form .inputBox input,
+  .container form .inputBox select{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border:1px solid rgba(0,0,0,.3);
+    color:#444;
+  }
+  
+  .container form .flexbox{
+    display: flex;
+    gap:15px;
+  }
+  
+  .container form .flexbox .inputBox{
+    flex:1 1 150px;
+  }
+  
+  .container form .submit-btn{
+    width: 100%;
+    background:linear-gradient(to right,  rgb(113, 79, 117), rgb(138, 109, 134), rgb(189, 137, 183), rgb(189, 137, 183), rgb(138, 109, 134), rgb(113, 79, 117)); 
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 20px;
+    color:#fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .2s linear;
+  }
+  
+  .container form .submit-btn:hover{
+    letter-spacing: 2px;
+    opacity: .8;
+  }
+  
+  .container .card-container{
+    margin-bottom: -150px;
+    position: relative;
+    height: 250px;
+    width: 400px;
+  }
+  
+  .container .card-container .front{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0; left: 0;
+    background:linear-gradient(to right,  rgb(113, 79, 117), rgb(138, 109, 134), rgb(189, 137, 183), rgb(189, 137, 183), rgb(138, 109, 134), rgb(113, 79, 117)); 
+    border-radius: 5px;
+    backface-visibility: hidden;
+    box-shadow: 0 15px 25px rgba(0,0,0,.2);
+    padding:20px;
+   transform:perspective(1000px) rotateY(0deg);
+    transition:transform .4s ease-out;
+  }
+  
+  .container .card-container .front .image{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    padding-top: 10px;
+  }
+  
+  .container .card-container .front .image img{
+    height: 50px;
+  }
+  
+  .container .card-container .front .card-number-box{
+    padding:30px 0;
+    font-size: 22px;
+    color:#fff;
+  }
+  
+  .container .card-container .front .flexbox{
+    display: flex;
+  }
+  
+  .container .card-container .front .flexbox .box:nth-child(1){
+    margin-right: auto;
+  }
+  
+  .container .card-container .front .flexbox .box{
+    font-size: 15px;
+    color:#fff;
+  }
+  
+  

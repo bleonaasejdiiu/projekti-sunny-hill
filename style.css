@@ -389,6 +389,25 @@ div ul a{
 .gallery1 img:hover, .gallery2 img:hover, .gallery3 img:hover {
   transform: scale(1.05);  /* Kjo do të bëjë që fotoja të zmadhohet pak */
 }
+
+.container3 {
+  text-align: center; /* Pozicionon tekstin në qendër */
+  margin-top: 50px;
+  width: 40%;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  /* Përdorim Flexbox për të pozicionuar kutinë në qendër të faqes */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* E pozicionon përmbajtjen në qendër vertikalisht */
+  align-items: center; /* E pozicionon përmbajtjen në qendër horizontalisht */
+  height: 200px; /* Caktoni një lartësi të përshtatshme për kutinë */
+  margin-left: auto;  /* E pozicionon në qendër horizontalisht */
+  margin-right: auto; /* E pozicionon në qendër horizontalisht */
+}
     /*---------------SHOWS&EVENTS----------------------*/
     
     .sh{

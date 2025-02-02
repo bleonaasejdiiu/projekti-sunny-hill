@@ -116,57 +116,54 @@ if (isset($_GET['id'])) {
 </head>
 <body>
 
+<div class="form-container">
+    <h2>Edit User</h2>
 
-    <div class="form-container">
-        <h2>Edit User</h2>
+    <form method="POST" action="edit_user.php" onsubmit="return validateEditForm()">
+        <input type="hidden" name="id" value="<?php echo $user['Id']; ?>">
 
-        <form method="POST" action="edit_user.php"  onsubmit="return validateRegisterForm()">
-            <input type="hidden" name="id" value="<?php echo $user['Id']; ?>">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" value="<?php echo $user['Username']; ?>" required>
 
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" value="<?php echo $user['Username']; ?>" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" value="<?php echo $user['Email']; ?>" required>
 
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" value="<?php echo $user['Email']; ?>" required>
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" value="<?php echo $user['Age']; ?>" required>
 
-            <label for="age">Age</label>
-            <input type="number" id="age" name="age" value="<?php echo $user['Age']; ?>" required>
+        <input type="submit" value="Update User">
+    </form>
 
-            <input type="submit" value="Update User">
-
-        </form>
-
-        <div class="cancel-btn">
-            <a href="../admin_dashboard.php">Cancel</a>
-        </div>
+    <div class="cancel-btn">
+        <a href="../admin_dashboard.php">Cancel</a>
     </div>
+</div>
 
-    <script>
-        function validateRegisterForm() {
-    const username = document.getElementById("username").value;
-    const email = document.getElementById("email").value;
-    const age = document.getElementById("age").value;
-   
+<script>
+    function validateEditForm() {
+        const username = document.getElementById("username").value;
+        const email = document.getElementById("email").value;
+        const age = document.getElementById("age").value;
 
-    if (username === "" || email === "" || age === "" || password === "") {
-        alert("Please fill in all fields.");
-        return false;
+        if (username === "" || email === "" || age === "") {
+            alert("Please fill in all fields.");
+            return false;
+        }
+
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!emailPattern.test(email)) {
+            alert("Please enter a valid email.");
+            return false;
+        }
+
+        if (age < 18) {
+            alert("You must be at least 18 years old.");
+            return false;
+        }
+
+        return true;
     }
-
-    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-    if (!emailPattern.test(email)) {
-        alert("Please enter a valid email.");
-        return false;
-    }
-
-    if (age < 18) {
-        alert("You must be at least 18 years old to register.");
-        return false;
-    }
-
-    return true;
-}
-    </script>
+</script>
 
 </body>
 </html>

@@ -1,6 +1,7 @@
 <?php
 
 include("connect_db.php"); 
+include('comment.php');
 
 // krijimi i lidhjes te databaze me oop
 $database = new Database();

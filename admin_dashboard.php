@@ -6,6 +6,13 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
     exit;
 }
 
+if (isset($_SESSION['error_message'])) {
+    echo "<div style='background-color: #f8d7da; color: #721c24; padding: 15px; border-radius: 5px; border: 1px solid #f5c6cb; margin-bottom: 10px;'>
+            <strong>Gabim!</strong> ".$_SESSION['error_message'].".
+          </div>";
+    unset($_SESSION['error_message']);
+}
+
 include_once 'connect_db.php';
 include_once 'Admin.php';
 

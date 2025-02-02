@@ -35,11 +35,23 @@ class Admin {
 
   
     public function deleteUser($id) {
+        // Kontrollo nëse përdoruesi ka bileta të lidhura
+        $stmt = $this->conn->prepare("SELECT COUNT(*) FROM tickets WHERE user_id = :id");
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        $ticketCount = $stmt->fetchColumn();
+    
+        if ($ticketCount > 0) {
+            // Fshij përdoruesin që ka bileta
+            throw new Exception("Përdoruesi ka bileta të lidhura dhe nuk mund të fshihet.");
+        }
+    
+        // Fshi përdoruesin vetëm nëse nuk ka bileta
         $stmt = $this->conn->prepare("DELETE FROM users WHERE Id = :id");
         $stmt->bindParam(':id', $id);
         return $stmt->execute();
     }
-
+    
     public function getUsersWithTickets() {
         $stmt = $this->conn->prepare("
             SELECT users.Id, users.Username, users.Email, users.Age, 

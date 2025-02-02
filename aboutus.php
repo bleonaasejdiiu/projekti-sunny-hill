@@ -25,6 +25,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['comment'])) {
         echo "<script>alert('Ju lutem, shkruani një koment para se ta postoni!');</script>";
     }
 }
+
+// marrim komentet per faqen
+$comments = $comment->getComments('about us');
+
 /////////////////////////////////////////////////////////////
 class Content {
     private $conn;

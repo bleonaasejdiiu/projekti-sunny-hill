@@ -139,7 +139,15 @@
         <i class="fa-solid fa-user-large"></i>
     </a>
     </nav>
-
+    <style>
+.centered h1 {
+  color: white !important;
+  background: transparent !important;
+}
+.centered {
+  color: white;
+}
+</style>
 
     <div class="slider-container">
         <div class="slider-wrapper">

@@ -368,6 +368,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <script src="read.js"></script>
 
+<style>
+    
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: rgb(240, 233, 237); 
+        color: #333;
+    }
+    .footer-item {
+        flex: 1;
+        text-align: left;
+    }
+    .sponsors {
+        display: flex;  
+        gap: 0; 
+    }
+    .sponsors img {
+        width: 80px;  
+        height: auto;
+        max-height: 50px;
+        object-fit: contain;
+        margin: 0 !important; 
+        padding: 0 !important; 
+        display: inline-block; 
+    }
+    @media (max-width: 768px) {
+       .footer {
+            flex-direction: column;
+            text-align: center;
+        }
+
+       .sponsors img {
+            width: 60px;
+            max-height: 40px;
+        }
+    }
+</style>
+
 <footer class="footer">
     <div class="footer-item"> 
         <p>Volunteer</p>

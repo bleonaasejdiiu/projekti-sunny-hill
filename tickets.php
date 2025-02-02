@@ -188,8 +188,8 @@
     cursor: pointer;
 }
 .navbar .profile-icon:hover {
-  background-color: transparent; /* heq background */
-  color: white; /* ruan ngjyrën e bardhë */
+  background-color: transparent; 
+  color: white; 
 }
     </style>
 </head>

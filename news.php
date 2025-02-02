@@ -56,7 +56,8 @@ include("connect_db.php");
     <title>News</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-     
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
 </head>
 <body>
  
@@ -67,6 +68,10 @@ include("connect_db.php");
         <a href="Tickets.php">Tickets</a>
         <a href="aboutus.php">About Us</a>
         <a href="contactus.php">Log In</a>
+
+        <a href="user_dashboard.php" class="profile-icon">
+        <i class="fa-solid fa-user-large"></i>
+    </a>
     </nav>
         <div id="header">
             
@@ -350,6 +355,22 @@ form .error-message {
     form input, form button {
         font-size: 0.9em; 
     }
+}
+
+.navbar .profile-icon {
+    position: absolute;
+    right: 10px;
+ 
+}
+
+.navbar .profile-icon i {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+.navbar .profile-icon:hover {
+  background-color: transparent; 
+  color: white; 
 }
 </style>
 

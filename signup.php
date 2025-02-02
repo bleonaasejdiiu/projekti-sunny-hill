@@ -66,7 +66,9 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Tickets/tickets-style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="tickets-style.css">
     <title>Register</title>
   
     <style>
@@ -187,19 +189,37 @@ if (isset($_POST['submit'])) {
 
         .links {
             margin-bottom: 15px;
-        }
+        } 
+        .navbar .profile-icon {
+    position: absolute;
+    right: 10px;
+ 
+}
+
+.navbar .profile-icon i {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+.navbar .profile-icon:hover {
+  background-color: transparent; 
+  color: white; 
+}
     </style>
 </head>
 <body>
-    <nav class="navbar">
+<nav class="navbar">
         <a href="home.php">Home</a>
         <a href="shows&events.php">Shows&Events</a>
         <a href="news.php">News</a>
         <a href="Tickets.php">Tickets</a>
         <a href="aboutus.php">About Us</a>
         <a href="contactus.php">Log In</a>
-    </nav>
 
+        <a href="user_dashboard.php" class="profile-icon">
+        <i class="fa-solid fa-user-large"></i>
+    </a>
+    </nav>
     <div class="fcontainer">
         <div class="box form-box">
             <header>Sign Up</header>

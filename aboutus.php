@@ -80,19 +80,25 @@ $emri_faqes = isset($page_data['emri_faqes']) ? $page_data['emri_faqes'] : 'Emri
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>about us</title>
     
 </head>
 <body>
-    <nav class="navbar">
+<nav class="navbar">
         <a href="home.php">Home</a>
         <a href="shows&events.php">Shows&Events</a>
         <a href="news.php">News</a>
-        <a href="Tickets.html">Tickets</a>
-        <a href="aboutus.html">About Us</a>
-        <a href="contactus.html">Log In</a>
-    </nav> 
+        <a href="Tickets.php">Tickets</a>
+        <a href="aboutus.php">About Us</a>
+        <a href="contactus.php">Log In</a>
+
+        <a href="user_dashboard.php" class="profile-icon">
+        <i class="fa-solid fa-user-large"></i>
+    </a>
+    </nav>
 
     <!-- Shfaqim mesazhin nga sesioni -->
     <?php
@@ -201,7 +207,21 @@ $emri_faqes = isset($page_data['emri_faqes']) ? $page_data['emri_faqes'] : 'Emri
 </style>
 -->
 <style>
-    
+    .navbar .profile-icon {
+    position: absolute;
+    right: 10px;
+ 
+}
+
+.navbar .profile-icon i {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+.navbar .profile-icon:hover {
+  background-color: transparent; 
+  color: white; 
+}
     .footer {
         display: flex;
         justify-content: space-between;

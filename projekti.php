@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
     <title>Home</title>
     <link rel="stylesheet" href="style.css">
     <style>
@@ -24,7 +26,7 @@
     width: 100%; 
     height: 100%;
     transition: transform 0.5s ease-in-out; 
-
+}
 .slider-wrapper img {
     flex: 0 0 100%; 
     width: 100%;
@@ -94,6 +96,22 @@
     transform: scale(1.1); 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
 }
+
+.navbar .profile-icon {
+    position: absolute;
+    right: 10px;
+ 
+}
+
+.navbar .profile-icon i {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+.navbar .profile-icon:hover {
+  background-color: transparent; 
+  color: white; 
+}
 </style>
 
    
@@ -111,13 +129,16 @@
     </div>
     <nav class="navbar">
         <a href="home.php">Home</a>
-        <a href="shows&events.html">Shows&Events</a>
+        <a href="shows&events.php">Shows&Events</a>
         <a href="news.php">News</a>
         <a href="Tickets.php">Tickets</a>
-        <a href="aboutus.html">About Us</a>
+        <a href="aboutus.php">About Us</a>
         <a href="contactus.php">Log In</a>
-    </nav>
 
+        <a href="user_dashboard.php" class="profile-icon">
+        <i class="fa-solid fa-user-large"></i>
+    </a>
+    </nav>
 
 
     <div class="slider-container">

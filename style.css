@@ -447,6 +447,15 @@ button:hover {
   margin-bottom: 10px;
   border-left: 5px solid #af4c9b;
 }
+.comment p {
+  margin: 0;
+  color: #555;
+}
+
+.comment .author {
+  font-weight: bold;
+  color: #333;
+}
     /*---------------SHOWS&EVENTS----------------------*/
     
     .sh{

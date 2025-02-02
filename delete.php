@@ -13,15 +13,15 @@ if (isset($_GET['id'])) {
     $stmt = $connection->prepare($sql);
     $stmt->execute([':id' => $id]);
 
-    // Shfaq mesazhin për fshirjen e përdoruesit
+
     echo "<div class='delete-message'>
             <h2>User Deleted</h2>
             <p>User has been successfully deleted from the system.</p>
-            <button onclick=\"window.location.href='read.php';\">Go Back</button>
+            <button onclick=\"window.location.href='admin_dashboard.php';\">Go Back</button>
           </div>";
 
-    // Vonesë për redirect pas 3 sekondash
-    header("Refresh: 3; url=read.php");
+    
+    header("Refresh: 3; url=admin_dashboard.php");
 }
 ?>
 
@@ -43,27 +43,27 @@ if (isset($_GET['id'])) {
             text-align: center;
         }
 
-        /* Stili për titullin */
+       
         .delete-message h2 {
             text-align: center;
-            color: #FF6347; /* Ngjyrë e kuqe për të treguar fshirjen */
+            color: #FF6347; 
             font-family: 'Arial', sans-serif;
             font-size: 28px;
             margin-bottom: 20px;
         }
 
-        /* Stili për mesazhin */
+        
         .delete-message p {
             font-size: 18px;
             color: #333;
             margin-bottom: 20px;
         }
 
-        /* Stili për butonin */
+        
         .delete-message button {
             width: 100%;
             padding: 12px;
-            background-color:rgb(246, 58, 205); /* Ngjyrë e kuqe për veprimet kritike */
+            background-color:rgb(246, 58, 205); 
             color: white;
             border: none;
             border-radius: 4px;
@@ -73,7 +73,7 @@ if (isset($_GET['id'])) {
         }
 
         .delete-message button:hover {
-            background-color:rgb(246, 57, 204); /* Efekti hover për ngjyrë më të errët */
+            background-color:rgb(246, 57, 204); 
         }
     </style>
 </head>

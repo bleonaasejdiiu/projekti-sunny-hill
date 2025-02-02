@@ -194,27 +194,7 @@ include("cookie-banner.php");
 
 
 
-<!--<h2>QUESTION FORM</h2>
-    <form method="POST" action="">
-        <label for="name">Emri:</label>
-        <input type="text" name="name"  required><br><br>
 
-        <label for="mbiemri">Mbiemri:</label>
-        <input type="text" name="mbiemri" required><br><br>
-
-        <label for="age">Mosha:</label>
-        <input type="number" name="age"  required><br><br>
-
-        <label for="email">Email:</label>
-        <input type="email" name="email" required><br><br>
-
-        <label for="text">Question:</label>
-        <input type="text" name="question" required><br><br>
-
-
-        <button type="submit" name="submit">SUBMIT</button>
-    </form>      
--->
 <h2>QUESTION FORM</h2>
 <form method="POST" action="" onsubmit="return validateForm()">
     <label for="name">Emri:</label>

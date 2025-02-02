@@ -1,7 +1,5 @@
 <?php include 'connect_db.php';
-//session
 
-//perfundimi
 $db = new Database();
 $connection = $db->connect(); 
  ?>
@@ -50,7 +48,7 @@ $connection = $db->connect();
         ]);
 
         echo "<p style='color: green;'>Useri u përditësua me sukses!</p>";
-        header("Location: read.php");
+        header("Location: admin_dashboard.php");
         exit;
     }
     ?>
@@ -65,7 +63,7 @@ $connection = $db->connect();
     border: 2px solid #f0f0f0;
 }
 
-/* Stili për titullin */
+
 form h2 {
     text-align: center;
     color:rgb(228, 119, 210);
@@ -74,7 +72,7 @@ form h2 {
     margin-bottom: 20px;
 }
 
-/* Stili për etiketat */
+
 label {
     font-size: 16px;
     color: #333;
@@ -83,7 +81,7 @@ label {
     font-weight: bold;
 }
 
-/* Stili për inputet */
+
 input[type="text"],
 input[type="number"],
 input[type="email"] {
@@ -104,7 +102,7 @@ input[type="email"]:focus {
     outline: none;
 }
 
-/* Stili për butonin */
+
 button[type="submit"] {
     width: 100%;
     padding: 12px;
@@ -121,7 +119,7 @@ button[type="submit"]:hover {
     background-color:rgb(245, 119, 190);
 }
 
-/* Stili për mesazhin e suksesit ose gabimit */
+
 .success, .error {
     text-align: center;
     font-size: 16px;

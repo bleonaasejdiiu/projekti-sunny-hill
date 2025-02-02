@@ -176,6 +176,21 @@
     margin-top: 30px;
     height: 30px;
 }
+.navbar .profile-icon {
+    position: absolute;
+    right: 10px;
+ 
+}
+
+.navbar .profile-icon i {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+.navbar .profile-icon:hover {
+  background-color: transparent; /* heq background */
+  color: white; /* ruan ngjyrën e bardhë */
+}
     </style>
 </head>
 <body>
@@ -186,8 +201,11 @@
         <a href="Tickets.php">Tickets</a>
         <a href="aboutus.php">About Us</a>
         <a href="contactus.php">Log In</a>
+
+        <a href="user_dashboard.php" class="profile-icon">
+        <i class="fa-solid fa-user-large"></i>
+    </a>
     </nav>
-    
       
     <div class="pjesa1">
           <h1>TICKETS</h1>

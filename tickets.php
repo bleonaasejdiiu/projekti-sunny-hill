@@ -500,7 +500,7 @@ document.querySelector('form').addEventListener('submit', function (e) {
         isValid = false;
     }
 
-    // Nëse ka gabime nalet dergimi i formës edhe shfaqet mesazhet
+   
     if (!isValid) {
         e.preventDefault();
         alert("Please :\n" + errorMessage);

@@ -19,7 +19,6 @@ class Login {
             $_SESSION['id'] = $row['Id'];
             $_SESSION['role'] = $row['Role'];
     
-            // Kontroll nëse përdoruesi është admin
             if ($row['Role'] === 'admin') {
                 return 'admin';
             }

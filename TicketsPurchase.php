@@ -18,7 +18,7 @@ class TicketPurchase {
     }
 
     public function processPayment($ticketType, $quantity, $cvv, $cardNumber) {
-        // Llogaritja e çmimit total
+     
         $prices = [
             'Regular' => 200,
             'Group of 3' => 180,
@@ -32,7 +32,7 @@ class TicketPurchase {
 
         $totalPrice = $prices[$ticketType] * $quantity;
 
-        // Ruajtja e të dhënave në databazë
+        
         $stmt = $this->conn->prepare("INSERT INTO tickets (user_id, ticket_type, quantity, total_price, payment_status) VALUES (:user_id, :ticket_type, :quantity, :total_price, 'Completed')");
         $stmt->bindParam(':user_id', $this->userId);
         $stmt->bindParam(':ticket_type', $ticketType);

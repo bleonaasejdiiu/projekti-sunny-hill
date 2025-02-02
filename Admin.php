@@ -42,7 +42,7 @@ class Admin {
         $ticketCount = $stmt->fetchColumn();
     
         if ($ticketCount > 0) {
-            // Fshij përdoruesin që ka bileta
+            
             throw new Exception("Përdoruesi ka bileta të lidhura dhe nuk mund të fshihet.");
         }
     

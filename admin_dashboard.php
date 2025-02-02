@@ -87,7 +87,7 @@ $questions = $admin->getAllQuestions();
             background-color: #620746;
         }
 
-        /* Table styles */
+      
         .admin-table {
             width: 100%;
             border-collapse: collapse;

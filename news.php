@@ -1,7 +1,7 @@
 <?php
 
 include("connect_db.php");
-include("cookie-banner.php");
+
 
     if (isset($_POST['submit'])) {
         try {

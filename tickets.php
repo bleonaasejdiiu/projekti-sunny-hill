@@ -36,13 +36,13 @@
 
   display: flex;
   flex-direction: column;
-  gap: 10px; 
+  gap: 20px; 
 }
 
 .container form .inputBox span{
     display: block;
     color:#999;
-    padding-bottom: 5px;
+    padding-top: 10px;
 }
 
 .container form .inputBox input,

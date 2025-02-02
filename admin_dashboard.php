@@ -123,23 +123,6 @@ $questions = $admin->getAllQuestions();
             text-decoration: underline;
         }
 
-        .card {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-
-        .card h3 {
-            margin: 0;
-            color: #333;
-        }
-
-        .card p {
-            color: #555;
-        }
-
         
     </style>
 </head>

@@ -29,7 +29,7 @@ $userData = $home->getUserData($_SESSION['id']);
     <title>User Dashboard</title>
     <style>
        body {
-  background: rgb(247, 243, 247);
+        background: linear-gradient(to right,  rgb(113, 79, 117), rgb(138, 109, 134), rgb(189, 137, 183), rgb(189, 137, 183), rgb(138, 109, 134), rgb(113, 79, 117)); 
 }
 
 
@@ -74,6 +74,11 @@ main {
   }
 }
 
+.ticket-icon {     
+    color:rgb(250, 229, 247);
+
+  }
+  
     </style>
 </head>
 <body>

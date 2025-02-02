@@ -7,6 +7,12 @@ include('comment.php');
 $database = new Database();
 $db = $database->connect();
 
+$comment = new Comment($db);
+
+// nese eshte post
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['comment'])) {
+    $commentText = htmlspecialchars(trim($_POST['comment']));
+    $page_name = 'about us'; 
 
 class Content {
     private $conn;

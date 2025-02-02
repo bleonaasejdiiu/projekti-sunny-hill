@@ -16,15 +16,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['comment'])) {
     $commentText = htmlspecialchars(trim($_POST['comment']));
     $page_name = 'about us'; 
 
-    // Validimi i komenteve
-    if (!empty($commentText)) {
+     // Validimi i komenteve
+     if (!empty($commentText)) {
         if ($comment->saveComment($commentText, $page_name)) {
-            echo "<script>alert('Komenti është postuar me sukses!');</script>";
+            $_SESSION['message'] = "Komenti është postuar me sukses!"; 
         } else {
-            echo "<script>alert('Ka ndodhur një gabim gjatë postimit të komentit.');</script>";
+            $_SESSION['message'] = "Ka ndodhur një gabim gjatë postimit të komentit."; 
         }
     } else {
-        echo "<script>alert('Ju lutem, shkruani një koment para se ta postoni!');</script>";
+        $_SESSION['message'] = "Ju lutem, shkruani një koment para se ta postoni!"; 
     }
 }
 

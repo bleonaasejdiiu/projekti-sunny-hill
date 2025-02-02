@@ -391,7 +391,7 @@ div ul a{
 }
 
 .container3 {
-  text-align: center; /* Pozicionon tekstin në qendër */
+  text-align: center; 
   margin-top: 50px;
   width: 40%;
   background-color: white;
@@ -399,14 +399,14 @@ div ul a{
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
-  /* Përdorim Flexbox për të pozicionuar kutinë në qendër të faqes */
+  
   display: flex;
   flex-direction: column;
-  justify-content: center; /* E pozicionon përmbajtjen në qendër vertikalisht */
-  align-items: center; /* E pozicionon përmbajtjen në qendër horizontalisht */
-  height: 200px; /* Caktoni një lartësi të përshtatshme për kutinë */
-  margin-left: auto;  /* E pozicionon në qendër horizontalisht */
-  margin-right: auto; /* E pozicionon në qendër horizontalisht */
+  justify-content: center; 
+  align-items: center; 
+  height: 200px; 
+  margin-left: auto;  
+  margin-right: auto; 
 }
 
 h1 {

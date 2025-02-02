@@ -3,6 +3,7 @@
 include("connect_db.php"); 
 include('comment.php');
 
+session_start();
 
 // krijimi i lidhjes te databaze me oop
 $database = new Database();

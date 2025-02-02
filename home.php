@@ -39,7 +39,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(243, 230, 230, 0.92);
     color: white;
     border: none;
     font-size: 24px;
@@ -143,11 +143,21 @@
     </nav>
 
 
-   
+   <style>
+.centered h1 {
+  color: white !important;
+  background: transparent !important;
+}
+.centered {
+  color: white;
+}
+
+   </style>
 <div class="slider-container">
         <div class="slider-wrapper">
             <img src="sejdiuu.jpeg" alt="Main Image">
             <div class="centered"><h5>Opening on Thursday, August 31st</h5>
+           
                 <h1>The Sunny Hill Festival 2025</h1>
                <a href="tickets.html"><button id="purchaseBtn">Purchase Tickets</button></a> 
             </div>

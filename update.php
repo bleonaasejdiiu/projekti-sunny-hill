@@ -100,7 +100,7 @@ input[type="email"] {
 input[type="text"]:focus,
 input[type="number"]:focus,
 input[type="email"]:focus {
-    border-color: #4CAF50;
+    border-color:rgb(203, 92, 190);
     outline: none;
 }
 
@@ -108,7 +108,7 @@ input[type="email"]:focus {
 button[type="submit"] {
     width: 100%;
     padding: 12px;
-    background-color: #4CAF50;
+    background-color:rgb(199, 55, 175);
     color: white;
     border: none;
     border-radius: 4px;

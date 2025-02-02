@@ -14,7 +14,18 @@ include("connect_db.php");
             $age = $_POST['age'];
             $email = $_POST['email'];
             $question = $_POST['question'];
-    
+            if (strlen($question) <= 5) {
+                echo "<p style='color: red;'>Pyetja duhet të ketë më shumë se 5 karaktere!</p>";
+                return;
+            }
+        
+            // Validimi i fushës 'email' (duhet të jetë një email i vlefshëm)
+            $emailPattern = "/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/";
+            if (!preg_match($emailPattern, $email)) {
+                echo "<p style='color: red;'>Email-i nuk është i vlefshëm!</p>";
+                return;
+            }
+           
             $sql = "INSERT INTO user (emri, mbiemri, mosha, email, question) 
                     VALUES (:emri, :mbiemri, :mosha, :email, :question)";
     
@@ -182,7 +193,7 @@ include("connect_db.php");
 
 
 
-<h2>QUESTION FORM</h2>
+<!--<h2>QUESTION FORM</h2>
     <form method="POST" action="">
         <label for="name">Emri:</label>
         <input type="text" name="name"  required><br><br>
@@ -202,6 +213,65 @@ include("connect_db.php");
 
         <button type="submit" name="submit">SUBMIT</button>
     </form>      
+-->
+<h2>QUESTION FORM</h2>
+<form method="POST" action="" onsubmit="return validateForm()">
+    <label for="name">Emri:</label>
+    <input type="text" name="name" id="name" required><br><br>
+
+    <label for="mbiemri">Mbiemri:</label>
+    <input type="text" name="mbiemri" id="mbiemri" required><br><br>
+
+    <label for="age">Mosha:</label>
+    <input type="number" name="age" id="age" required><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" required><br><br>
+
+    <label for="question">Question:</label>
+    <input type="text" name="question" id="question" required><br><br>
+
+    <button type="submit" name="submit">SUBMIT</button>
+</form>
+
+<script>
+    function validateForm() {
+        
+        const name = document.getElementById("name").value;
+        const mbiemri = document.getElementById("mbiemri").value;
+        const age = document.getElementById("age").value;
+        const email = document.getElementById("email").value;
+        const question = document.getElementById("question").value;
+
+      
+        if (name === "" || mbiemri === "" || age === "" || email === "" || question === "") {
+            alert("Të gjitha fushat janë të detyrueshme!");
+            return false;
+        }
+
+      
+        if (question.length <= 5) {
+            alert("Pyetja duhet të ketë më shumë se 5 karaktere!");
+            return false;
+        }
+
+        
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!emailPattern.test(email)) {
+            alert("Email-i nuk është i vlefshëm!");
+            return false;
+        }
+
+        
+        if (age < 18) {
+            alert("Duhet të jesh të paktën 18 vjeç për t'u regjistruar.");
+            return false;
+        }
+
+       
+        return true;
+    }
+</script>
 
 
 

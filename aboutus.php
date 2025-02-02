@@ -190,7 +190,7 @@ $emri_faqes = isset($page_data['emri_faqes']) ? $page_data['emri_faqes'] : 'Emri
   background-color: transparent; 
   color: white; 
 }
-    .footer {
+.footer {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -198,16 +198,20 @@ $emri_faqes = isset($page_data['emri_faqes']) ? $page_data['emri_faqes'] : 'Emri
         background-color: rgb(240, 233, 237); 
         color: #333;
     }
+
+
     .footer-item {
         flex: 1;
         text-align: left;
     }
+
     .sponsors {
-        display: flex;  
+        display: flex; 
         gap: 0; 
     }
+
     .sponsors img {
-        width: 80px;  
+        width: 80px; 
         height: auto;
         max-height: 50px;
         object-fit: contain;
@@ -215,6 +219,8 @@ $emri_faqes = isset($page_data['emri_faqes']) ? $page_data['emri_faqes'] : 'Emri
         padding: 0 !important; 
         display: inline-block; 
     }
+
+
     @media (max-width: 768px) {
        .footer {
             flex-direction: column;
@@ -226,11 +232,7 @@ $emri_faqes = isset($page_data['emri_faqes']) ? $page_data['emri_faqes'] : 'Emri
             max-height: 40px;
         }
     }
-    
 </style>
-
-
-
 
 
 <footer class="footer">
@@ -256,35 +258,6 @@ $emri_faqes = isset($page_data['emri_faqes']) ? $page_data['emri_faqes'] : 'Emri
         <img src="vodafone.jpg" alt="Vodafone">
     </div>
 </footer>
-
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
 </html>

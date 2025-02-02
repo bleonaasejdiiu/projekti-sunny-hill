@@ -7,6 +7,176 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     
     <link rel="stylesheet" href="tickets-style.css">
+
+    <style>
+       .container{
+    min-height: 100vh;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding-bottom: 60px;
+   
+}
+.card-container{
+    margin-top:70px;
+}
+.container form{
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 10px 15px rgba(0,0,0,.1);
+    padding: 20px;
+    width: 600px;
+    padding-top: 160px;
+   
+}
+
+.container form .inputBox {
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+}
+
+.container form .inputBox span{
+    display: block;
+    color:#999;
+    padding-bottom: 5px;
+}
+
+.container form .inputBox input,
+.container form .inputBox select{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border:1px solid rgba(0,0,0,.3);
+    color:#444;
+}
+
+.container form .flexbox {
+  display: flex;
+  gap: 30px;
+}
+
+.container form .flexbox .inputBox{
+    flex:1 1 150px;
+}
+
+.container form .submit-btn{
+    width: 100%;
+    background: linear-gradient(to right,  rgb(113, 79, 117), rgb(138, 109, 134), rgb(189, 137, 183), rgb(189, 137, 183), rgb(138, 109, 134), rgb(113, 79, 117)); 
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 20px;
+    color:#fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .2s linear;
+}
+
+.container form .submit-btn:hover{
+    letter-spacing: 2px;
+    opacity: .8;
+}
+
+.container .card-container{
+    margin-bottom: -150px;
+    position: relative;
+    height: 250px;
+    width: 400px;
+}
+
+.container .card-container .front{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0; left: 0;
+    background: linear-gradient(to right,  rgb(113, 79, 117), rgb(138, 109, 134), rgb(189, 137, 183), rgb(189, 137, 183), rgb(138, 109, 134), rgb(113, 79, 117)); 
+    border-radius: 5px;
+    backface-visibility: hidden;
+    box-shadow: 0 15px 25px rgba(0,0,0,.2);
+    padding:20px;
+    transform:perspective(1000px) rotateY(0deg);
+    transition:transform .4s ease-out;
+}
+
+.container .card-container .front .image{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.container .card-container .front .image img{
+    height: 50px;
+}
+
+.container .card-container .front .card-number-box{
+    padding:30px 0;
+    font-size: 22px;
+    color:#fff;
+}
+
+.container .card-container .front .flexbox{
+    display: flex;
+}
+
+.container .card-container .front .flexbox .box:nth-child(1){
+    margin-right: auto;
+}
+
+.container .card-container .front .flexbox .box{
+    font-size: 15px;
+    color:#fff;
+}
+
+.container .card-container .back{
+    position: absolute;
+    top:0; left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right,  rgb(113, 79, 117), rgb(138, 109, 134), rgb(189, 137, 183), rgb(189, 137, 183), rgb(138, 109, 134), rgb(113, 79, 117)); 
+    border-radius: 5px;
+    padding: 20px 0;
+    text-align: right;
+    backface-visibility: hidden;
+    box-shadow: 0 15px 25px rgba(0,0,0,.2);
+    transform:perspective(1000px) rotateY(180deg);
+    transition:transform .4s ease-out;
+}
+
+.container .card-container .back .stripe{
+    background: #000;
+    width: 100%;
+    margin: 10px 0;
+    height: 50px;
+}
+
+.container .card-container .back .box{
+    padding: 0 20px;
+}
+
+.container .card-container .back .box span{
+    color:#fff;
+    font-size: 15px;
+}
+
+.container .card-container .back .box .cvv-box{
+    height: 50px;
+    padding: 10px;
+    margin-top: 5px;
+    color:#333;
+    background: #fff;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.container .card-container .back .box img{
+    margin-top: 30px;
+    height: 30px;
+}
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -249,6 +419,13 @@
 
 
 <script>
+    document.querySelector('.card-number-input').oninput = () =>{
+    document.querySelector('.card-number-box').innerText = document.querySelector('.card-number-input').value;
+}
+
+document.querySelector('.card-holder-input').oninput = () =>{
+    document.querySelector('.card-holder-name').innerText = document.querySelector('.card-holder-input').value;
+}
     document.querySelector('.ticket-type-input').oninput = () => {
     document.querySelector('.exp-month').innerText = document.querySelector('.ticket-type-input').value;
 };
@@ -256,6 +433,61 @@
 document.querySelector('.quantity-input').oninput = () => {
     document.querySelector('.exp-year').innerText = document.querySelector('.quantity-input').value;
 };
+const frontCard = document.querySelector('.front');
+const backCard = document.querySelector('.back');
+const cvvInput = document.querySelector('.cvv-input');
+
+cvvInput.addEventListener('focus', () => {
+  frontCard.style.transform = 'rotateY(180deg)';
+  backCard.style.transform = 'rotateY(360deg)';
+});
+
+cvvInput.addEventListener('blur', () => {
+  frontCard.style.transform = 'rotateY(0deg)';
+  backCard.style.transform = 'rotateY(180deg)';
+});
+
+document.querySelector('.cvv-input').oninput = () =>{
+    document.querySelector('.cvv-box').innerText = document.querySelector('.cvv-input').value;
+}
+document.querySelector('form').addEventListener('submit', function (e) {
+    let isValid = true;
+    let errorMessage = "";
+
+   
+    const cardNumber = document.querySelector('.card-number-input').value.trim();
+    if (!/^\d{16}$/.test(cardNumber)) {
+        errorMessage += "- Card number must be 16 digits.\n";
+        isValid = false;
+    }
+
+  
+    const cardHolder = document.querySelector('.card-holder-input').value.trim();
+    if (!/^[a-zA-Z\s]{3,}$/.test(cardHolder)) {
+        errorMessage += "- Card holder name must have at least 3 characters and contain only letters.\n";
+        isValid = false;
+    }
+
+ 
+    const cvv = document.querySelector('.cvv-input').value.trim();
+    if (!/^\d{3,4}$/.test(cvv)) {
+        errorMessage += "- CVV must be 3 or 4 numeric digits.\n";
+        isValid = false;
+    }
+
+ 
+    const quantity = document.querySelector('.quantity-input').value;
+    if (quantity <= 0 || isNaN(quantity)) {
+        errorMessage += "- Quantity must be a positive number.\n";
+        isValid = false;
+    }
+
+    // Nëse ka gabime nalet dergimi i formës edhe shfaqet mesazhet
+    if (!isValid) {
+        e.preventDefault();
+        alert("Please :\n" + errorMessage);
+    }
+});
 </script>
 
 

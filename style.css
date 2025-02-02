@@ -386,9 +386,9 @@ div ul a{
 }
 
 
-/* Efekti kur maus prek foton */
+
 .gallery1 img:hover, .gallery2 img:hover, .gallery3 img:hover {
-  transform: scale(1.05);  /* Kjo do të bëjë që fotoja të zmadhohet pak */
+  transform: scale(1.05);  /* fotoja zbadhohet */
 }
 
 .container3 {
@@ -478,8 +478,8 @@ button:hover {
     
     .all .card1 {
       position: relative;
-      width: 30%; /* Siguron se kartat janë të shëndosha dhe nuk janë shumë të ngushta */
-      height: 600px; /* Përshtatim i lartësisë së kartave për të lejuar hapësirë për tekstin */
+      width: 30%; 
+      height: 600px; 
       display: flex;
       flex-direction: column;
       transition: 0.3s;
@@ -493,11 +493,11 @@ button:hover {
       align-items: center;
       z-index: 1;
       flex: 1;
-      transition: transform 0.3s ease-in-out; /* Për efektin e lëvizjes */
+      transition: transform 0.3s ease-in-out; /* efekti i levizjes */
     }
     
     .all .card1:hover .face.face1 {
-      transform: translateY(-50px); /* Foto lëviz lart kur maus kalon mbi të */
+      transform: translateY(-50px); /* Fotoja leviz kur mausi osht ne te */
       box-shadow: 
         inset 0 0 60px whitesmoke,
         inset 20px 0 80px #f596d2,
@@ -516,7 +516,7 @@ button:hover {
     }
     
     .all .card1:hover .face.face1 .content1 {
-      opacity: 1; /* Siguron që teksti shfaqet plotësisht */
+      opacity: 1; /* teksti mu shfaq */
     }
     
     .all .card1 .face.face1 .content1 i {
@@ -539,9 +539,9 @@ button:hover {
       padding: 30px;
       box-sizing: border-box;
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-      transform: translateY(0); /* Teksti do të mbetet në vendin e tij fillestar */
+      transform: translateY(0); 
       flex: 1;
-      z-index: 0; /* Siguron që teksti të jetë pas fotos */
+      z-index: 0; 
     }
     
     .all .card1 .face.face2 .content1 p,
@@ -568,26 +568,26 @@ button:hover {
       box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
     }
     .search-container {
-      text-align: center; /* Pozicionon elementët në mes */
-      margin-top: 50px; /* Hapësirë nga maja e faqes */
+      text-align: center; 
+      margin-top: 50px; 
     }
     
-    /* Label për tekstin mbi search box */
+    
     .search-container label {
       font-size: 20px;
-      display: block; /* E bën të jetë në një linjë më vete */
-      margin-bottom: 10px; /* Hapësirë nën tekst */
+      display: block; 
+      margin-bottom: 10px; 
     }
     
     /* Search box input */
     #search-box {
-      width: 300px; /* Gjerësia e kutisë së kërkimit */
+      width: 300px; /* Gjeersia */
       padding: 10px;
       font-size: 16px;
-      border: 2px solid #ccc; /* Bordi gri */
+      border: 2px solid #ccc; 
       border-radius: 4px;
-      outline: none; /* Heq kufirin e fokusit nga kutia */
-      margin-right: 10px; /* Hapësirë ndërmjet input dhe butonit */
+      outline: none; 
+      margin-right: 10px; 
     }
     
     /* Butoni i submit */
@@ -595,16 +595,16 @@ button:hover {
       padding: 10px 20px;
       font-size: 16px;
       border: 2px solid #ccc;
-      background-color: #c64abc; /* Ngjyrë e butonit */
+      background-color: #c64abc; 
       color: white;
       cursor: pointer;
       border-radius: 4px;
-      transition: all 0.3s ease; /* Kalimi i butë për ngjyrat dhe madhësinë */
+      transition: all 0.3s ease; 
     }
     
-    /* Efekti kur maus kalon mbi buton */
+    
     #search-button:hover {
-      background-color: #852680; /* Ndryshimi i ngjyrës kur maus kalon mbi të */
+      background-color: #852680; 
       transform: scale(1.1); /* Zmadhohet butoni */
     }
 

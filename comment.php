@@ -17,3 +17,15 @@ class Comment {
 
         return $stmt->execute();
     }
+        // per mi marr komentet
+        public function getComments($page_name) {
+            $query = "SELECT * FROM " . $this->table_name . " WHERE page_name = :page_name ORDER BY created_at DESC";
+            
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindParam(':page_name', $page_name);
+            $stmt->execute();
+            
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+    }
+    ?>

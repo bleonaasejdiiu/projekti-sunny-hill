@@ -92,7 +92,16 @@ $emri_faqes = isset($page_data['emri_faqes']) ? $page_data['emri_faqes'] : 'Emri
         <a href="Tickets.html">Tickets</a>
         <a href="aboutus.html">About Us</a>
         <a href="contactus.html">Log In</a>
-    </nav>
+    </nav> 
+
+    <!-- Shfaqim mesazhin nga sesioni -->
+    <?php
+    if (isset($_SESSION['message'])) {
+        echo "<script>alert('" . $_SESSION['message'] . "');</script>";
+        unset($_SESSION['message']);  
+    }
+    ?> 
+
                 <h1 class="b"><?php echo isset($titulli) ? $titulli : 'ABOUT US'; ?></h1>
                 <div class="a">
                     <ul>

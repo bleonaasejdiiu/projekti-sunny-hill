@@ -457,6 +457,47 @@ button:hover {
   font-weight: bold;
   color: #333;
 }
+@media (max-width: 768px) {
+  .navbar a {
+      display: block;
+      text-align: center;
+      padding: 15px;
+  }
+  .row {
+      grid-template-columns: 1fr; /* Kolona një për një për pajisje mobile */
+      padding: 0 10px;
+  }
+  .gallery1 img, .gallery2 img, .gallery3 img {
+      width: 100%; /* Pamja e imazheve do të rregullohet për ekranin */
+      margin: 5px 0;
+  }
+  .container3 {
+      width: 80%; /* Rritet gjerësia për pajisje mobile */
+      margin-top: 20px;
+  }
+  .comment-box3 {
+      width: 100%; /* Përditësohet madhësia e kutisë së komenteve */
+  }
+  .footer {
+      flex-direction: column; /* Ndarje vertikale për footer për pajisje mobile */
+      text-align: center;
+  }
+  .sponsors img {
+      width: 70px;
+      max-height: 40px;
+  }
+}
+
+/* Përshtatje për ekranët e mëdhenj (Tablet, Desktop) */
+@media (min-width: 769px) {
+  .row {
+      grid-template-columns: repeat(2, 1fr); /* Dy kolona për ekranët më të mëdhenj */
+  }
+  .gallery1 img, .gallery2 img, .gallery3 img {
+      width: 364px; /* Pamja e imazheve për ekrane më të mëdhenj */
+      margin: 0 10px;
+  }
+}
     /*---------------SHOWS&EVENTS----------------------*/
     
     .sh{

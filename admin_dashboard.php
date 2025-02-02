@@ -38,92 +38,154 @@ $questions = $admin->getAllQuestions();
     <link rel="stylesheet" href="tickets-style.css">
 
     <style>
-      
-      body {
-            font-family: Arial, sans-serif;
-            background-color: #f1f1f1;
-            margin: 0;
-            padding: 0;
-        }
+   body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+}
 
-       
+.logout-btn {
+    float: right;
+    display: inline-block;
+}
 
-        .logout-btn {
-            float: right;
-            display: inline-block;
-        }
+.dashboard-content {
+    margin: 15px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-        .dashboard-content {
-            margin: 15px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 40px;
+}
 
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 40px;
-        }
+h2 {
+    color: #333;
+    margin-top: 80px;
+}
 
-        h2 {
-            color: #333;
-            margin-top: 80px;
-        }
+.btn1 {
+    background-color: #820a6b;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
 
-        .btn1 {
-            background-color: #820a6b;
-            color: white;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            text-align: center;
-            transition: background-color 0.3s ease;
-        }
+.btn1:hover {
+    background-color: #620746;
+}
 
-        .btn1:hover {
-            background-color: #620746;
-        }
+.admin-table-container {
+    overflow-x: auto; 
+    margin-top: 20px;
+}
 
-      
-        .admin-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            background-color: #fff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    min-width: 600px; 
+}
 
-        .admin-table th, .admin-table td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-            color: #333;
-        }
+.admin-table th, .admin-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    color: #333;
+}
 
-        .admin-table th {
-            background-color: #820a6b;
-            color: white;
-            text-transform: uppercase;
-        }
+.admin-table th {
+    background-color: #820a6b;
+    color: white;
+    text-transform: uppercase;
+}
 
-        .admin-table tr:hover {
-            background-color: #f9f9f9;
-        }
+.admin-table tr:hover {
+    background-color: #f9f9f9;
+}
 
-        .admin-table a {
-            color: #007BFF;
-            text-decoration: none;
-        }
+.admin-table a {
+    color: #007BFF;
+    text-decoration: none;
+}
 
-        .admin-table a:hover {
-            text-decoration: underline;
-        }
+.admin-table a:hover {
+    text-decoration: underline;
+}
 
-        
+/* Responsiveness */
+@media (max-width: 768px) {
+    .logout-btn {
+        float: none;
+        display: block;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .dashboard-content {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .btn1 {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .admin-table-container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .admin-table {
+        font-size: 14px;
+        min-width: 500px; 
+    }
+
+    .admin-table th, .admin-table td {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .dashboard-content {
+        padding: 10px;
+    }
+
+    .btn1 {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .admin-table th, .admin-table td {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .admin-table {
+        font-size: 12px;
+        min-width: 320px; 
+    }
+}
     </style>
 </head>
 <body>

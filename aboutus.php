@@ -173,39 +173,7 @@ $emri_faqes = isset($page_data['emri_faqes']) ? $page_data['emri_faqes'] : 'Emri
 
     <script src="script2.js"></script>
 
-<!--<style>
-    .footer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 20px;
- 
-  background-color:rgb(240, 233, 237); /* Ngjyra e qumështit */
-  color: #333; /* Ngjyrë e errët për tekstin për kontrast */
-  text-align: center;
-}
 
-.footer-item {
-  padding: 10px;
-}
-
-/* ✅ Mobile & Tableta */
-
-@media (max-width: 768px) {
-       .footer {
-            flex-direction: column;
-            text-align: center;
-        }
-
-       .sponsors img {
-            width: 60px;
-            max-height: 40px;
-        }
-    }
-</style>
-
-</style>
--->
 <style>
     .navbar .profile-icon {
     position: absolute;

@@ -5,6 +5,7 @@ ini_set('display_errors', 1);
 
 include("connect_db.php");
 include("UserSearch.php");
+include("cookie-banner.php");
 
 $database = new Database();
 $conn = $database->connect();

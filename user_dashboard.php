@@ -24,7 +24,7 @@ $userData = $home->getUserData($_SESSION['id']);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tickets-style.css">
 
     <title>User Dashboard</title>
     <style>
@@ -32,47 +32,6 @@ $userData = $home->getUserData($_SESSION['id']);
   background: rgb(247, 243, 247);
 }
 
-.nav {
-  background: linear-gradient(to right, rgb(113, 79, 117), rgb(138, 109, 134), rgb(189, 137, 183), rgb(189, 137, 183), rgb(138, 109, 134), rgb(113, 79, 117)); 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 30px;
-  color: white;
-  font-family: Arial, sans-serif;
-}
-
-.nav .logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.nav .logo a {
-  text-decoration: none;
-  color: #fff;
-}
-
-.right-links a {
-  color: #fff;
-  padding: 8px 20px;
-  text-decoration: none;
-  margin-left: 20px;
-  font-size: 20px;
-}
-
-.right-links .btn {
-  background-color: #daa2ce;
-  color: white;
-  border: none;
-  padding: 8px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 15px;
-}
-
-.right-links .btn:hover { 
-  background-color: rgb(186, 115, 170);
-}
 
 main {
   display: flex;
@@ -114,67 +73,19 @@ main {
     gap: 15px;
   }
 }
-/*Animacione me Tickets */
-.tickets-logos {
-  display: flex;             
-  justify-content: center;   
-  gap: 20px;                
-  flex-wrap: wrap;           
-}
 
-.ticket-icon {
-  font-size: 40px;          
-  color: #bd89b7;
-  animation: bounce 2s infinite ease-in-out; 
-}
-
-.ticket-icon:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.ticket-icon:nth-child(3) {
-  animation-delay: 0.4s;
-}
-
-.ticket-icon:nth-child(4) {
-  animation-delay: 0.6s;
-}
-
-.ticket-icon:nth-child(5) {
-  animation-delay: 0.8s;
-}
-
-.ticket-icon:nth-child(6) {
-  animation-delay: 1s;
-}
-.ticket-icon:nth-child(7) {
-  animation-delay: 1.2s;
-}
-
-/* Animacioni */
-@keyframes bounce {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px); /* Lëviz lart */
-  }
-  100% {
-    transform: translateY(0); /* Kthehet poshtë */
-}
-}
     </style>
 </head>
 <body>
-    <div class="nav">
-        <div class="logo">
-            <p><a href="home.php">HOME</a></p>
-        </div>
-        <div class="right-links">
-            <a href="Tickets.php"><b>Buy Tickets</b></a>
-            <a href="logout.php"><button class="btn">Log Out</button></a>
-        </div>
-    </div>
+<nav class="navbar">
+        <a href="home.php">Home</a>
+        <a href="shows&events.php">Shows&Events</a>
+        <a href="news.php">News</a>
+        <a href="Tickets.php">Tickets</a>
+        <a href="aboutus.php">About Us</a>
+        <a href="contactus.php">Log In</a>
+    </nav>
+    
  
     <main>
         <div class="main-box">

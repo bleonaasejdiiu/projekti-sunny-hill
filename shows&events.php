@@ -4,6 +4,7 @@ ini_set('display_errors', 1);
 
 
 include("connect_db.php");
+include("UserSearch.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     

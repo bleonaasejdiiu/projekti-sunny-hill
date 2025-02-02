@@ -258,6 +258,6 @@ $emri_faqes = isset($page_data['emri_faqes']) ? $page_data['emri_faqes'] : 'Emri
         <img src="vodafone.jpg" alt="Vodafone">
     </div>
 </footer>
-    
+ 
 </body>
 </html>

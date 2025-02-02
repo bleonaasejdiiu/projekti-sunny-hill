@@ -76,10 +76,10 @@ document.getElementById('read-more5').addEventListener('click', function(event) 
         this.textContent = 'Read More'; 
     }
 });
-document.getElementById('read-more5').addEventListener('click', function(event) {
+document.getElementById('read-more6').addEventListener('click', function(event) {
     event.preventDefault(); 
 
-    var moreText = document.getElementById('more-text5');
+    var moreText = document.getElementById('more-text6');
 
     if (moreText.style.display === 'none') {
         moreText.style.display = 'block'; 
@@ -89,10 +89,10 @@ document.getElementById('read-more5').addEventListener('click', function(event) 
         this.textContent = 'Read More'; 
     }
 });
-document.getElementById('read-more5').addEventListener('click', function(event) {
+document.getElementById('read-more7').addEventListener('click', function(event) {
     event.preventDefault(); 
 
-    var moreText = document.getElementById('more-text5');
+    var moreText = document.getElementById('more-text7');
 
     if (moreText.style.display === 'none') {
         moreText.style.display = 'block'; 

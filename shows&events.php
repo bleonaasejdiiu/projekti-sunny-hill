@@ -90,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
        
         
-    <div class="all">
+        <div class="all">
         <div class="card1">
             <div class="face face1">
                 <div class="content1">
@@ -276,7 +276,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <p id="more-text10" style="display:none;">Ata janë të njohur për energjinë dhe stilin unik që sjellin në skenë dhe kanë arritur të fitojnë një audiencë të gjerë, jo vetëm në Shqipëri dhe Kosovë, por edhe jashtë saj.</p>
                     <a href="#" id="read-more10" type="button">Read More</a>
                 </div>
-             </div><
+             </div>
         </div>
         <div class="card1">
             <div class="face face1">

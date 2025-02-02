@@ -32,79 +32,130 @@ $questions = $admin->getAllQuestions();
 
     <style>
       
-.dashboard-content {
-    padding: 20px;
-    background-color: #f4f4f4;
-}
+      body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+        }
 
-h1 {
-    color: #333;
-    text-align: center;
-}
+       
 
-.btn {
-    background-color: rgb(131, 48, 113);
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    display: inline-block;
-    margin: 20px;
-}
+        .logout-btn {
+            float: right;
+            display: inline-block;
+        }
 
-.btn:hover {
-    background-color: rgb(117, 0, 91);
-}
+        .dashboard-content {
+            margin: 15px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-/* Table styles */
-.admin-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+        }
 
-.admin-table th, .admin-table td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
-}
+        h2 {
+            color: #333;
+            margin-top: 80px;
+        }
 
-.admin-table th {
-    background-color: #333;
-    color: white;
-}
+        .btn1 {
+            background-color: #820a6b;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
 
-.admin-table tr:hover {
-    background-color: #f2f2f2;
-}
+        .btn1:hover {
+            background-color: #620746;
+        }
 
-.admin-table a {
-    color: #007BFF;
-    text-decoration: none;
-}
+        /* Table styles */
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
 
-.admin-table a:hover {
-    text-decoration: underline;
-}
+        .admin-table th, .admin-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            color: #333;
+        }
+
+        .admin-table th {
+            background-color: #820a6b;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .admin-table tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .admin-table a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .admin-table a:hover {
+            text-decoration: underline;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            margin: 0;
+            color: #333;
+        }
+
+        .card p {
+            color: #555;
+        }
+
+        
     </style>
 </head>
 <body>
- 
+
     <nav class="navbar">
-        <a href="home.php">Home</a>
-        <a href="shows&events.php">Shows & Events</a>
-        <a href="news.php">News</a>
-        <a href="Tickets.php">Tickets</a>
-        <a href="aboutus.php">About Us</a>
-        <a href="contactus.php">Log In</a>
+        <div>
+            <a href="home.php">Home</a>
+            <a href="shows&events.php">Shows & Events</a>
+            <a href="news.php">News</a>
+            <a href="Tickets.php">Tickets</a>
+            <a href="aboutus.php">About Us</a>
+            <a href="contactus.php">Log In</a> 
+            <a href="logout.php" class=" btn1 logout-btn">Log Out</a>
+        </div>
+       
     </nav>
 
     
     <div class="dashboard-content">
         <h1>Welcome to the Admin Dashboard!</h1>
-        <p>Hello, <?= $_SESSION['username'] ?>!</p>
-        <a href="logout.php"><button class="btn">Log Out</button></a>
+       
+       
 
         
         <h2>User and Ticket Information</h2>
@@ -136,7 +187,7 @@ h1 {
             <?php endforeach; ?>
         </table>
 
-        <a href="Admin/add_user.php"><button class="btn">Add New User</button></a>
+        <a href="Admin/add_user.php"><button class="btn1">Add New User</button></a>
         <h2>User Questions</h2>
         <table class="admin-table">
             <tr>
@@ -162,7 +213,7 @@ h1 {
             <?php endforeach; ?>
         </table>
 
-        <a href="add_question.php"><button class="btn">Add New Question</button></a>
+        <a href="add_question.php"><button class="btn1">Add New Question</button></a>
     </div>
      
 </body>

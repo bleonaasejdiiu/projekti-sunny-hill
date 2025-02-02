@@ -6,6 +6,12 @@ ini_set('display_errors', 1);
 include("connect_db.php");
 include("UserSearch.php");
 
+$database = new Database();
+$conn = $database->connect();
+
+
+$userSearch = new UserSearch($conn);
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     

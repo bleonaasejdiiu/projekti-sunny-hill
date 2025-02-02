@@ -6,6 +6,14 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
     exit;
 }
 
+include_once '../connect_db.php';
+include_once '../Admin.php';
+
+$database = new Database();
+$conn = $database->connect();
+
+$admin = new Admin($conn);
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     include_once 'connect_db.php';
     $admin = new Admin($conn);
@@ -110,26 +118,55 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="form-container">
         <h2>Add New User</h2>
 
-        <form method="POST" action="add_user.php">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" required>
+        <form method="POST" action="add_user.php" onsubmit="return validateRegisterForm()">
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" required>
 
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
 
-            <label for="age">Age</label>
-            <input type="number" id="age" name="age" required>
+    <label for="age">Age</label>
+    <input type="number" id="age" name="age" required>
 
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required>
 
-            <input type="submit" value="Add User">
-        </form>
-
+    <input type="submit" value="Add User">
+</form>
         <div class="cancel-btn">
             <a href="../admin_dashboard.php">Cancel</a>
         </div>
     </div>
+    <script >
+    function validateRegisterForm() {
+    const username = document.getElementById("username").value;
+    const email = document.getElementById("email").value;
+    const age = document.getElementById("age").value;
+    const password = document.getElementById("password").value;
 
+    if (username === "" || email === "" || age === "" || password === "") {
+        alert("Please fill in all fields.");
+        return false;
+    }
+
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email.");
+        return false;
+    }
+
+    if (age < 18) {
+        alert("You must be at least 18 years old to register.");
+        return false;
+    }
+
+    if (password.length < 6) {
+        alert("Password must be at least 6 characters long.");
+        return false;
+    }
+
+    return true;
+}
+    </script>
 </body>
 </html>

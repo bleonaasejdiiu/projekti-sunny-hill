@@ -14,8 +14,8 @@ $userSearch = new UserSearch($conn);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
-    
     $artist_name = trim($_POST['artist_name']); 
+
     
     if (empty($artist_name)) {
         echo "Ju lutem shkruani emrin e artistit!";
@@ -33,18 +33,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
    
-    $artist_name = htmlspecialchars($artist_name);
-    $artist_name = stripslashes($artist_name);
-    
+    $user_ip = $_SERVER['REMOTE_ADDR']; 
+    if ($userSearch->saveSearch($user_ip, $artist_name)) {
+        echo "Kërkimi është regjistruar me sukses!";
+    } else {
+        echo "Ndodhi një gabim gjatë regjistrimit të kërkimit!";
+    }
+
     
     $searchTerm = "%" . $artist_name . "%";  
-
     $query = "SELECT * FROM artists WHERE artist_name LIKE :artist_name";
     $stmt = $conn->prepare($query);
-
-    
     $stmt->bindParam(':artist_name', $searchTerm);
-    
     $stmt->execute();
 
     if ($stmt->rowCount() > 0) {

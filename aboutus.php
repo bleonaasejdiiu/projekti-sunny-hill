@@ -14,6 +14,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['comment'])) {
     $commentText = htmlspecialchars(trim($_POST['comment']));
     $page_name = 'about us'; 
 
+    // Validimi i komenteve
+    if (!empty($commentText)) {
+        if ($comment->saveComment($commentText, $page_name)) {
+            echo "<script>alert('Komenti është postuar me sukses!');</script>";
+        } else {
+            echo "<script>alert('Ka ndodhur një gabim gjatë postimit të komentit.');</script>";
+        }
+    } else {
+        echo "<script>alert('Ju lutem, shkruani një koment para se ta postoni!');</script>";
+    }
+}
+/////////////////////////////////////////////////////////////
 class Content {
     private $conn;
     private $table_name = "content1"; 

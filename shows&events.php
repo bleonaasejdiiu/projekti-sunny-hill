@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $_SESSION['artist_name'] = $artist_name; 
-    
+
     $user_ip = $_SERVER['REMOTE_ADDR']; 
     if ($userSearch->saveSearch($user_ip, $artist_name)) {
         echo "Kërkimi është regjistruar me sukses!";
@@ -60,12 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Nuk u gjet artisti: " . htmlspecialchars($artist_name);
     }
 }
-// Kontrollo nëse përdoruesi ka pranuar cookies
-if (!isset($_COOKIE['cookies_accepted'])) {
-    $cookieBanner = true;
-} else {
-    $cookieBanner = false;
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -87,48 +82,8 @@ if (!isset($_COOKIE['cookies_accepted'])) {
     </nav>
         <h1 class="sh">SHOWS&EVENTS</h1>
 
-        <style>
-        .cookie-banner {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
-            text-align: center;
-            padding: 10px;
-            display: <?php echo $cookieBanner ? 'block' : 'none'; ?>;
-            z-index: 1000;
-        }
-
-        .accept-button {
-            background-color:rgb(93, 27, 76);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-
-        .accept-button:hover {
-            background-color:rgb(160, 58, 131);
-        }
-    </style>
-    <!-- Mesazhi i Cookies -->
-    <div id="cookie-banner" class="cookie-banner">
-        <p>Ne perdorim cookies per te permiresuar pervojen tuaj ne kete faqe. Duke klikuar "Prano", ju pranoni perdorimin e cookies.</p>
-        <a href="?accept_cookies=true"><button class="accept-button">Prano</button></a>
-    </div>
-
-    <?php
-  
-    if (isset($_GET['accept_cookies']) && $_GET['accept_cookies'] == 'true') {
        
-        setcookie('cookies_accepted', 'yes', time() + (60 * 60), "/"); 
-       
-        header("Location: " . $_SERVER['PHP_SELF']); 
-        exit();
-    }
-    ?>
+        
     <div class="all">
         <div class="card1">
             <div class="face face1">

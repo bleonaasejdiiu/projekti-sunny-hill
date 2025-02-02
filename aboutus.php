@@ -118,7 +118,20 @@ $emri_faqes = isset($page_data['emri_faqes']) ? $page_data['emri_faqes'] : 'Emri
             <img src="https://sunnyhillfestival.com/wp-content/uploads/2024/04/Sunny-Hill-Festival-Grand-Return-in-Prishtina.jpg">
         </div>      
     
+        <div class="container3">
+        <h2>Trego eksperiencen tende</h2>
+        
+        <div class="comment-box3">
+            <textarea id="commentInput" placeholder="Shkruaj nje koment..." rows="4" cols="50"></textarea>
+            <button onclick="addComment()">Posto Komentin</button>
+        </div>
+        
+        <div id="commentsSection">
+            <!-- Komentet do te shfaqen ktu -->
+        </div>
+    </div>
 
+    <script src="script2.js"></script>
 
 <!--<style>
     .footer {

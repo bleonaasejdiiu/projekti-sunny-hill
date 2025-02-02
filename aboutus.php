@@ -2,7 +2,7 @@
 
 include("connect_db.php"); 
 include('comment.php');
-include("cookie-banner.php")
+include("cookie-banner.php");
 
 // krijimi i lidhjes te databaze me oop
 $database = new Database();

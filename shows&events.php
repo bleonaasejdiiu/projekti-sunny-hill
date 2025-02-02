@@ -1,5 +1,6 @@
 <?php
 session_start(); // Fillon sesionin
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -34,7 +35,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-   
+    $_SESSION['artist_name'] = $artist_name; 
+    
     $user_ip = $_SERVER['REMOTE_ADDR']; 
     if ($userSearch->saveSearch($user_ip, $artist_name)) {
         echo "Kërkimi është regjistruar me sukses!";
